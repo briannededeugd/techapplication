@@ -1,0 +1,19 @@
+{
+  "name": "techapplication",
+  "version": "1.0.0",
+  "description": "This is the package for the tech application with the A-Team",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briannededeugd/techapplication.git"
+  },
+  "author": "Tristan Brattinga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briannededeugd/techapplication/issues"
+  },
+  "homepage": "https://github.com/briannededeugd/techapplication#readme"
+}
