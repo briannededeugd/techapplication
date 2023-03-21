@@ -2,8 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-    res.send("jarno's following router werkt!")
-    console.log("jarno's following router werkt!")
+    res.send("bryan's liking router werkt!")
+    console.log("bryan's liking router werkt!")
 })
 
 
