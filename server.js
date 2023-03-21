@@ -9,8 +9,8 @@ const mongoose = require('mongoose');
  *------------------------**/
 const followingRouter = require('./routes/followingRouter');
 const registerRouter = require('./routes/registerRouter');
-const brMatchingRouter = require('./routes/brMatchingRouter');
-const elMatchingRouter = require('./routes/elMatchingRouter');
+const matchingRouter = require('./routes/matchingRouter');
+const filterRouter = require('./routes/filterRouter');
 const likingRouter = require('./routes/likingRouter');
 
 /**----------------------
@@ -85,12 +85,12 @@ app.use('/register', registerRouter);
 /**----------------------
  *    Brianne's Matching
  *------------------------**/
-app.use('/brmatching', brMatchingRouter);
+app.use('/matching', matchingRouter);
 
 /**----------------------
  *    Elaine's Matching
  *------------------------**/
-app.use('/elmatching', elMatchingRouter);
+app.use('/filter', filterRouter);
 
 /**----------------------
  *    Bryan's Liking
