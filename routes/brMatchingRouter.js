@@ -6,5 +6,4 @@ router.get('/', async (req, res) => {
     console.log("brianne's matching router werkt!")
 })
 
-
 module.exports = router;
