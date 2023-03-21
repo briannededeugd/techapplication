@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000
-
-require("dotenv").config();
+const port = process.env.PORT || 3000;
+const mongoose = require('mongoose');
 
 const followingRouter = require('./routes/followingRouter');
 const registerRouter = require('./routes/registerRouter');
@@ -10,7 +10,37 @@ const brMatchingRouter = require('./routes/brMatchingRouter');
 const elMatchingRouter = require('./routes/elMatchingRouter');
 const likingRouter = require('./routes/likingRouter');
 
+const { songs } = require('./routes/songSchema');
+console.log("🚀 ~ file: server.js:14 ~ songs:", songs)
 
+const { users } = require('./routes/usersSchema');
+console.log("🚀 ~ file: server.js:17 ~ users:", users)
+
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
+
+async function main() {
+    await mongoose.connect(uri,{
+      dbName: process.env.DB_NAME,
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log("Succesfully connected")
+}
+main().catch(err => console.log(err));
+
+/**========================================================================
+ *                           Middleware
+ *========================================================================**/ 
+
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+/**========================================================================
+ *                           Templating
+ *========================================================================**/ 
+
+app.set('view engine', 'ejs');
 
 
 /**========================================================================
@@ -22,7 +52,7 @@ const likingRouter = require('./routes/likingRouter');
  *------------------------**/
 app.get('/', (req, res) => {
     res.send('Welkom op de homepagina')
-})
+});
 
 /**----------------------
  *    Jarno's Following
@@ -47,7 +77,7 @@ app.use('/elmatching', elMatchingRouter);
 /**----------------------
  *    Bryan's Liking
  *------------------------**/
-app.use('/liking', likingRouter)
+app.use('/liking', likingRouter);
 
 
 
