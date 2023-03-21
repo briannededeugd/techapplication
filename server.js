@@ -11,9 +11,8 @@ const elMatchingRouter = require('./routes/elMatchingRouter');
 const likingRouter = require('./routes/likingRouter');
 
 const { songs } = require('./routes/songSchema');
-console.log("🚀 ~ file: server.js:14 ~ songs:", songs)
 
-const { users } = require('./routes/usersSchema');
+const { users } = require('./routes/userSchema');
 console.log("🚀 ~ file: server.js:17 ~ users:", users)
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
@@ -50,8 +49,19 @@ app.set('view engine', 'ejs');
 /**----------------------
  *    Home Page
  *------------------------**/
-app.get('/', (req, res) => {
-    res.send('Welkom op de homepagina')
+app.get('/', async (req, res) => {
+    res.send('Welkom op de homepagina');
+
+    try {
+        const allSongs = await songs.find({});
+        // console.log("🚀 ~ file: server.js:58 ~ app.get ~ allSongs:", allSongs);
+
+        const allUsers = await users.find({});
+        // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
+        
+    } catch (error) {
+        console.error(error);
+    }
 });
 
 /**----------------------
@@ -97,3 +107,6 @@ app.use((req, res) => {
 app.listen(port, () => {
     console.log(`Server is listening to port: ${port}`);
 });
+
+
+
