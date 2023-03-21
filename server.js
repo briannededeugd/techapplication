@@ -4,17 +4,25 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 
+/**----------------------
+ *    Requiring the seperate routes
+ *------------------------**/
 const followingRouter = require('./routes/followingRouter');
 const registerRouter = require('./routes/registerRouter');
 const brMatchingRouter = require('./routes/brMatchingRouter');
 const elMatchingRouter = require('./routes/elMatchingRouter');
 const likingRouter = require('./routes/likingRouter');
 
+/**----------------------
+ *    Requiring the mongoose schemas
+ *------------------------**/
 const { songs } = require('./routes/songSchema');
-
 const { users } = require('./routes/userSchema');
 console.log("🚀 ~ file: server.js:17 ~ users:", users)
 
+/**----------------------
+ *    Defining and connecting to database
+ *------------------------**/
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
 
 async function main() {
