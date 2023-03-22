@@ -18,7 +18,7 @@ const likingRouter = require('./routes/likingRouter');
  *------------------------**/
 const { songs } = require('./routes/songSchema');
 const { users } = require('./routes/userSchema');
-console.log("🚀 ~ file: server.js:17 ~ users:", users)
+console.log("🚀 ~ file: server.js:17 ~ users:", users);
 
 /**----------------------
  *    Defining and connecting to database
@@ -31,7 +31,7 @@ async function main() {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    console.log("Succesfully connected")
+    console.log("Succesfully connected");
 }
 main().catch(err => console.log(err));
 
