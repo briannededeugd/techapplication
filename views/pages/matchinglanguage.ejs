@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<title>Document</title>
+	</head>
+	<body>
+		<section>
+			<h1><em>In welke taal</em> luister jij het liefst naar muziek?</h1>
+		</section>
+
+		<form action='/result' method='post'>
+			<input
+				type='checkbox'
+				name='language'
+				value='nederlands'
+				id='nederlands' />
+			<label for='nederlands'>
+				<img src='img/taal-nederlands.png' id='nederlandsImage' />
+				<p>Nederlands</p>
+			</label>
+
+			<input type='checkbox' name='language' value='engels' id='engels' />
+			<label for='engels'>
+				<img src='img/taal-engels.png' id='engelsImage' />
+				<p>Engels</p>
+			</label>
+
+			<input type='checkbox' name='language' value='koreaans' id='koreaans' />
+			<label for='koreaans'>
+				<img src='img/taal-koreaans.png' id='koreaansImage' />
+				<p>Koreaans</p>
+			</label>
+
+			<input
+				type='checkbox'
+				name='language'
+				value='geenvoorkeur'
+				id='geenvoorkeur' />
+			<label for='geenvoorkeur'>
+				<img src='img/taal-geenvoorkeur.png' id='geenvoorkeurImage' />
+				<p>Geen voorkeur</p>
+			</label>
+
+			<!-- Submit-knop is ook knop naar volgende pagina -->
+			<input type='hidden' name='nextPage' value='/resultaat' />
+
+			<fieldset>
+				<a href='/muziekelement'>
+					<img
+						src='img/next.png'
+						alt='Knop om terug te gaan naar muziekelement' />
+				</a>
+
+				<input
+					type='image'
+					src='img/nextpage.png'
+					alt='Volgende pagina' />
+			</fieldset>
+		</form>
+
+		<script src='/scripts/matchingscripts.js' type='module'></script>
+	</body>
+</html>
