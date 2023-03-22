@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
 	mood: Array,
 	favouriteArtist: Array,
 	favouriteSongs: Array,
+	follow : Boolean,
 });
 
 const users = mongoose.model('users', userSchema);
