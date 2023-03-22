@@ -60,13 +60,44 @@ router.get('/myprofile/:adminId', async (req, res) => {
 /**----------------------
  *    Following page
  *------------------------**/
+ 
+router.get('/followlist', async (req, res) => {
+    const dataFollowing = await users.find({follow : true})
+    // const EMPTY_MESSAGE_IMAGE_PULL = await DB_GENERAL.find({}).toArray();
+    // const EMPTY_MESSAGE_IMAGE = EMPTY_MESSAGE_IMAGE_PULL.find(profile => profile.imageEmpty)
+    if (dataFollowing.length < 1) {
+        res.render('pages/following', {
+            followingArray : dataFollowing,
+            emptyMessageH2 : "You don't seem to be following anyone...",
+            emptyImage : "techapplication/public/images/imageSadpepe.jpg",
+            emptyMessageP : "Head on over to the explore page to find new people to follow!"
 
+        })
+    } else {
+        res.render('pages/following', {
+            followingArray : dataFollowing,
+            emptyMessageH2 : "",
+            emptyImage : "",
+            emptyMessageP : ""
+        })
+    }
+})
 
 
 /**----------------------
  *    User clicks unfollow button
  *------------------------**/
 
+router.post('/followlist/:profileId', async (req, res) => {
+    const profileId = req.params.profileId;
+    const followStatus = req.body.followStatus === 'true';
+    
+    // Update the profile's follow status in the database
+    await users.findOneAndUpdate({_id: profileId}, {$set: {follow: followStatus}});
+  
+    // Redirect the user back to the explore page
+    res.redirect('/following/followlist');
+});
 
 
 

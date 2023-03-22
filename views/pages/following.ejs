@@ -4,33 +4,32 @@
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <%- include('../includes/head'); %>
+    <%- include('../partials/head'); %>
 
     <title>Following</title>
 </head>
 
 <body>
     <header>
-        <%- include('../includes/header'); %>
+        <%- include('../partials/header'); %>
     </header>
 
     <main class='following-main'>
         <h1>Following</h1>
         <p>Here you can manage the people you're following</p>
-        <div id="empty-message" class="<%= EMPTY_MESSAGE_H2 ? '' : 'empty-message-hidden' %>">
-            <h2><%=EMPTY_MESSAGE_H2 %></h2>
-            <img src="<%= EMPTY_IMAGE %>">
-            <p><%= EMPTY_MESSAGE_P %></p>
+        <div id="empty-message" class="<%= emptyMessageH2 ? '' : 'empty-message-hidden' %>">
+            <h2><%=emptyMessageH2 %></h2>
+            <img src="<%= emptyImage %>">
+            <p><%= emptyMessageP %></p>
         </div>
         <div id='following-profiles'>
-            <% FOLLOWING_ARRAY.forEach((profile) => { %>
-              <div class="<%= profile.subId %>">
-                <h2><%= profile.name %></h2>
+            <% followingArray.forEach((profile) => { %>
+              <div class="<%= profile._id %>">
+                <h2><%= profile.firstName %> <%= profile.lastName %></h2>
                 <p>Age:<%= profile.age %></p>
-                <p><%= profile.songs %></p>
-                <p><%= profile.about %></p>
-                <form action="/following/<%= profile.subId %>" method="POST">
-                  <!-- <input type="hidden" name="profile_id" value="<%= profile.subId %>"> -->
+                <p><%= profile.favouriteSongs %></p>
+                <p><%= profile.mood %></p>
+                <form action="/following/followlist/<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
                   <% if (profile.follow) { %>
                     <button>Unfollow</button>
@@ -38,7 +37,7 @@
                     <button>Follow</button>
                   <% } %>
                 </form>
-                <img src='<%= profile.image %>'>
+                <img src='<%= profile.profilePicture %>'>
               </div>
             <% }); %>
           </div>
@@ -47,7 +46,7 @@
     </main>
 
     <footer>
-        <%- include('../includes/footer'); %>
+        <%- include('../partials/footer'); %>
     </footer>
     
 </body>
