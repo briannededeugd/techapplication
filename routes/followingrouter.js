@@ -69,7 +69,7 @@ router.get('/followlist', async (req, res) => {
         res.render('pages/following', {
             followingArray : dataFollowing,
             emptyMessageH2 : "You don't seem to be following anyone...",
-            emptyImage : "techapplication/public/images/imageSadpepe.jpg",
+            emptyImage : "../images/imageSadpepe.jpg",
             emptyMessageP : "Head on over to the explore page to find new people to follow!"
 
         })
