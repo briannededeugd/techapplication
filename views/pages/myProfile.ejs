@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('../includes/head'); %>
+
+    <title>My Profile</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../includes/header'); %>
+    </header>
+
+    <main class="myProfile-main">
+        <h1 class="myProfile-title">My profile</h1>
+        <div class="myProfile-container">
+            <h2 class="myProfile-name"> <%= user.name %></h2>
+            <a class="myProfile-ahref" href="/following">Following</a>
+            <p class="myProfile-about"> <%= user.about %></p>
+            <p class="myProfile-age">Age: <%= user.age %></p>
+            <p class="myProfile-songs"><%= user.songs %></p>
+            <img class="myProfile-image" src="<%= user.image %>" alt="profile picture admin">
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../includes/footer'); %>
+    </footer>
+    
+</body>
+</html>
