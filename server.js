@@ -17,8 +17,8 @@ const likingRouter = require("./routes/likingRouter");
  *    Requiring the mongoose schemas
  *------------------------**/
 const { songs } = require("./routes/songSchema");
-const { users } = require("./routes/userSchema");
-console.log("🚀 ~ file: server.js:17 ~ users:", users);
+const { user } = require("./routes/userSchema");
+console.log("🚀 ~ file: server.js:17 ~ users:", user);
 
 /**----------------------
  *    Defining and connecting to database
@@ -63,7 +63,7 @@ app.get("/", async (req, res) => {
     const allSongs = await songs.find({});
     // console.log("🚀 ~ file: server.js:58 ~ app.get ~ allSongs:", allSongs);
 
-    const allUsers = await users.find({});
+    const allUsers = await user.find({});
     // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
   } catch (error) {
     console.error(error);
