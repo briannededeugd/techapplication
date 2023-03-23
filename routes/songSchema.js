@@ -1,5 +1,5 @@
-const { ObjectId } = require("mongodb");
-const mongoose = require("mongoose");
+const { ObjectId } = require('mongodb');
+const mongoose = require('mongoose');
 
 const songSchema = new mongoose.Schema({
   _id: ObjectId,
@@ -13,6 +13,6 @@ const songSchema = new mongoose.Schema({
   spotifylink: String
 });
 
-const songs = mongoose.model("songs", songSchema);
+const songs = mongoose.model('songs', songSchema);
 
 module.exports = { songs };
