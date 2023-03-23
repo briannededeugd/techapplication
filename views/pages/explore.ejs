@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <%- include('../partials/head'); %>
+
+    <title>About</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main class='explore-main'>
+        <h1>Explore</h1>
+        <p>Find new people to follow!</p>
+
+        
+
+        <div id='profiles'>
+            <% profiles.forEach((profile) => { %>
+              <div class="<%= profile._id %>">
+                <h2><%= profile.firstName %> <%= profile.lastName %></h2>
+                <p>Age:<%= profile.age %></p>
+                <p><%= profile.favouriteSongs %></p>
+                <p><%= profile.favouriteArtists %></p>
+                <form action="/following/follow/<%= profile._id %>" method="POST">
+                  <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
+                  
+                  <% if (profile.follow) { %>
+                    <button>Unfollow</button>
+                  <% } else { %>
+                    <button>Follow</button>
+                  <% } %>
+                </form>
+                <img src='<%= profile.profilePicture %>'>
+              </div>
+            <% }); %>
+          </div>
+
+    
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
+

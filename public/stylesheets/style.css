@@ -1,0 +1,316 @@
+:root {
+    --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    --mainGroen: #167A74;
+    --mainGrijs: #f2f2f2;
+    --mainGeel: #EBAD36;
+    --tekstWit: #ffffff;
+    --tekstZwart: #000000;
+}
+
+html {
+    margin: 0px;
+    max-height: auto;
+    scroll-behavior: smooth;
+}
+
+ 
+
+body {
+    width: 100%;
+    height: auto;
+    font-family: var(--fontstyle);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    display: grid; 
+    grid-template-columns: 1fr 6fr 1fr ;
+    grid-template-rows: auto 6fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    ". main ."
+    "footer footer footer";
+    justify-content: stretch;
+    gap: 1.5em 0px;
+    margin: 0 auto 0 auto;
+    text-decoration: none;
+    text-decoration-line: none;
+    justify-content: center;
+}
+
+/*******************************************  
+Header
+*******************************************/
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: var(--mainGrijs);
+    height: auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header nav {
+    grid-column: 2 / 2;
+    grid-row: 1;
+}
+
+header nav ul {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    list-style-type: none;
+
+}
+
+header li {
+    padding: 1em;
+    margin: 0 1em 0 1em;
+    background-color: var(--tekstZwart);
+    border-radius: 10%;
+    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+header li a {
+    text-decoration: none;
+    color: var(--mainGeel);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/*******************************************  
+Main Home
+*******************************************/
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/*******************************************  
+Main MyProfile
+*******************************************/
+
+main.myProfile-main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "title"
+    "container";
+}
+
+main div.myProfile-container {
+    grid-area: container;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr ;
+    grid-template-areas: 
+    "name button image image"
+    "age songs image image"
+    "about about image image";
+    background-color: var(--mainGrijs);
+    margin: 0 0 2em 0;
+    align-items: center;
+    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+h1.myProfile-title{
+    grid-area: title;
+}
+
+h2.myProfile-name {
+    grid-area: name;
+}
+
+p.myProfile-about {
+    grid-area: about;
+    margin: 0 2em 0 2em;
+}
+
+p.myProfile-songs {
+    grid-area: songs;
+}
+
+img.myProfile-image {
+    grid-area: image;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+/* button.myProfile-but1 {
+    grid-area: button1;
+}
+
+button.myProfile-but2 {
+    grid-area: button2;
+} */
+
+a.myProfile-ahref {
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 3em;
+    margin: 0 2em 0 2em;
+    background-color: var(--tekstZwart);
+    color: var(--mainGeel);
+    text-decoration: none;
+    
+
+   
+    
+}
+
+.footerText {
+   font-weight: 100 ;
+}
+
+
+
+/*******************************************  
+Main Explore
+*******************************************/
+
+/* main.explore-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr ;
+
+} */
+
+div#profiles {
+    display: grid;
+
+}
+
+div#profiles div {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto ;
+    grid-template-areas: 
+    "name button image image"
+    "age songs image image"
+    "about about image image";
+    background-color: var(--mainGrijs);
+    margin: 0 0 2em 0;
+    align-items: center;
+    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+div#profiles img{
+    grid-area: image;
+    width: auto;
+    max-width: 100%;
+}
+
+div#profiles h2{
+    grid-area: name;
+}
+
+div#profiles p:nth-of-type(1) {
+    grid-area: age;
+}
+
+div#profiles p:nth-of-type(2) {
+    grid-area: songs;
+}
+
+div#profiles p:nth-of-type(3) {
+    grid-area: about;
+}
+
+div#profiles button {
+    grid-area: button;
+}
+
+.footerText {
+   font-weight: 100 ;
+}
+
+
+/*******************************************  
+Main Following
+*******************************************/
+
+/* main.explore-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr 1fr ;
+
+} */
+
+div#following-profiles {
+    display: grid;
+
+}
+
+div#following-profiles div {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto ;
+    grid-template-areas: 
+    "name button image image"
+    "age songs image image"
+    "about about image image";
+    background-color: var(--mainGrijs);
+    margin: 0 0 2em 0;
+    align-items: center;
+    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+div#following-profiles img{
+    grid-area: image;
+    width: auto;
+    max-width: 100%;
+}
+
+div#following-profiles h2{
+    grid-area: name;
+}
+
+div#following-profiles p:nth-of-type(1) {
+    grid-area: age;
+}
+
+div#following-profiles p:nth-of-type(2) {
+    grid-area: songs;
+}
+
+div#following-profiles p:nth-of-type(3) {
+    grid-area: about;
+}
+
+div#following-profiles button {
+    grid-area: button;
+}
+
+div#empty-message {
+    padding: 2em;
+    background-color: var(--mainGrijs);
+}
+
+div#empty-message img{
+    height: auto;
+    width: 30%;
+}
+
+.footerText {
+   font-weight: 100 ;
+}
+
+.empty-message-hidden {
+    display: none;
+}
