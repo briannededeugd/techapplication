@@ -5,23 +5,15 @@
         <%- include("../partials/header") %>
     </header>
     <main>
-        <form action="/account:userName" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="First name" name="name" required>
+        <form action="/register" method="post">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="First name" name="firstName" required>
 
-            <label for="lastname">Last name:</label>
-            <input type="text" id="lastname" placeholder="Last name" name="lastname" required>
+            <label for="lastName">Last name:</label>
+            <input type="text" id="lastName" placeholder="Last name" name="lastName" required>
 
-            <label for="dateofbirth">Date of birth:</label>
-            <input type="date" id="dateofbirth" name="dateofbirth" required>
-
-            <label for="gender">Gender:</label>
-            <select name="gender" id="gender" required>
-                <option value=""></option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select>
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
 
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="example@gmail.com"required>
@@ -29,8 +21,8 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password"required>
 
-            <label for="passwordcheck">Password check:</label>
-            <input type="password" id="passwordcheck" name="passwordcheck" placeholder="Re-enter password"required>
+            <label for="password2">Password check:</label>
+            <input type="password" id="password2" name="password2" placeholder="Re-enter password"required>
 
             <input type="submit" value="Sign Up">
         </form>
