@@ -33,7 +33,7 @@ let selectedFeatures;
 let selectedMoods;
 let selectedLanguage;
 
-router.post('/userPost', (req, res) => {
+router.post('/test', (req, res) => {
 	console.log('test');
 	const formData = req.body;
 	const nextPage = formData['nextPage'];
