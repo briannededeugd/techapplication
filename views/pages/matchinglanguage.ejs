@@ -12,53 +12,34 @@
 		</section>
 
 		<form action='/result' method='post'>
-			<input
-				type='checkbox'
-				name='language'
-				value='nederlands'
-				id='nederlands' />
-			<label for='nederlands'>
-				<img src='img/taal-nederlands.png' id='nederlandsImage' />
-				<p>Nederlands</p>
+			<input type='checkbox' name='language' value='dutch' id='dutch' />
+			<label for='language'>
+				<img src='img/language-dutch.png' id='dutchImage' />
+				<p>Dutch</p>
 			</label>
 
-			<input type='checkbox' name='language' value='engels' id='engels' />
-			<label for='engels'>
-				<img src='img/taal-engels.png' id='engelsImage' />
-				<p>Engels</p>
+			<input type='checkbox' name='language' value='english' id='english' />
+			<label for='english'>
+				<img src='img/language-english.png' id='englishImage' />
+				<p>English</p>
 			</label>
 
-			<input type='checkbox' name='language' value='koreaans' id='koreaans' />
-			<label for='koreaans'>
-				<img src='img/taal-koreaans.png' id='koreaansImage' />
-				<p>Koreaans</p>
+			<input type='checkbox' name='language' value='korean' id='korean' />
+			<label for='korean'>
+				<img src='img/language-korean.png' id='koreanImage' />
+				<p>Korean</p>
 			</label>
 
-			<input
-				type='checkbox'
-				name='language'
-				value='geenvoorkeur'
-				id='geenvoorkeur' />
-			<label for='geenvoorkeur'>
-				<img src='img/taal-geenvoorkeur.png' id='geenvoorkeurImage' />
-				<p>Geen voorkeur</p>
+			<input type='checkbox' name='language' value='nopreference' id='nopreference' />
+			<label for='nopreference'>
+				<img src='img/language-nopreference.png' id='nopreferenceImage' />
+				<p>No preference</p>
 			</label>
 
 			<!-- Submit-knop is ook knop naar volgende pagina -->
-			<input type='hidden' name='nextPage' value='/resultaat' />
+			<input type='hidden' name='nextPage' value='matching/result' />
 
-			<fieldset>
-				<a href='/muziekelement'>
-					<img
-						src='img/next.png'
-						alt='Knop om terug te gaan naar muziekelement' />
-				</a>
-
-				<input
-					type='image'
-					src='img/nextpage.png'
-					alt='Volgende pagina' />
-			</fieldset>
+			<input type="submit">
 		</form>
 
 		<script src='/scripts/matchingscripts.js' type='module'></script>

@@ -11,7 +11,7 @@
 			<h1>What <em>music elements</em> do you listen to most?</h1>
 		</section>
 
-		<form action='matching/test' method='post'>
+		<form action='matching/userPost' method='post'>
 			<input type='checkbox' name='feature' value='beat' id='beat' />
 			<label for='beat'>
 				<!-- <img src='img/feature-beat.png' id='beatImage' /> -->
@@ -59,14 +59,12 @@
 			</label>
 
 			<!-- Submit-knop is ook knop naar volgende pagina -->
-			<input type='hidden' name='nextPage' value='matching/matchinglanguage' />
+			<input type='hidden' name='nextPage' value='/matching/matchinglanguage' />
 
 			<fieldset>
 			<!-- <input type='image' src='img/nextpage.png' alt='next page' /> -->
 			<input type="submit">
-		</fieldset>
 		</form>
 
-		<script src='/scripts/matchingscripts.js' type='module'></script>
 	</body>
 </html>

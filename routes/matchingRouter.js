@@ -1,5 +1,3 @@
-// ! HOE WERKT NAVIGATIE? LUKT NIET. HANDMATIG localhost:3000/matching/matchinglanguages WERKT WEL, ANDERE MANIEREN NIET 
-
 /* eslint-disable no-undef */
 
 const express = require('express');
@@ -33,10 +31,11 @@ let selectedFeatures;
 let selectedMoods;
 let selectedLanguage;
 
-router.post('/test', (req, res) => {
+router.post('/userPost', (req, res) => {
 	console.log('test');
 	const formData = req.body;
 	const nextPage = formData['nextPage'];
+	console.log('🚀 ~ file: matchingRouter.js:38 ~ router.post ~ nextPage:', nextPage)
 	res.redirect(nextPage);
 
 	if (selectedFeatures === undefined) {
