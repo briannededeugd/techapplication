@@ -20,6 +20,17 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+<<<<<<< HEAD
+=======
+  profilePicture: {
+    type: String,
+    required: false
+  },
+  mood: Array,
+  favouriteArtist: Array,
+  favouriteSongs: Array,
+  follow: Boolean,
+>>>>>>> main
   password: {
     type: String,
     required: true
@@ -27,6 +38,7 @@ const userSchema = new mongoose.Schema({
   password2: {
     type: String,
     required: true
+<<<<<<< HEAD
   },
   profilePicture: {
     type: String,
@@ -41,3 +53,11 @@ const userSchema = new mongoose.Schema({
 const user = mongoose.model("users", userSchema);
 
 module.exports = { user };
+=======
+  }
+});
+
+const users = mongoose.model("users", userSchema);
+
+module.exports = { users };
+>>>>>>> main

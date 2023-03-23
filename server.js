@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 
+<<<<<<< HEAD
 /**----------------------
  *    Requiring the seperate routes
  *------------------------**/
@@ -19,12 +20,36 @@ const likingRouter = require("./routes/likingRouter");
 const { songs } = require("./routes/songSchema");
 const { user } = require("./routes/userSchema");
 console.log("🚀 ~ file: server.js:17 ~ users:", user);
+=======
 
-/**----------------------
- *    Defining and connecting to database
- *------------------------**/
+/**========================================================================
+ *                           Requiring the seperate routes
+ *========================================================================**/
+
+const followingRouter = require('./routes/followingRouter');
+const registerRouter = require('./routes/registerRouter');
+const matchingRouter = require('./routes/matchingRouter');
+const filterRouter = require('./routes/filterRouter');
+const likingRouter = require('./routes/likingRouter');
+
+
+/**========================================================================
+ *                           Requiring the mongoose schemas
+ *========================================================================**/
+
+const { songs } = require('./routes/songSchema');
+const { users } = require('./routes/userSchema');
+const { admin } = require('./routes/adminSchema');
+
+
+/**========================================================================
+ *                           Defining and connecting to database
+ *========================================================================**/
+>>>>>>> main
+
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
 
+<<<<<<< HEAD
 async function main () {
   await mongoose.connect(uri, {
     dbName: process.env.DB_NAME,
@@ -32,8 +57,18 @@ async function main () {
     useUnifiedTopology: true
   });
   console.log("Succesfully connected");
+=======
+async function main() {
+    await mongoose.connect(uri,{
+      dbName: process.env.DB_NAME,
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+    console.log("Succesfully connected");
+>>>>>>> main
 }
 main().catch(err => console.log(err));
+
 
 /**========================================================================
  *                           Middleware
@@ -42,6 +77,7 @@ main().catch(err => console.log(err));
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 /**========================================================================
  *                           Templating
@@ -63,11 +99,22 @@ app.get("/", async (req, res) => {
     const allSongs = await songs.find({});
     // console.log("🚀 ~ file: server.js:58 ~ app.get ~ allSongs:", allSongs);
 
+<<<<<<< HEAD
     const allUsers = await user.find({});
     // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
   } catch (error) {
     console.error(error);
   }
+=======
+        const allUsers = await users.find({});
+        // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
+        
+        const allAdmins = await admin.find({});
+        // console.log("🚀 ~ file: server.js:73 ~ app.get ~ allAdmins:", allAdmins)
+    } catch (error) {
+        console.error(error);
+    }
+>>>>>>> main
 });
 
 /**----------------------
