@@ -1,4 +1,4 @@
-//! HOE WERKT NAVIGATIE? LUKT NIET. HANDMATIG localhost:3000/matching/matchinglanguages WERKT WEL, ANDERE MANIEREN NIET 
+// ! HOE WERKT NAVIGATIE? LUKT NIET. HANDMATIG localhost:3000/matching/matchinglanguages WERKT WEL, ANDERE MANIEREN NIET 
 
 /* eslint-disable no-undef */
 
@@ -29,17 +29,12 @@ function onLanguage(req, res){
 	res.render('pages/matchinglanguage');
 }
 
-/**========================================================================
- *                           DATA VERWERKEN ETC
- *========================================================================**/
-
 let selectedFeatures;
 let selectedMoods;
 let selectedLanguage;
 
-router.post('/userPost', handleUserPost);
-
-function handleUserPost(req, res) {
+router.post('/userPost', (req, res) => {
+	console.log('test');
 	const formData = req.body;
 	const nextPage = formData['nextPage'];
 	res.redirect(nextPage);
@@ -55,6 +50,10 @@ function handleUserPost(req, res) {
 	if (selectedLanguage === undefined) {
 		selectedLanguage = req.body.language;
 	}
-}
+});
+/**========================================================================
+ *                           DATA VERWERKEN ETC
+ *========================================================================**/
+	
 
 module.exports = router;
