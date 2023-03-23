@@ -4,23 +4,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 
-<<<<<<< HEAD
-/**----------------------
- *    Requiring the seperate routes
- *------------------------**/
-const followingRouter = require("./routes/followingRouter");
-const registerRouter = require("./routes/registerRouter");
-const matchingRouter = require("./routes/matchingRouter");
-const filterRouter = require("./routes/filterRouter");
-const likingRouter = require("./routes/likingRouter");
-
-/**----------------------
- *    Requiring the mongoose schemas
- *------------------------**/
-const { songs } = require("./routes/songSchema");
-const { user } = require("./routes/userSchema");
-console.log("🚀 ~ file: server.js:17 ~ users:", user);
-=======
 
 /**========================================================================
  *                           Requiring the seperate routes
@@ -45,19 +28,9 @@ const { admin } = require('./routes/adminSchema');
 /**========================================================================
  *                           Defining and connecting to database
  *========================================================================**/
->>>>>>> main
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
 
-<<<<<<< HEAD
-async function main () {
-  await mongoose.connect(uri, {
-    dbName: process.env.DB_NAME,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  console.log("Succesfully connected");
-=======
 async function main() {
     await mongoose.connect(uri,{
       dbName: process.env.DB_NAME,
@@ -65,7 +38,6 @@ async function main() {
       useUnifiedTopology: true
     });
     console.log("Succesfully connected");
->>>>>>> main
 }
 main().catch(err => console.log(err));
 
