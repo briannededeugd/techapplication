@@ -4,10 +4,16 @@
 const express = require('express');
 const router = express.Router();
 
+const { users } = require('./userSchema');
+
 router.get('/', async (req, res) => {
-    res.send('elaines filter router werkt!');
+    // const allUsers = users.find({mood});
+
+    res.render('pages/filterpage');
     console.log('elaines filter router werkt!');
 });
+
+console.log(users);
 
 
 module.exports = router;
