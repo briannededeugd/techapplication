@@ -27,6 +27,12 @@ function onLanguage(req, res){
 	res.render('pages/matchinglanguage');
 }
 
+router.get('/matchingresult', onResult);
+
+function onResult(req, res){
+	res.render('pages/matchingresult');
+}
+
 let selectedFeatures;
 let selectedMoods;
 let selectedLanguage;
@@ -35,7 +41,7 @@ router.post('/userPost', (req, res) => {
 	console.log('test');
 	const formData = req.body;
 	const nextPage = formData['nextPage'];
-	console.log('🚀 ~ file: matchingRouter.js:38 ~ router.post ~ nextPage:', nextPage)
+	console.log('🚀 ~ file: matchingRouter.js:38 ~ router.post ~ nextPage:', nextPage);
 	res.redirect(nextPage);
 
 	if (selectedFeatures === undefined) {
@@ -49,6 +55,14 @@ router.post('/userPost', (req, res) => {
 	if (selectedLanguage === undefined) {
 		selectedLanguage = req.body.language;
 	}
+
+	console.log('🚀 ~ file: matchingRouter.js:47 ~ router.post ~ selectedMoods = req.body.moods;:', selectedMoods);
+	
+});
+
+router.post('/matchingresult', (req, res) => {
+	console.log('yes');
+	res.render('pages/matchingresult');
 });
 /**========================================================================
  *                           DATA VERWERKEN ETC

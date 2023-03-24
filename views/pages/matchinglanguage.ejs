@@ -11,7 +11,7 @@
 			<h1><em>In welke taal</em> luister jij het liefst naar muziek?</h1>
 		</section>
 
-		<form action='/result' method='post'>
+		<form name="languageform" action='../matching/matchingresult' method='post'>
 			<input type='checkbox' name='language' value='dutch' id='dutch' />
 			<label for='language'>
 				<img src='img/language-dutch.png' id='dutchImage' />
@@ -37,7 +37,7 @@
 			</label>
 
 			<!-- Submit-knop is ook knop naar volgende pagina -->
-			<input type='hidden' name='nextPage' value='matching/result' />
+			<input type='hidden' name='nextPage' value='matching/matchingresult' />
 
 			<input type="submit">
 		</form>
