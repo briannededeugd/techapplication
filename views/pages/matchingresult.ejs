@@ -5,77 +5,68 @@
 		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
 		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
+		<link
+			rel='stylesheet'
+			href='https://fonts.googleapis.com/icon?family=Material+Icons' />
 		<%- include('../partials/head'); %>
 	</head>
 	<body class='matching'>
 		<header><%- include('../partials/header') %></header>
-		<!-- Wrapper -->
-		<section>
-			<!-- Top bar -->
+
+		<main class='brianne'>
+			<!-- Wrapper -->
 			<section>
-				<a href='/'>
+				<!-- Top bar -->
+				<section>
+					<!-- <a href='/'>
 					<img
 						src='img/home.png'
 						alt='Knop om terug te gaan naar startscherm' />
-				</a>
+				</a> -->
 
-				<h1>Beste Match</h1>
+					<h1>Beste Match</h1>
 
-				<i class='material-icons'>more_horiz</i>
-			</section>
-
-			<!-- Lied details -->
-			<section>
-				<img src='<%= cover %>' alt='Album cover' />
-				<p><%= title %></p>
-				<p><%= artist %></p>
-			</section>
-
-			<!-- Voortgang area -->
-			<section>
-				<section>
-					<audio id='current-audio' src='<%= audiofile %>'></audio>
+					<!-- <i class='material-icons'>more_horiz</i> -->
 				</section>
 
-				<!-- song timer -->
+				<!-- Lied details -->
+				<section id='lieddetails'>
+					<img src='<%= cover %>' alt='Album cover' />
+					<p><%= title %></p>
+					<p><%= artist %></p>
+				</section>
+
+				<!-- Voortgang area -->
 				<section>
-					<span id='huidige-tijd'>0:00</span>
-					<section class='progress-bar'>
-						<section class='tijd-indicator'></section>
+					<section id='audio'>
+						<audio id='current-audio' src='<%= audiofile %>'></audio>
 					</section>
-					<span id='max-tijd'>0:00</span>
-				</section>
-			</section>
 
-			<!-- Controls -->
-			<section>
-				<a href='/update-voel'>
-					<img src='/img/editicon.png' id='wijzig-lied' />
-				</a>
-
-				<i id='play-knop' class='material-icons'>play_arrow</i>
-
-				<a href='<%= spotifylink %>'>
-					<img src='/img/spotifylogo.png' id='spotify' />
-				</a>
-			</section>
-
-			<!-- Muziek lijst -->
-			<section>
-				<!-- Header -->
-				<section>
-					<!-- Rij -->
-					<section>
-						<i class='list material-icons'>queue_music</i>
-						<p>Wachtrij</p>
+					<!-- song timer -->
+					<section id='songtimer'>
+						<span id='huidige-tijd'>0:00</span>
+						<section class='progress-bar'>
+							<section class='tijd-indicator'></section>
+						</section>
+						<span id='max-tijd'>0:00</span>
 					</section>
-					<i id='close' class='material-icons'>close</i>
 				</section>
 
-				<ul></ul>
-			</section>
-		</section>
+				<!-- Controls -->
+				<section class='controls'>
+					<a href='/update-voel'>
+						<img src='/img/editicon.png' id='wijzig-lied' />
+					</a>
 
-		<script src='/scripts/matchingscripts.js' type='module'></script>
+					<i id='play-knop' class='material-icons'>play_arrow</i>
+
+					<a href='<%= spotifylink %>'>
+						<img src='/img/spotifylogo.png' id='spotify' />
+					</a>
+				</section>
+			</section>
+		</main>
+
+		<script src='/scripts/matchingscript.js' type='module'></script>
 	</body>
 </html>

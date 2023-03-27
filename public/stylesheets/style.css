@@ -367,3 +367,66 @@ form.form {
 section.heading {
     grid-area: heading;
 }
+
+/****************************/
+/* RESULTATENPAGINA */
+/****************************/
+
+#lieddetails img {
+    width: 30vw;
+    margin-bottom: 1em;
+    position: relative;
+}
+
+#audio {
+    display: block;
+    height: 4em;
+    width: 85vw;
+    position: absolute;
+    border-radius: inherit;
+    bottom: 3.5em;
+}
+
+#play-knop {
+    cursor: pointer;
+}
+
+audio {
+    width: 80vw;
+}
+
+#songtimer {
+    width: inherit;
+    position: absolute;
+    bottom: 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    position: relative;
+    width: 22.5vw;
+    height: 5px;
+    margin: auto 1em;
+    background-color: #525b78;
+}
+
+.tijd-indicator {
+    border-radius: 2em;
+    width: 1em;
+    height: 1em;
+    top: -.31em;
+    background-color: #8ebaff;
+    position: absolute;
+    left: 0;
+}
+
+.controls {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 3em;
+}
