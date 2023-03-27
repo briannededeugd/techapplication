@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 
@@ -13,6 +15,7 @@ const songSchema = new mongoose.Schema({
 	spotifylink: String,
 });
 
-const songs = mongoose.model('songs', songSchema);
-
-module.exports = { songs };
+// const songs = mongoose.model('songs', songSchema);
+module.exports = {
+	songs: mongoose.model('songs', songSchema),
+};

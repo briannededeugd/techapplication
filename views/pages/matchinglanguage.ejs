@@ -1,47 +1,58 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 	<head>
-		<meta charset='UTF-8' />
-		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
-		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<%- include('../partials/head'); %>
 	</head>
-	<body>
-		<section>
-			<h1><em>In welke taal</em> luister jij het liefst naar muziek?</h1>
-		</section>
+	<body class="matching">
+		<header><%- include('../partials/header') %></header>
 
-		<form name="languageform" action='../matching/matchingresult' method='post'>
-			<input type='checkbox' name='language' value='dutch' id='dutch' />
-			<label for='language'>
-				<img src='img/language-dutch.png' id='dutchImage' />
-				<p>Dutch</p>
-			</label>
+		<main class="brianne">
+			<section class="heading">
+				<h1><em>In welke taal</em> luister jij het liefst naar muziek?</h1>
+			</section>
 
-			<input type='checkbox' name='language' value='english' id='english' />
-			<label for='english'>
-				<img src='img/language-english.png' id='englishImage' />
-				<p>English</p>
-			</label>
+			<form
+				name="languageform"
+				action="../matching/matchingresult"
+				method="post"
+				class="form">
+				<input type="checkbox" name="language" value="dutch" id="dutch" />
+				<label for="language">
+					<img src="img/language-dutch.png" id="dutchImage" />
+					<p>Dutch</p>
+				</label>
 
-			<input type='checkbox' name='language' value='korean' id='korean' />
-			<label for='korean'>
-				<img src='img/language-korean.png' id='koreanImage' />
-				<p>Korean</p>
-			</label>
+				<input type="checkbox" name="language" value="english" id="english" />
+				<label for="english">
+					<img src="img/language-english.png" id="englishImage" />
+					<p>English</p>
+				</label>
 
-			<input type='checkbox' name='language' value='nopreference' id='nopreference' />
-			<label for='nopreference'>
-				<img src='img/language-nopreference.png' id='nopreferenceImage' />
-				<p>No preference</p>
-			</label>
+				<input type="checkbox" name="language" value="korean" id="korean" />
+				<label for="korean">
+					<img src="img/language-korean.png" id="koreanImage" />
+					<p>Korean</p>
+				</label>
 
-			<!-- Submit-knop is ook knop naar volgende pagina -->
-			<input type='hidden' name='nextPage' value='matching/matchingresult' />
+				<input
+					type="checkbox"
+					name="language"
+					value="nopreference"
+					id="nopreference" />
+				<label for="nopreference">
+					<img src="img/language-nopreference.png" id="nopreferenceImage" />
+					<p>No preference</p>
+				</label>
 
-			<input type="submit">
-		</form>
+				<!-- Submit-knop is ook knop naar volgende pagina -->
+				<input type="hidden" name="nextPage" value="matching/matchingresult" />
 
-		<script src='/scripts/matchingscripts.js' type='module'></script>
+				<input type="submit" />
+			</form>
+		</main>
 	</body>
 </html>

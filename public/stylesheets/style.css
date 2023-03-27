@@ -1,5 +1,5 @@
 :root {
-    --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     --mainGroen: #167A74;
     --mainGrijs: #f2f2f2;
     --mainGeel: #EBAD36;
@@ -13,7 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
- 
+
 
 body {
     width: 100%;
@@ -21,13 +21,13 @@ body {
     font-family: var(--fontstyle);
     color: rgb(0, 0, 0);
     text-align: center;
-    display: grid; 
-    grid-template-columns: 1fr 6fr 1fr ;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: auto 6fr 1fr;
-    grid-template-areas: 
-    "header header header"
-    ". main ."
-    "footer footer footer";
+    grid-template-areas:
+        "header header header"
+        ". main ."
+        "footer footer footer";
     justify-content: stretch;
     gap: 1.5em 0px;
     margin: 0 auto 0 auto;
@@ -61,7 +61,7 @@ header nav ul {
     padding: 0;
     display: flex;
     flex-direction: row;
-    justify-content: center;  
+    justify-content: center;
     list-style-type: none;
 
 }
@@ -71,7 +71,7 @@ header li {
     margin: 0 1em 0 1em;
     background-color: var(--tekstZwart);
     border-radius: 10%;
-    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 header li a {
@@ -105,27 +105,27 @@ main.myProfile-main {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    grid-template-areas: 
-    "title"
-    "container";
+    grid-template-areas:
+        "title"
+        "container";
 }
 
 main div.myProfile-container {
     grid-area: container;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr ;
-    grid-template-areas: 
-    "name button image image"
-    "age songs image image"
-    "about about image image";
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:
+        "name button image image"
+        "age songs image image"
+        "about about image image";
     background-color: var(--mainGrijs);
     margin: 0 0 2em 0;
     align-items: center;
-    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-h1.myProfile-title{
+h1.myProfile-title {
     grid-area: title;
 }
 
@@ -168,14 +168,14 @@ a.myProfile-ahref {
     background-color: var(--tekstZwart);
     color: var(--mainGeel);
     text-decoration: none;
-    
 
-   
-    
+
+
+
 }
 
 .footerText {
-   font-weight: 100 ;
+    font-weight: 100;
 }
 
 
@@ -197,26 +197,26 @@ div#profiles {
 }
 
 div#profiles div {
-    display: grid; 
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto ;
-    grid-template-areas: 
-    "name button image image"
-    "age songs image image"
-    "about about image image";
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "name button image image"
+        "age songs image image"
+        "about about image image";
     background-color: var(--mainGrijs);
     margin: 0 0 2em 0;
     align-items: center;
-    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-div#profiles img{
+div#profiles img {
     grid-area: image;
     width: auto;
     max-width: 100%;
 }
 
-div#profiles h2{
+div#profiles h2 {
     grid-area: name;
 }
 
@@ -237,7 +237,7 @@ div#profiles button {
 }
 
 .footerText {
-   font-weight: 100 ;
+    font-weight: 100;
 }
 
 
@@ -258,26 +258,26 @@ div#following-profiles {
 }
 
 div#following-profiles div {
-    display: grid; 
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto ;
-    grid-template-areas: 
-    "name button image image"
-    "age songs image image"
-    "about about image image";
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "name button image image"
+        "age songs image image"
+        "about about image image";
     background-color: var(--mainGrijs);
     margin: 0 0 2em 0;
     align-items: center;
-    box-shadow:  3px 3px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-div#following-profiles img{
+div#following-profiles img {
     grid-area: image;
     width: auto;
     max-width: 100%;
 }
 
-div#following-profiles h2{
+div#following-profiles h2 {
     grid-area: name;
 }
 
@@ -302,15 +302,68 @@ div#empty-message {
     background-color: var(--mainGrijs);
 }
 
-div#empty-message img{
+div#empty-message img {
     height: auto;
     width: 30%;
 }
 
 .footerText {
-   font-weight: 100 ;
+    font-weight: 100;
 }
 
 .empty-message-hidden {
     display: none;
+}
+
+
+
+/****************************/
+/* MATCHING */
+/****************************/
+
+body.matching {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        'header header header'
+        '. main .';
+}
+
+main.brianne {
+    width: 100%;
+    height: auto;
+    font-family: var(--fontstyle);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    gap: 1.5em 0px;
+    margin: 0 auto 0 auto;
+    text-decoration: none;
+    text-decoration-line: none;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        '. heading .'
+        '. form .';
+
+}
+
+/****************************/
+/* TEMPLATE AREAS */
+/****************************/
+
+form>section {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+form.form {
+    grid-area: form;
+}
+
+section.heading {
+    grid-area: heading;
 }

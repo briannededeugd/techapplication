@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
-const { songs } = require('./songSchema');
+const { songs } = require('../routes/songSchema');
+console.log('songs:', songs);
 
 /**========================================================================
  *                        BRIANNE'S MATCHING ROUTER
@@ -25,13 +26,13 @@ function onElements(req, res) {
 
 router.get('/matchinglanguage', onLanguage);
 
-function onLanguage(req, res){
+function onLanguage(req, res) {
 	res.render('pages/matchinglanguage');
 }
 
 router.get('/matchingresult', onResult);
 
-function onResult(req, res){
+function onResult(req, res) {
 	res.render('pages/matchingresult');
 }
 
@@ -43,7 +44,10 @@ router.post('/userPost', (req, res) => {
 	console.log('test');
 	const formData = req.body;
 	const nextPage = formData['nextPage'];
-	console.log('🚀 ~ file: matchingRouter.js:38 ~ router.post ~ nextPage:', nextPage);
+	console.log(
+		'🚀 ~ file: matchingRouter.js:38 ~ router.post ~ nextPage:',
+		nextPage
+	);
 	res.redirect(nextPage);
 
 	if (selectedFeatures === undefined) {
@@ -58,8 +62,10 @@ router.post('/userPost', (req, res) => {
 		selectedLanguage = req.body.language;
 	}
 
-	console.log('🚀 ~ file: matchingRouter.js:47 ~ router.post ~ selectedMoods = req.body.moods;:', selectedMoods);
-	
+	console.log(
+		'🚀 ~ file: matchingRouter.js:47 ~ router.post ~ selectedMoods = req.body.moods;:',
+		selectedMoods
+	);
 });
 
 router.post('/matchingresult', async (req, res) => {
@@ -78,8 +84,12 @@ router.post('/matchingresult', async (req, res) => {
 	const song = await songs.find({});
 	console.log('🚀 ~ file: matchingRouter.js:79 ~ router.post ~ song:', song);
 
-	const filterSongs = (song) => {
-		const filterOnLanguages = song.filter((selectedSong) =>
+	const filterSongs = (songList) => {
+		if (!Array.isArray(songList)) {
+			songList = [songList];
+		}
+
+		const filterOnLanguages = songList.filter((selectedSong) =>
 			Array.isArray(selectedSong.language)
 				? selectedSong.language.some((language) =>
 					selectedLanguage.includes(language)
@@ -104,8 +114,8 @@ router.post('/matchingresult', async (req, res) => {
 		return songsFromFilter;
 	};
 
-	const filteredSongs = filterSongs(songs); // Hier maak ik een variabele aan voor de liedjes uit mijn database die uit mijn filters komen.
-	console.log(filteredSongs); // En die gefilterde liedjes log ik vervolgens in de terminal.
+	const filteredSongs = filterSongs(song); // Hier maak ik een variabele aan voor de liedjes uit mijn database die uit mijn filters komen.
+	console.log('DE RESULTATEN VAN MATCHES:', filteredSongs); // En die gefilterde liedjes log ik vervolgens in de terminal.
 
 	console.log('@@-- feature', selectedFeatures);
 	console.log('@@-- moods', selectedMoods);
@@ -180,6 +190,5 @@ router.post('/matchingresult', async (req, res) => {
 /**========================================================================
  *                           DATA VERWERKEN ETC
  *========================================================================**/
-	
 
 module.exports = router;
