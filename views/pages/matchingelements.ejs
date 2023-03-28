@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<%- include('../partials/head'); %>
+	</head>
+	<body class="matching">
+		<header><%- include('../partials/header') %></header>
+
+		<main class="brianne">
+			<section class="heading">
+				<h1>What <em>music elements</em> do you listen to most?</h1>
+			</section>
+
+			<form
+				name="elementform"
+				action="../matching/userPost"
+				method="post"
+				class="form">
+				<section class="beatmelody">
+					<input type="checkbox" name="feature" value="beat" id="beat" />
+					<label for="beat">
+						<!-- <img src='img/feature-beat.png' id='beatImage' /> -->
+						<p>Beat</p>
+					</label>
+
+					<input type="checkbox" name="feature" value="melody" id="melody" />
+					<label for="melody">
+						<!-- <img src='img/feature-melody.png' id='melodyImage' /> -->
+						<p>Melody</p>
+					</label>
+				</section>
+
+				<section class="vocalsinstruments">
+					<input type="checkbox" name="feature" value="vocals" id="vocals" />
+					<label for="vocals">
+						<!-- <img src='img/feature-vocals.png' id='vocalsImage' /> -->
+						<p>Vocals</p>
+					</label>
+
+					<input
+						type="checkbox"
+						name="feature"
+						value="instruments"
+						id="instruments" />
+					<label for="instruments">
+						<!-- <img src='img/feature-instruments.png' id='instrumentsImage' /> -->
+						<p>Instruments</p>
+					</label>
+				</section>
+
+				<section class="backingvibe">
+					<input
+						type="checkbox"
+						name="feature"
+						value="backingvocals"
+						id="backingvocals" />
+					<label for="backingvocals">
+						<!-- <img src='img/feature-backingvocals.png' id='backingvocalsImage' /> -->
+						<p>Backing vocals</p>
+					</label>
+
+					<input type="checkbox" name="feature" value="vibe" id="vibe" />
+					<label for="vibe">
+						<!-- <img src='img/feature-vibe.png' id='vibeImage' /> -->
+						<p>Vibe</p>
+					</label>
+				</section>
+
+				<!-- Submit-knop is ook knop naar volgende pagina -->
+				<input
+					type="hidden"
+					name="nextPage"
+					value="/matching/matchinglanguage" />
+				<!-- <input type='image' src='img/nextpage.png' alt='next page' /> -->
+				<input type="submit" />
+			</form>
+		</main>
+	</body>
+</html>
