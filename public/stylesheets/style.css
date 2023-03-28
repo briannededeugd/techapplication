@@ -314,3 +314,13 @@ div#empty-message img{
 .empty-message-hidden {
     display: none;
 }
+
+/*******************************************  
+Elaine's CSS
+*******************************************/
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
