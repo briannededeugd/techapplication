@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<%- include('../partials/head'); %>
+	</head>
+
+	<body class="matching">
+		<header><%- include('../partials/header') %></header>
+
+		
+
+		<main class="brianne">
+			<section class='heading'>
+			<h1><em>How do you feel</em> at the moment?</h1>
+			<p>Select as many options as apply.</p>
+		</section>
+
+
+			<form name="feelsform" action="../matching/userPost" method="POST" class='form'>
+				<section class="positivefeels">
+					<input
+						type="checkbox"
+						name="moods"
+						value="optimistic"
+						id="optimistic" />
+					<label for="optimistic">
+						<!-- <img src='img/voel-optimistic.png' id='optimisticImage' /> -->
+						<p>Optimistic</p>
+					</label>
+
+					<input
+						type="checkbox"
+						name="moods"
+						value="energetic"
+						id="energetic" />
+					<label for="energetic">
+						<!-- <img src='img/feel-energetic.png' id='energeticImage' /> -->
+						<p>Energetic</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="loving" id="loving" />
+					<label for="loving">
+						<!-- <img src='img/feel-loving.png' id='lovingImage' /> -->
+						<p>Loving</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="inspired" id="inspired" />
+					<label for="inspired">
+						<!-- <img src='img/feel-inspired.png' id='inspiredImage' /> -->
+						<p>Inspired</p>
+					</label>
+				</section>
+
+				<section class="okayfeels">
+					<input
+						type="checkbox"
+						name="moods"
+						value="motivated"
+						id="motivated" />
+					<label for="motivated">
+						<!-- <img src='img/feel-motivated.png' id='motivatedImage' /> -->
+						<p>Motivated</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="calm" id="calm" />
+					<label for="calm">
+						<!-- <img src='img/feel-calm.png' id='calmImage' /> -->
+						<p>Calm</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="neutral" id="neutral" />
+					<label for="neutral">
+						<!-- <img src='img/feel-neutral.png' id='neutralImage' /> -->
+						<p>Neutral</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="sad" id="sad" />
+					<label for="sad">
+						<!-- <img src='img/feel-sad.png' id='sadImage' /> -->
+						<p>Sad</p>
+					</label>
+				</section>
+
+				<section class="badfeels">
+					<input type="checkbox" name="moods" value="tired" id="tired" />
+					<label for="tired">
+						<!-- <img src='img/feel-tired.png' id='tiredImage' /> -->
+						<p>Tired</p>
+					</label>
+
+					<input
+						type="checkbox"
+						name="moods"
+						value="frustrated"
+						id="frustrated" />
+					<label for="frustrated">
+						<!-- <img src='img/feel-frustrated.png' id='frustratedImage' /> -->
+						<p>Frustrated</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="annoyed" id="annoyed" />
+					<label for="annoyed">
+						<!-- <img src='img/feel-annoyed.png' id='annoyedImage' /> -->
+						<p>Annoyed</p>
+					</label>
+
+					<input type="checkbox" name="moods" value="angry" id="angry" />
+					<label for="angry">
+						<!-- <img src='img/feel-angry.png' id='angryImage' /> -->
+						<p>Angry</p>
+					</label>
+				</section>
+
+				<!-- Submit-knop is ook knop naar volgende pagina -->
+				<input
+					type="hidden"
+					name="nextPage"
+					value="/matching/matchingelements" />
+
+				<!-- Knop naar wat de value van nextPage is -->
+				<input type="submit" />
+			</form>
+		</main>
+	</body>
+</html>
