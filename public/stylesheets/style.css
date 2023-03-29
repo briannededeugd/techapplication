@@ -1,5 +1,5 @@
 :root {
-    --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --fontstyle: 'Poppins', sans-serif, 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     --accentRoze: #f72585;
     --grijs: #f1f2f0;
     --accentDonkerBlauw: #3a0ca3;
@@ -59,6 +59,7 @@ header {
     height: auto;
     justify-content: center;
     align-items: center;
+    font-size: 120%;
 
 }
 
@@ -82,7 +83,7 @@ header nav li a{
     font-size: 1em;
     font-weight: bold;
     letter-spacing: 1px;
-    margin: 0 0.6em;
+    margin: 0 0.9em;
     padding: 0.4em 0.2em;
     position: relative;
     text-decoration: none;
@@ -94,7 +95,7 @@ header nav li a{
 header nav li a:before, header nav li a:after {
     content: '';
     position: absolute;
-    width: 5px;
+    width: 7px;
     height: 0%;
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
@@ -120,7 +121,7 @@ header nav li a.active:before,
 header nav li a.active:after {
     content: '';
     position: absolute;
-    width: 5px;
+    width: 7px;
     height: 100%;
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
@@ -249,18 +250,20 @@ div#profiles {
 
 div#profiles div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto ;
+    grid-template-columns: 2em 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2em auto auto auto auto auto auto ;
     grid-template-areas:
-        "name button image image"
-        "age . image image"
-        "moodsHeading . image image"
-        "moods . image image"
-        "favSongsHeading . image image"
-        "favSongs . image image";
+        ". . . image image"
+        ". name form image image"
+        ". age . image image"
+        ". moodsHeading . image image"
+        ". moods . image image"
+        ". favSongsHeading . image image"
+        ". favSongs . image image";
     background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
+    justify-items: start;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     border-radius: 30px;
     overflow: hidden;
@@ -269,42 +272,70 @@ div#profiles div {
 
 div#profiles img {
     grid-area: image;
-    /* width: auto; */
     width: 100%;
     max-width: 100%;
     max-height: 25em;
+    height: 100%;
+    min-width: 10em;
 }
 
 div#profiles h2 {
     grid-area: name;
     color: var(--accentPaars);
     font-size: 2em;
+    align-self: start;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: -0.5em;
 }
 
 div#profiles p:nth-of-type(1) {
     grid-area: age;
+    align-self: start;
+    margin: 0 0 -0.5em;
 }
 
 div#profiles p:nth-of-type(2) {
     grid-area: favSongsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
 }
 
 div#profiles p:nth-of-type(3) {
     grid-area: favSongs;
+    margin: 0;
 }
 
 div#profiles p:nth-of-type(4) {
     grid-area: moodsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
 }
 
 div#profiles p:nth-of-type(5) {
     grid-area: moods;
+    margin: 0;
+}
+
+div#profiles form {
+    grid-area: form;
+    justify-self: center;
+    align-self: start;  
+    margin-top: 0.5em;  
 }
 
 div#profiles button {
-    all: unset;
     grid-area: button;
-    padding: 0.3em 2em;
+    all: unset;
+    padding: 0.1em 2em;
     cursor: pointer;
     border-radius: 9px;
     color: var(--wit);
@@ -318,6 +349,7 @@ div#profiles button:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
+
 }
 
 .footerText {
