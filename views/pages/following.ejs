@@ -26,18 +26,21 @@
             <% followingArray.forEach((profile) => { %>
               <div class="<%= profile._id %>">
                 <h2><%= profile.firstName %> <%= profile.lastName %></h2>
-                <p>Age:<%= profile.age %></p>
+                <p>Age: <%= profile.age %></p>
+                <p>Favourite Songs:</p>
                 <p><%= profile.favouriteSongs %></p>
+                <p>Moods:</p>
                 <p><%= profile.mood %></p>
                 <form action="/following/followlist/<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
+                  
                   <% if (profile.follow) { %>
                     <button>Unfollow</button>
                   <% } else { %>
                     <button>Follow</button>
                   <% } %>
                 </form>
-                <img src='<%= profile.profilePicture %>'>
+                <img src='/images/imageBackupGandalf.jpg'>
               </div>
             <% }); %>
           </div>
