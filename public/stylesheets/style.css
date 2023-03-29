@@ -1,17 +1,22 @@
 :root {
     --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    --mainGroen: #167A74;
-    --mainGrijs: #f2f2f2;
-    --mainGeel: #EBAD36;
-    --tekstWit: #ffffff;
-    --tekstZwart: #000000;
-    --accentPaars: rgb(114, 9, 183);
+    --accentRoze: #f72585;
+    --grijs: #f1f2f0;
+    --accentDonkerBlauw: #3a0ca3;
+    --accentMidBlauw: #4361ee;
+    --accentLichtBlauw: #4cc9f0;
+    --wit: #ffffff;
+    --zwart: #000000;
+    --accentPaars: #7209b7;
 }
 
 html {
     margin: 0px;
     max-height: auto;
     scroll-behavior: smooth;
+    background-color: var(--grijs);
+    /* background: rgb(247,37,133);
+    background: linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%); */
 }
 
 
@@ -26,7 +31,7 @@ body {
     color: rgb(0, 0, 0);
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto 6fr 1fr;
     grid-template-areas:
         "header header header"
@@ -50,7 +55,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr;
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
     height: auto;
     justify-content: center;
     align-items: center;
@@ -72,19 +77,13 @@ header nav ul {
 }
 
 header nav li a{
-    /* padding: 1em;
-    margin: 0 1em 0 1em;
-    background-color: var(--tekstZwart);
-    border-radius: 10%;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75); */
-
-    color: var(--tekstZwart);
+    color: var(--zwart);
     display: block;
     font-size: 1em;
     font-weight: bold;
     letter-spacing: 1px;
     margin: 0 0.6em;
-    padding: 0.3em 0.1em;
+    padding: 0.4em 0.2em;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -95,7 +94,7 @@ header nav li a{
 header nav li a:before, header nav li a:after {
     content: '';
     position: absolute;
-    width: 0.3em;
+    width: 5px;
     height: 0%;
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
@@ -115,6 +114,18 @@ header nav li a:hover:before {
     background: var(--accentPaars);
     height: 100%;
     transition: height 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+header nav li a.active:before,
+header nav li a.active:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    left: -0.5em;
+    border-radius: 85px 85px 85px 85px;
+    bottom: 0;
+    background: var(--accentPaars);
 }
 
 .sticky {
@@ -159,7 +170,7 @@ main div.myProfile-container {
         "name button image image"
         "age songs image image"
         "about about image image";
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
     margin: 0 0 2em 0;
     align-items: center;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -205,8 +216,8 @@ a.myProfile-ahref {
     width: auto;
     height: 3em;
     margin: 0 2em 0 2em;
-    background-color: var(--tekstZwart);
-    color: var(--mainGeel);
+    background-color: var(--zwart);
+    color: var(--accentDonkerBlauw);
     text-decoration: none;
 
 
@@ -239,25 +250,35 @@ div#profiles {
 div#profiles div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto ;
     grid-template-areas:
         "name button image image"
-        "age songs image image"
-        "about about image image";
-    background-color: var(--mainGrijs);
+        "age . image image"
+        "moodsHeading . image image"
+        "moods . image image"
+        "favSongsHeading . image image"
+        "favSongs . image image";
+    background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    overflow: hidden;
+
 }
 
 div#profiles img {
     grid-area: image;
-    width: auto;
+    /* width: auto; */
+    width: 100%;
     max-width: 100%;
+    max-height: 25em;
 }
 
 div#profiles h2 {
     grid-area: name;
+    color: var(--accentPaars);
+    font-size: 2em;
 }
 
 div#profiles p:nth-of-type(1) {
@@ -265,15 +286,42 @@ div#profiles p:nth-of-type(1) {
 }
 
 div#profiles p:nth-of-type(2) {
-    grid-area: songs;
+    grid-area: favSongsHeading;
 }
 
 div#profiles p:nth-of-type(3) {
-    grid-area: about;
+    grid-area: favSongs;
+}
+
+div#profiles p:nth-of-type(4) {
+    grid-area: moodsHeading;
+}
+
+div#profiles p:nth-of-type(5) {
+    grid-area: moods;
 }
 
 div#profiles button {
+    all: unset;
     grid-area: button;
+    padding: 0.3em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s;
+    
+
+    
+}
+
+div#profiles button:hover {
+    grid-area: button;
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
+
 }
 
 .footerText {
@@ -305,7 +353,7 @@ div#following-profiles div {
         "name button image image"
         "age songs image image"
         "about about image image";
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
     margin: 0 0 2em 0;
     align-items: center;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -339,7 +387,7 @@ div#following-profiles button {
 
 div#empty-message {
     padding: 2em;
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
 }
 
 div#empty-message img {
