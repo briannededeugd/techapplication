@@ -26,9 +26,21 @@
                 <h2><%= profile.firstName %> <%= profile.lastName %></h2>
                 <p>Age: <%= profile.age %></p>
                 <p>Favourite Songs:</p>
-                <p><%= profile.favouriteSongs %></p>
+                <p>
+                  <% if ((profile.favouriteSongs).length === 0 ) { %>
+                    <%= profile.firstName %> hasn't given any favourite songs yet
+                  <% } else { %>
+                    <%= profile.favouriteSongs %>
+                 <% } %>
+                </p>
                 <p>Moods:</p>
-                <p><%= profile.mood %></p>
+                <p>
+                  <% if ((profile.mood).length === 0 ) { %>
+                     <%= profile.firstName %> hasn't given any moods yet
+                   <% } else { %>
+                     <%= profile.mood %>
+                  <% } %>
+                </p>
                 <form action="/following/follow/<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
                   
