@@ -310,10 +310,7 @@ div#profiles button {
     color: var(--wit);
     background-color: var(--accentPaars);
     border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;
-    
-
-    
+    transition: all 0.3s;   
 }
 
 div#profiles button:hover {
@@ -321,7 +318,6 @@ div#profiles button:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
-
 }
 
 .footerText {
