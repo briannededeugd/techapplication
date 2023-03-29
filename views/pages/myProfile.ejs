@@ -17,13 +17,15 @@
 
         <main class="myProfile-main">
             <h1 class="myProfile-title">My profile</h1>
-            <div class="myProfile-container">
-                <h2 class="myProfile-name"> <%= user.firstName %> <%= user.lastName %></h2>
-                <a class="myProfile-ahref" href="/following/followlist">Following</a>
-                <p class="myProfile-about"> <%= user.mood %></p>
-                <p class="myProfile-age">Age: <%= user.age %></p>
-                <p class="myProfile-songs"><%= user.favouriteSongs %></p>
-                <img class="myProfile-image" src="<%= user.profilePicture %>" alt="profile picture admin">
+            <div id="myProfile-container">
+                <h2> <%= user.firstName %> <%= user.lastName %></h2>
+                <p>Age: <%= user.age %></p>
+                <p>Favourite Songs:</p>
+                <p><%= user.favouriteSongs %></p>
+                <p>Moods:</p>
+                <p> <%= user.mood %></p>
+                <a href="/following/followlist">Following</a>
+                <img src="/images/imageBackupGandalf.jpg" alt="profile picture admin">
             </div>
         </main>
 
