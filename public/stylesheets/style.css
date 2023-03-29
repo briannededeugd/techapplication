@@ -250,23 +250,23 @@ div#profiles {
 
 div#profiles div {
     display: grid;
-    grid-template-columns: 2em 1fr 1fr 1fr 1fr;
-    grid-template-rows: 2em auto auto auto auto auto auto ;
+    grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
         ". age . image image"
-        ". moodsHeading . image image"
-        ". moods . image image"
-        ". favSongsHeading . image image"
-        ". favSongs . image image";
+        ". moodsHeading moodsHeading image image"
+        ". moods moods image image"
+        ". favSongsHeading favSongsHeading image image"
+        ". favSongs favSongs image image";
     background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
     justify-items: start;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
     border-radius: 30px;
-    overflow: hidden;
+    min-width: 45em;
 
 }
 
@@ -276,7 +276,9 @@ div#profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width: 10em;
+    min-width:15em;
+    min-height: 22em;
+    border-radius: 0 30px 30px 0;
 }
 
 div#profiles h2 {
@@ -308,6 +310,7 @@ div#profiles p:nth-of-type(2) {
 div#profiles p:nth-of-type(3) {
     grid-area: favSongs;
     margin: 0;
+    align-self: start;
 }
 
 div#profiles p:nth-of-type(4) {
@@ -323,11 +326,12 @@ div#profiles p:nth-of-type(4) {
 div#profiles p:nth-of-type(5) {
     grid-area: moods;
     margin: 0;
+    align-self: start;
 }
 
 div#profiles form {
     grid-area: form;
-    justify-self: center;
+    justify-self: start;
     align-self: start;  
     margin-top: 0.5em;  
 }
