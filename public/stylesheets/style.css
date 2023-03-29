@@ -5,6 +5,7 @@
     --mainGeel: #EBAD36;
     --tekstWit: #ffffff;
     --tekstZwart: #000000;
+    --accentPaars: rgb(114, 9, 183);
 }
 
 html {
@@ -14,6 +15,9 @@ html {
 }
 
 
+/**========================================================================
+ *                           Body
+ *========================================================================**/
 
 body {
     width: 100%;
@@ -36,9 +40,10 @@ body {
     justify-content: center;
 }
 
-/*******************************************  
-Header
-*******************************************/
+
+/**========================================================================
+ *                           Header
+ *========================================================================**/
 
 header {
     grid-area: header;
@@ -66,17 +71,50 @@ header nav ul {
 
 }
 
-header li {
-    padding: 1em;
+header nav li a{
+    /* padding: 1em;
     margin: 0 1em 0 1em;
     background-color: var(--tekstZwart);
     border-radius: 10%;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75); */
+
+    color: var(--tekstZwart);
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0.6em;
+    padding: 0.3em 0.1em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
-header li a {
-    text-decoration: none;
-    color: var(--mainGeel);
+header nav li a:before, header nav li a:after {
+    content: '';
+    position: absolute;
+    width: 0.3em;
+    height: 0%;
+    left: -0.5em;
+    border-radius: 85px 85px 85px 85px;
+}
+  
+header nav li a:before {
+    bottom: 0;
+    transition: 0.5s;
+}
+  
+header nav li a:after {
+    background:var(--accentPaars);
+    top: 0;
+}
+  
+header nav li a:hover:before {
+    background: var(--accentPaars);
+    height: 100%;
+    transition: height 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
 
 .sticky {
@@ -85,9 +123,10 @@ header li a {
     width: 100%;
 }
 
-/*******************************************  
-Main Home
-*******************************************/
+
+/**========================================================================
+ *                           Main Home
+ *========================================================================**/
 
 main {
     grid-area: main;
@@ -97,9 +136,10 @@ footer {
     grid-area: footer;
 }
 
-/*******************************************  
-Main MyProfile
-*******************************************/
+
+/**========================================================================
+ *                           Main MyProfile
+ *========================================================================**/
 
 main.myProfile-main {
     display: grid;
@@ -180,9 +220,9 @@ a.myProfile-ahref {
 
 
 
-/*******************************************  
-Main Explore
-*******************************************/
+/**========================================================================
+ *                           Main Explore
+ *========================================================================**/
 
 /* main.explore-main {
     display: grid;
@@ -241,9 +281,9 @@ div#profiles button {
 }
 
 
-/*******************************************  
-Main Following
-*******************************************/
+/**========================================================================
+ *                           Main Following
+ *========================================================================**/
 
 /* main.explore-main {
     display: grid;
@@ -317,9 +357,9 @@ div#empty-message img {
 
 
 
-/****************************/
-/* MATCHING */
-/****************************/
+/**========================================================================
+ *                           Matching
+ *========================================================================**/
 
 body.matching {
     display: grid;
