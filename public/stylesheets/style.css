@@ -584,6 +584,26 @@ main.mainmatch {
 
 }
 
+/* main.mainresult {
+    width: 100%;
+    height: auto;
+    font-family: var(--fontstyle);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    gap: 1.5em 0px;
+    margin: 0 auto 0 auto;
+    text-decoration: none;
+    text-decoration-line: none;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        '. heading .'
+        '. form .';
+
+} */
+
 /****************************/
 /* TEMPLATE AREAS */
 /****************************/
@@ -601,6 +621,8 @@ form.form {
 section.heading {
     grid-area: heading;
 }
+
+
 
 /****************************/
 /* FORMULIERENNPAGINA */
@@ -647,6 +669,15 @@ body.matching>main.mainmatch label {
     border-radius: 1em;
 }
 
+body.matching>main.mainmatch label:hover {
+    cursor: pointer;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+
+}
+
 body.matching>main.mainmatch>form>section>section:not(:last-of-type)>label {
     margin-bottom: 1em;
 }
@@ -659,7 +690,7 @@ body.matching>main.mainmatch>form>section>section>input[type="checkbox"]:checked
     color: var(--wit);
 }
 
-body.matching>main.mainmatch>form input[type="submit"] {
+body.matching>main.mainmatch>form>input[type="submit"] {
     font-size: large;
     border: none;
     border-radius: 1em;
@@ -670,14 +701,46 @@ body.matching>main.mainmatch>form input[type="submit"] {
     color: var(--wit);
 }
 
+body.matching>main.mainmatch>form>input[type="submit"]:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
+
 /****************************/
 /* RESULTATENPAGINA */
 /****************************/
 
+main.mainresult>section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10em;
+    grid-row-gap: 0px;
+}
+
+body.matching>main.mainresult>section>section>section:first-of-type>h1 {
+    font-size: 2em;
+    color: var(--wit);
+    margin: .5em auto .5em auto;
+}
+
+#lieddetails p:first-of-type {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: .5em 0 0 0;
+    color: var(--wit);
+}
+
+#lieddetails p:nth-of-type(2) {
+    margin: 0 0 .5em 0;
+    color: var(--wit);
+}
+
 #lieddetails img {
-    width: 30vw;
-    margin-bottom: 1em;
+    width: 25vw;
+    margin: 0 auto 1em auto;
     position: relative;
+    border-radius: 1em;
 }
 
 #audio {
@@ -691,6 +754,8 @@ body.matching>main.mainmatch>form input[type="submit"] {
 
 #play-knop {
     cursor: pointer;
+    font-size: 3em;
+    color: var(--wit);
 }
 
 audio {
@@ -699,27 +764,32 @@ audio {
 
 #songtimer {
     width: inherit;
-    position: absolute;
-    bottom: 5em;
+    margin-top: 2.25em;
+    color: white;
+}
+
+#tijd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
 }
 
 .progress-bar {
     position: relative;
-    width: 22.5vw;
-    height: 5px;
+    width: 40vw;
+    height: 3px;
+    border-radius: 2em;
     margin: auto 1em;
-    background-color: #525b78;
+    background-color: var(--wit);
 }
 
 .tijd-indicator {
     border-radius: 2em;
-    width: 1em;
-    height: 1em;
-    top: -.31em;
-    background-color: #8ebaff;
+    width: 1.5em;
+    height: 1.5em;
+    top: -.7em;
+    background-color: var(--wit);
     position: absolute;
     left: 0;
 }
@@ -729,6 +799,62 @@ audio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     position: relative;
-    margin-top: 3em;
+}
+
+.controls>a:first-of-type>img {
+    height: 1.5em;
+}
+
+.controls>a:nth-of-type(2)>i {
+    height: 1.5em;
+    color: var(--wit);
+}
+
+/**************************/
+/*     ALMOST-MATCHES     */
+/**************************/
+.othermatches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    margin: auto;
+
+    color: var(--wit);
+}
+
+.othermatches * {
+    margin: 0;
+}
+
+.othermatches>p {
+    margin-bottom: 2em;
+}
+
+.othermatches>section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 25vw;
+    gap: 1em;
+
+    background-color: var(--vlakPaars);
+    padding: 0 2em;
+    border-radius: 1em;
+}
+
+.othermatches>section img {
+    height: 6vh;
+}
+
+.othermatches>section>i {
+    margin-left: auto;
+}
+
+.othermatches>section h3 {
+    font-weight: 300;
+    font-size: 1em;
 }

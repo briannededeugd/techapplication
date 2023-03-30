@@ -164,7 +164,7 @@ router.post('/matchingresult', async (req, res) => {
 		scores.sort((a, b) => b.score - a.score);
 
 		// Return het hoogst scorende lied OF null als geen liedjes zijn gevonden
-		return scores.length > 0 ? scores[0].song : null;
+		return scores.length > 0 ? scores.map((item) => item.song) : null;
 	};
 
 	const bestMatch = findBestMatch(
@@ -175,16 +175,38 @@ router.post('/matchingresult', async (req, res) => {
 	);
 	console.log('DE BESTE MATCH IS:', bestMatch);
 
+
 	/**========================================================================
 	 *                           LAADT IN OP PAGINA
 	 *========================================================================**/
 
 	res.render('pages/matchingresult', {
-		title: bestMatch.title,
-		artist: bestMatch.artist,
-		cover: bestMatch.cover,
-		audiofile: bestMatch.audiofile,
-		spotifylink: bestMatch.spotifylink,
+		title: bestMatch[0]?.title,
+		artist: bestMatch[0]?.artist,
+		cover: bestMatch[0]?.cover,
+		audiofile: bestMatch[0]?.audiofile,
+		spotifylink: bestMatch[0]?.spotifylink,
+
+		secondTitle: bestMatch[1]?.title,
+		secondArtist: bestMatch[1]?.artist,
+		secondCover: bestMatch[1]?.cover,
+		secondAudiofile: bestMatch[1]?.audiofile,
+
+		thirdTitle: bestMatch[2]?.title,
+		thirdArtist: bestMatch[2]?.artist,
+		thirdCover: bestMatch[2]?.cover,
+		thirdAudiofile: bestMatch[2]?.audiofile,
+
+		fourthTitle: bestMatch[3]?.title,
+		fourthArtist: bestMatch[3]?.artist,
+		fourthCover: bestMatch[3]?.cover,
+		fourthAudiofile: bestMatch[3]?.audiofile,
+
+		fifthTitle: bestMatch[4]?.title,
+		fifthArtist: bestMatch[4]?.artist,
+		fifthCover: bestMatch[4]?.cover,
+		fifthAudiofile: bestMatch[4].audiofile,
+		
 	});
 });
 /**========================================================================
