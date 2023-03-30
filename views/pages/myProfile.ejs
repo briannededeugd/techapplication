@@ -23,7 +23,7 @@
         <p class="myProfile-age">Age: <%= user.age %></p>
         <p class="myProfile-songs">
           <!-- all liked songs for the admin -->
-          <% likedSongs.forEach((song) => { %> <%= song.title %>, <% }); %>
+          <% likedSongs.forEach((song) => { %> Artist:<%= song.artist %>: <%= song.title %>, <% }); %>
         </p>
         <img
           class="myProfile-image"
