@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <%- include('../partials/head'); %>
 
@@ -20,10 +20,14 @@
             <div id="myProfile-container">
                 <h2> <%= user.firstName %> <%= user.lastName %></h2>
                 <p>Age: <%= user.age %></p>
-                <p>Favourite Songs:</p>
-                <p><%= user.favouriteSongs %></p>
+                <p>Liked Songs:</p>
+                <p>
+                  <% likedSongs.forEach((song) => { %> <%= song.title %>, <% }); %>
+                </p>
                 <p>Moods:</p>
-                <p> <%= user.mood %></p>
+                <p> 
+                  <%= user.mood %>
+                </p>
                 <a href="/following/followlist">Following</a>
                 <img src="/images/imageBackupGandalf.jpg" alt="profile picture admin">
             </div>
@@ -34,4 +38,6 @@
         </footer>
         <script src='/scripts/navbarScript.js'></script>
     </body>
-</html>
+  
+
+

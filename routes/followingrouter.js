@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { users } = require('./userSchema');
 const { admin } = require('./adminSchema');
-
+const { songs } = require('./songSchema');
 
 
 /**========================================================================
@@ -59,7 +59,7 @@ router.post('/follow/:profileId', async (req, res) => {
 
 router.get('/myprofile/:adminId', async (req, res) => {
 	const adminId = req.params.adminId;
-    
+	let allSongs = await songs.find({});
 	const adminProfile = await admin.findOne({ _id : adminId});
 
 	//! Doesnt work yet, admin mood and favSongs still uncleaned 
@@ -77,7 +77,8 @@ router.get('/myprofile/:adminId', async (req, res) => {
 	console.log(adminProfile);
     
 	res.render('pages/myprofile', {
-		user : adminProfile
+		user : adminProfile,
+		likedSongs: allSongs.filter(song => song.adminLike === 'true'),
 	});
 });
 
