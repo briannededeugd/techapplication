@@ -5,7 +5,7 @@
         <%- include("../partials/header") %>
     </header>
     <main>
-        <form action="/register" method="post">
+        <form action="register/signup" method="post">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" placeholder="First name" name="firstName" required>
 
@@ -18,14 +18,70 @@
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="example@gmail.com"required>
 
+                <input
+                    type="checkbox"
+                    name="moods"
+                    value="optimistic"
+                    id="optimistic" />
+                <label for="optimistic"><p>Optimistic</p></label>
+
+                <input
+                    type="checkbox"
+                    name="moods"
+                    value="energetic"
+                    id="energetic" />
+                <label for="energetic"><p>Energetic</p></label>
+
+                <input type="checkbox" name="moods" value="loving" id="loving" />
+                <label for="loving"><p>Loving</p></label>
+
+                <input type="checkbox" name="moods" value="inspired" id="inspired" />
+                <label for="inspired"><p>Inspired</p></label>
+
+                <input
+                    type="checkbox"
+                    name="moods"
+                    value="motivated"
+                    id="motivated" />
+                <label for="motivated"><p>Motivated</p></label>
+
+                <input type="checkbox" name="moods" value="calm" id="calm" />
+                <label for="calm"><p>Calm</p></label>
+
+                <input type="checkbox" name="moods" value="neutral" id="neutral" />
+                <label for="neutral"><p>Neutral</p></label>
+
+                <input type="checkbox" name="moods" value="sad" id="sad" />
+                <label for="sad"><p>Sad</p></label>
+        
+                <input type="checkbox" name="moods" value="tired" id="tired" />
+                <label for="tired"><p>Tired</p></label>
+
+                <input
+                    type="checkbox"
+                    name="moods"
+                    value="frustrated"
+                    id="frustrated" />
+                <label for="frustrated"><p>Frustrated</p></label>
+
+                <input type="checkbox" name="moods" value="annoyed" id="annoyed" />
+                <label for="annoyed"><p>Annoyed</p></label>
+
+                <input type="checkbox" name="moods" value="angry" id="angry" />
+                <label for="angry"><p>Angry</p></label>
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Password"required>
 
             <label for="password2">Password check:</label>
             <input type="password" id="password2" name="password2" placeholder="Re-enter password"required>
 
+
+
             <input type="submit" value="Sign Up">
         </form>
+
+        <p>Already have an account?</p><a href="register/login">Login</a>
 
     </main>
 </body>

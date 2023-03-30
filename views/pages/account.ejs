@@ -6,7 +6,12 @@
     </header>
     <main>
         <h1>Hello</h1>
-        <p><%= user.firstName %></p>
+        <p><%= user.firstName + ' ' + user.lastName%></p>
+        <ul>
+            <% user.mood.forEach(moods => { %>
+                <li><%= moods %></li>
+            <% }); %>
+        </ul>
     </main>
 </body>
 </html>
