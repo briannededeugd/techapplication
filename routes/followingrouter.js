@@ -20,13 +20,13 @@ router.get('/explore', async (req, res) => {
 	 *------------------------**/
 	const cleanedUsers = allUsers.map(user => {
 		if (user.mood) {
-			user.mood = user.mood.join(', ')
+			user.mood = user.mood.join(', ');
 		}
 		if (user.favouriteSongs) {
-			user.favouriteSongs = user.favouriteSongs.join(', ')
+			user.favouriteSongs = user.favouriteSongs.join(', ');
 		}
 		return user;
-	  });
+	});
 	/*---- END OF SECTION ----*/
 	
 
@@ -93,10 +93,10 @@ router.get('/followlist', async (req, res) => {
 	const dataFollowing = await users.find({follow : true});
 	const cleanedUsers = dataFollowing.map(user => {
 		if (user.mood) {
-			user.mood = user.mood.join(', ')
+			user.mood = user.mood.join(', ');
 		}
 		if (user.favouriteSongs) {
-			user.favouriteSongs = user.favouriteSongs.join(', ')
+			user.favouriteSongs = user.favouriteSongs.join(', ');
 		}
 		return user;
 	});
@@ -108,7 +108,7 @@ router.get('/followlist', async (req, res) => {
 	if (cleanedUsers.length < 1) {
 		res.render('pages/following', {
 			followingArray : cleanedUsers,
-			emptyMessageH2 : "You don't seem to be following anyone...",
+			emptyMessageH2 : 'You don\'t seem to be following anyone...',
 			emptyImage : '../images/imageSadpepe.jpg',
 			emptyMessageP : 'Head on over to the explore page to find new people to follow!'
 
