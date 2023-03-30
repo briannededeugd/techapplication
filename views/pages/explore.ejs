@@ -24,9 +24,23 @@
             <% profiles.forEach((profile) => { %>
               <div class="<%= profile._id %>">
                 <h2><%= profile.firstName %> <%= profile.lastName %></h2>
-                <p>Age:<%= profile.age %></p>
-                <p><%= profile.favouriteSongs %></p>
-                <p><%= profile.favouriteArtists %></p>
+                <p>Age: <%= profile.age %></p>
+                <p>Favourite Songs:</p>
+                <p>
+                  <% if (profile.favouriteSongs[0].length === 0 ) { %>
+                    <%= profile.firstName %> hasn't given any favourite songs yet
+                  <% } else { %>
+                    <%= profile.favouriteSongs %>
+                 <% } %>
+                </p>
+                <p>Moods:</p>
+                <p>
+                  <% if (profile.mood[0].length === 0 ) { %>
+                     <%= profile.firstName %> hasn't given any moods yet
+                   <% } else { %>
+                     <%= profile.mood %>
+                  <% } %>
+                </p>
                 <form action="/following/follow/<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
                   
@@ -36,7 +50,7 @@
                     <button>Follow</button>
                   <% } %>
                 </form>
-                <img src='<%= profile.profilePicture %>'>
+                <img src='/images/imageBackupGandalf.jpg'>
               </div>
             <% }); %>
           </div>
@@ -47,7 +61,7 @@
     <footer>
         <%- include('../partials/footer'); %>
     </footer>
-    
+    <script src='/scripts/navbarScript.js'></script>
 </body>
 </html>
 
