@@ -27,7 +27,7 @@
                 <p>Age: <%= profile.age %></p>
                 <p>Favourite Songs:</p>
                 <p>
-                  <% if ((profile.favouriteSongs).length === 0 ) { %>
+                  <% if (profile.favouriteSongs[0].length === 0 ) { %>
                     <%= profile.firstName %> hasn't given any favourite songs yet
                   <% } else { %>
                     <%= profile.favouriteSongs %>
@@ -35,7 +35,7 @@
                 </p>
                 <p>Moods:</p>
                 <p>
-                  <% if ((profile.mood).length === 0 ) { %>
+                  <% if (profile.mood[0].length === 0 ) { %>
                      <%= profile.firstName %> hasn't given any moods yet
                    <% } else { %>
                      <%= profile.mood %>

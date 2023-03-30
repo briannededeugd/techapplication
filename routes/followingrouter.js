@@ -27,6 +27,7 @@ router.get('/explore', async (req, res) => {
 		}
 		return user;
 	});
+	
 	/*---- END OF SECTION ----*/
 	
 
