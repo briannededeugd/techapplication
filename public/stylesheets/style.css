@@ -1,19 +1,28 @@
 :root {
-    --fontstyle: 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    --mainGroen: #167A74;
-    --mainGrijs: #f2f2f2;
-    --mainGeel: #EBAD36;
-    --tekstWit: #ffffff;
-    --tekstZwart: #000000;
+    --fontstyle: 'Poppins', sans-serif, 'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --accentRoze: #f72585;
+    --grijs: #f1f2f0;
+    --accentDonkerBlauw: #3a0ca3;
+    --accentMidBlauw: #4361ee;
+    --accentLichtBlauw: #4cc9f0;
+    --wit: #ffffff;
+    --zwart: #000000;
+    --accentPaars: #7209b7;
 }
 
 html {
     margin: 0px;
     max-height: auto;
     scroll-behavior: smooth;
+    background-color: var(--grijs);
+    /* background: rgb(247,37,133);
+    background: linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%); */ 
 }
 
 
+/**========================================================================
+ *                           Body
+ *========================================================================**/
 
 body {
     width: 100%;
@@ -22,7 +31,7 @@ body {
     color: rgb(0, 0, 0);
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto 6fr 1fr;
     grid-template-areas:
         "header header header"
@@ -36,19 +45,21 @@ body {
     justify-content: center;
 }
 
-/*******************************************  
-Header
-*******************************************/
+
+/**========================================================================
+ *                           Header
+ *========================================================================**/
 
 header {
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr;
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
     height: auto;
     justify-content: center;
     align-items: center;
+    font-size: 120%;
 
 }
 
@@ -66,17 +77,56 @@ header nav ul {
 
 }
 
-header li {
-    padding: 1em;
-    margin: 0 1em 0 1em;
-    background-color: var(--tekstZwart);
-    border-radius: 10%;
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+header nav li a{
+    color: var(--zwart);
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0.9em;
+    padding: 0.4em 0.2em;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
 }
 
-header li a {
-    text-decoration: none;
-    color: var(--mainGeel);
+header nav li a:before, header nav li a:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 0%;
+    left: -0.5em;
+    border-radius: 85px 85px 85px 85px;
+}
+  
+header nav li a:before {
+    bottom: 0;
+    transition: 0.5s;
+}
+  
+header nav li a:after {
+    background:var(--accentPaars);
+    top: 0;
+}
+  
+header nav li a:hover:before {
+    background: var(--accentPaars);
+    height: 100%;
+    transition: height 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+}
+
+header nav li a.active:before,
+header nav li a.active:after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 100%;
+    left: -0.5em;
+    border-radius: 85px 85px 85px 85px;
+    bottom: 0;
+    background: var(--accentPaars);
 }
 
 .sticky {
@@ -85,9 +135,10 @@ header li a {
     width: 100%;
 }
 
-/*******************************************  
-Main Home
-*******************************************/
+
+/**========================================================================
+ *                           Main Home
+ *========================================================================**/
 
 main {
     grid-area: main;
@@ -97,80 +148,120 @@ footer {
     grid-area: footer;
 }
 
-/*******************************************  
-Main MyProfile
-*******************************************/
 
-main.myProfile-main {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "title"
-        "container";
-}
+/**========================================================================
+ *                           Main MyProfile
+ *========================================================================**/
 
-main div.myProfile-container {
-    grid-area: container;
+ main.myProfile-main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr;
+} 
+
+div#myProfile-container {
+    display: grid;
+    grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
     grid-template-areas:
-        "name button image image"
-        "age songs image image"
-        "about about image image";
-    background-color: var(--mainGrijs);
+        ". . . image image"
+        ". name button image image"
+        ". age . image image"
+        ". moodsHeading moodsHeading image image"
+        ". moods moods image image"
+        ". favSongsHeading favSongsHeading image image"
+        ". favSongs favSongs image image";
+    background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
+    justify-items: start;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    min-width: 45em;
 }
 
-h1.myProfile-title {
-    grid-area: title;
-}
-
-h2.myProfile-name {
-    grid-area: name;
-}
-
-p.myProfile-about {
-    grid-area: about;
-    margin: 0 2em 0 2em;
-}
-
-p.myProfile-songs {
-    grid-area: songs;
-}
-
-img.myProfile-image {
+div#myProfile-container img {
     grid-area: image;
-    height: auto;
-    width: auto;
+    width: 100%;
     max-width: 100%;
+    max-height: 25em;
+    height: 100%;
+    min-width:15em;
+    min-height: 22em;
+    border-radius: 0 30px 30px 0;
 }
 
-/* button.myProfile-but1 {
-    grid-area: button1;
+div#myProfile-container h2 {
+    grid-area: name;
+    color: var(--accentPaars);
+    font-size: 2em;
+    align-self: start;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: -0.5em;
 }
 
-button.myProfile-but2 {
-    grid-area: button2;
+div#myProfile-container p:nth-of-type(1) {
+    grid-area: age;
+    align-self: start;
+    margin: 0 0 -0.5em;
+}
+
+div#myProfile-container p:nth-of-type(2) {
+    grid-area: favSongsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
+}
+
+div#myProfile-container p:nth-of-type(3) {
+    grid-area: favSongs;
+    margin: 0;
+    align-self: start;
+}
+
+div#myProfile-container p:nth-of-type(4) {
+    grid-area: moodsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
+}
+
+div#myProfile-container p:nth-of-type(5) {
+    grid-area: moods;
+    margin: 0;
+    align-self: start;
+}
+
+/* div#myProfile-container form {
+    grid-area: form;
+    justify-self: start;
+    align-self: start;  
+    margin-top: 0.5em;  
 } */
 
-a.myProfile-ahref {
+div#myProfile-container a {
+    all: unset;
     grid-area: button;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 3em;
-    margin: 0 2em 0 2em;
-    background-color: var(--tekstZwart);
-    color: var(--mainGeel);
-    text-decoration: none;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s; 
+      
+}
 
-
-
+div#myProfile-container a:hover {
+    grid-area: button;
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
 
 }
 
@@ -180,9 +271,9 @@ a.myProfile-ahref {
 
 
 
-/*******************************************  
-Main Explore
-*******************************************/
+/**========================================================================
+ *                           Main Explore
+ *========================================================================**/
 
 /* main.explore-main {
     display: grid;
@@ -198,42 +289,110 @@ div#profiles {
 
 div#profiles div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
     grid-template-areas:
-        "name button image image"
-        "age songs image image"
-        "about about image image";
-    background-color: var(--mainGrijs);
+        ". . . image image"
+        ". name form image image"
+        ". age . image image"
+        ". moodsHeading moodsHeading image image"
+        ". moods moods image image"
+        ". favSongsHeading favSongsHeading image image"
+        ". favSongs favSongs image image";
+    background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
+    justify-items: start;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    min-width: 45em;
+
 }
 
 div#profiles img {
     grid-area: image;
-    width: auto;
+    width: 100%;
     max-width: 100%;
+    max-height: 25em;
+    height: 100%;
+    min-width:15em;
+    min-height: 22em;
+    border-radius: 0 30px 30px 0;
 }
 
 div#profiles h2 {
     grid-area: name;
+    color: var(--accentPaars);
+    font-size: 2em;
+    align-self: start;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: -0.5em;
 }
 
 div#profiles p:nth-of-type(1) {
     grid-area: age;
+    align-self: start;
+    margin: 0 0 -0.5em;
 }
 
 div#profiles p:nth-of-type(2) {
-    grid-area: songs;
+    grid-area: favSongsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
 }
 
 div#profiles p:nth-of-type(3) {
-    grid-area: about;
+    grid-area: favSongs;
+    margin: 0;
+    align-self: start;
+}
+
+div#profiles p:nth-of-type(4) {
+    grid-area: moodsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
+}
+
+div#profiles p:nth-of-type(5) {
+    grid-area: moods;
+    margin: 0;
+    align-self: start;
+}
+
+div#profiles form {
+    grid-area: form;
+    justify-self: start;
+    align-self: start;  
+    margin-top: 0.5em;  
 }
 
 div#profiles button {
     grid-area: button;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s;   
+}
+
+div#profiles button:hover {
+    grid-area: button;
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
+
 }
 
 .footerText {
@@ -241,9 +400,9 @@ div#profiles button {
 }
 
 
-/*******************************************  
-Main Following
-*******************************************/
+/**========================================================================
+ *                           Main Following
+ *========================================================================**/
 
 /* main.explore-main {
     display: grid;
@@ -254,52 +413,118 @@ Main Following
 
 div#following-profiles {
     display: grid;
-
 }
 
 div#following-profiles div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
     grid-template-areas:
-        "name button image image"
-        "age songs image image"
-        "about about image image";
-    background-color: var(--mainGrijs);
+        ". . . image image"
+        ". name form image image"
+        ". age . image image"
+        ". moodsHeading moodsHeading image image"
+        ". moods moods image image"
+        ". favSongsHeading favSongsHeading image image"
+        ". favSongs favSongs image image";
+    background-color: var(--wit);
     margin: 0 0 2em 0;
     align-items: center;
+    justify-items: start;
     box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    min-width: 45em;
 }
 
 div#following-profiles img {
     grid-area: image;
-    width: auto;
+    width: 100%;
     max-width: 100%;
+    max-height: 25em;
+    height: 100%;
+    min-width:15em;
+    min-height: 22em;
+    border-radius: 0 30px 30px 0;
 }
 
 div#following-profiles h2 {
     grid-area: name;
+    color: var(--accentPaars);
+    font-size: 2em;
+    align-self: start;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: -0.5em;
 }
 
 div#following-profiles p:nth-of-type(1) {
     grid-area: age;
+    align-self: start;
+    margin: 0 0 -0.5em;
 }
 
 div#following-profiles p:nth-of-type(2) {
-    grid-area: songs;
+    grid-area: favSongsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
 }
 
 div#following-profiles p:nth-of-type(3) {
-    grid-area: about;
+    grid-area: favSongs;
+    margin: 0;
+    align-self: start;
+}
+
+div#following-profiles p:nth-of-type(4) {
+    grid-area: moodsHeading;
+    font-weight: 700;
+    border: 0.2em solid var(--accentLichtBlauw);
+    padding: 0.1em 0.5em;
+    border-radius: 9px;
+    margin: 0.5em 0 -0.5em;
+    align-self: start;
+}
+
+div#following-profiles p:nth-of-type(5) {
+    grid-area: moods;
+    margin: 0;
+    align-self: start;
+}
+
+div#following-profiles form {
+    grid-area: form;
+    justify-self: start;
+    align-self: start;  
+    margin-top: 0.5em;  
 }
 
 div#following-profiles button {
     grid-area: button;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s;   
+}
+
+div#following-profiles button:hover {
+    grid-area: button;
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
+
 }
 
 div#empty-message {
     padding: 2em;
-    background-color: var(--mainGrijs);
+    background-color: var(--grijs);
 }
 
 div#empty-message img {
@@ -326,9 +551,9 @@ Elaine's CSS
 }
 
 
-/****************************/
-/* MATCHING */
-/****************************/
+/**========================================================================
+ *                           Matching
+ *========================================================================**/
 
 body.matching {
     display: grid;
