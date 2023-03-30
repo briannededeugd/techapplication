@@ -20,33 +20,39 @@
 				action="../matching/matchingresult"
 				method="post"
 				class="form">
-				<input type="checkbox" name="language" value="dutch" id="dutch" />
-				<label for="language">
-					<img src="img/language-dutch.png" id="dutchImage" />
-					<p>Dutch</p>
-				</label>
+				<section>
+					<section class="dutchenglish">
+						<input type="checkbox" name="language" value="dutch" id="dutch" />
+						<label for="language">
+							<p>Dutch</p>
+						</label>
 
-				<input type="checkbox" name="language" value="english" id="english" />
-				<label for="english">
-					<img src="img/language-english.png" id="englishImage" />
-					<p>English</p>
-				</label>
+						<input
+							type="checkbox"
+							name="language"
+							value="english"
+							id="english" />
+						<label for="english">
+							<p>English</p>
+						</label>
+					</section>
 
-				<input type="checkbox" name="language" value="korean" id="korean" />
-				<label for="korean">
-					<img src="img/language-korean.png" id="koreanImage" />
-					<p>Korean</p>
-				</label>
+					<section class="koreannopref">
+						<input type="checkbox" name="language" value="korean" id="korean" />
+						<label for="korean">
+							<p>Korean</p>
+						</label>
 
-				<input
-					type="checkbox"
-					name="language"
-					value="nopreference"
-					id="nopreference" />
-				<label for="nopreference">
-					<img src="img/language-nopreference.png" id="nopreferenceImage" />
-					<p>No preference</p>
-				</label>
+						<input
+							type="checkbox"
+							name="language"
+							value="nopreference"
+							id="nopreference" />
+						<label for="nopreference">
+							<p>No preference</p>
+						</label>
+					</section>
+				</section>
 
 				<input type="hidden" name="nextPage" value="matching/matchingresult" />
 
