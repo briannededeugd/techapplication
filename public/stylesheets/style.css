@@ -14,9 +14,16 @@ html {
     margin: 0px;
     max-height: auto;
     scroll-behavior: smooth;
-    background-color: var(--grijs);
-    /* background: rgb(247,37,133);
-    background: linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%); */ 
+    /* background-color: var(--grijs); */
+    background: rgb(247, 37, 133);
+    background: linear-gradient(48deg,
+            rgba(247, 37, 133, 1) 0%,
+            rgba(114, 9, 183, 1) 15%,
+            rgba(58, 12, 163, 1) 50%,
+            rgba(67, 97, 238, 1) 85%,
+            rgba(76, 201, 240, 1) 100%);
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -77,7 +84,7 @@ header nav ul {
 
 }
 
-header nav li a{
+header nav li a {
     color: var(--zwart);
     display: block;
     font-size: 1em;
@@ -92,7 +99,8 @@ header nav li a{
     -webkit-transition: all 0.5s ease;
 }
 
-header nav li a:before, header nav li a:after {
+header nav li a:before,
+header nav li a:after {
     content: '';
     position: absolute;
     width: 7px;
@@ -100,17 +108,17 @@ header nav li a:before, header nav li a:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
 }
-  
+
 header nav li a:before {
     bottom: 0;
     transition: 0.5s;
 }
-  
+
 header nav li a:after {
-    background:var(--accentPaars);
+    background: var(--accentPaars);
     top: 0;
 }
-  
+
 header nav li a:hover:before {
     background: var(--accentPaars);
     height: 100%;
@@ -153,14 +161,14 @@ footer {
  *                           Main MyProfile
  *========================================================================**/
 
- main.myProfile-main {
+main.myProfile-main {
     display: grid;
-} 
+}
 
 div#myProfile-container {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name button image image"
@@ -184,7 +192,7 @@ div#myProfile-container img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -252,9 +260,9 @@ div#myProfile-container a {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
-      
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
+
 }
 
 div#myProfile-container a:hover {
@@ -290,7 +298,7 @@ div#profiles {
 div#profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -315,7 +323,7 @@ div#profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -371,8 +379,8 @@ div#profiles p:nth-of-type(5) {
 div#profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#profiles button {
@@ -383,8 +391,8 @@ div#profiles button {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 div#profiles button:hover {
@@ -418,7 +426,7 @@ div#following-profiles {
 div#following-profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -442,7 +450,7 @@ div#following-profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -498,8 +506,8 @@ div#following-profiles p:nth-of-type(5) {
 div#following-profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#following-profiles button {
@@ -510,8 +518,8 @@ div#following-profiles button {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 div#following-profiles button:hover {
@@ -555,7 +563,7 @@ body.matching {
         '. main .';
 }
 
-main.brianne {
+main.mainmatch {
     width: 100%;
     height: auto;
     font-family: var(--fontstyle);
@@ -592,6 +600,12 @@ form.form {
 section.heading {
     grid-area: heading;
 }
+
+/****************************/
+/* FORMULIERENNPAGINA */
+/****************************/
+
+body.matching>form {}
 
 /****************************/
 /* RESULTATENPAGINA */

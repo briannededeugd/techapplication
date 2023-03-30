@@ -1,73 +1,65 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 	<head>
-		<meta charset='UTF-8' />
-		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
-		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link
-			rel='stylesheet'
-			href='https://fonts.googleapis.com/icon?family=Material+Icons' />
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<%- include('../partials/head'); %>
 	</head>
-	<body class='matching'>
+	<body class="matching">
 		<header><%- include('../partials/header') %></header>
 
-		<main class='brianne'>
+		<main class="brianne">
 			<!-- Wrapper -->
 			<section>
 				<!-- Top bar -->
 				<section>
-					<!-- <a href='/'>
-					<img
-						src='img/home.png'
-						alt='Knop om terug te gaan naar startscherm' />
-				</a> -->
-
 					<h1>Beste Match</h1>
-
-					<!-- <i class='material-icons'>more_horiz</i> -->
 				</section>
 
 				<!-- Lied details -->
-				<section id='lieddetails'>
-					<img src='<%= cover %>' alt='Album cover' />
+				<section id="lieddetails">
+					<img src="<%= cover %>" alt="Album cover" />
 					<p><%= title %></p>
 					<p><%= artist %></p>
 				</section>
 
 				<!-- Voortgang area -->
 				<section>
-					<section id='audio'>
-						<audio id='current-audio' src='<%= audiofile %>'></audio>
+					<section id="audio">
+						<audio id="current-audio" src="<%= audiofile %>"></audio>
 					</section>
 
 					<!-- song timer -->
-					<section id='songtimer'>
-						<span id='huidige-tijd'>0:00</span>
-						<section class='progress-bar'>
-							<section class='tijd-indicator'></section>
+					<section id="songtimer">
+						<span id="huidige-tijd">0:00</span>
+						<section class="progress-bar">
+							<section class="tijd-indicator"></section>
 						</section>
-						<span id='max-tijd'>0:00</span>
+						<span id="max-tijd">0:00</span>
 					</section>
 				</section>
 
 				<!-- Controls -->
-				<section class='controls'>
-					<a href='/update-voel'>
-						<img src='/img/editicon.png' id='wijzig-lied' />
+				<section class="controls">
+					<a href="/update-voel">
+						<img src="/img/editicon.png" id="wijzig-lied" />
 					</a>
 
-					<i id='play-knop' class='material-icons'>play_arrow</i>
+					<i id="play-knop" class="material-icons">play_arrow</i>
 
-					<a href='<%= spotifylink %>'>
-						<img src='/img/spotifylogo.png' id='spotify' />
+					<a href="<%= spotifylink %>">
+						<img src="/img/spotifylogo.png" id="spotify" />
 					</a>
 				</section>
 			</section>
 		</main>
 
-		<script src='/scripts/matchingscript.js' type='module'></script>
-		<script src='/scripts/navbarScript.js'></script>
+		<script src="/scripts/matchingscript.js" type="module"></script>
+		<script src="/scripts/navbarScript.js"></script>
 	</body>
 </html>
