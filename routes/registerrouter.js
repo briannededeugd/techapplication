@@ -1,56 +1,71 @@
 const express = require('express');
 const router = express.Router();
-const { User } = require('./userSchema');
+const { users } = require('./userSchema');
 const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
-    res.render('pages/register');
-    const allUsers = await User.find({});
-    console.log('🚀 ~ file: followingrouter.js:15 ~ router.get ~ allUsers:', allUsers);
+  res.render('pages/register');
+  const allUsers = await users.find({});
 });
 
-  // Handle form submissions
-  router.post('/register', async (req, res) => {
-    // Hash the password with bcrypt
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+// REGISTER ROUTE
 
-    // Create a new user with the hashed password
-    const user = new User({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      age: req.body.age,
-      email: req.body.email,
-      password: hashedPassword,
-      password2: hashedPassword
-  });
+router.post('/signup', async (req, res) => {
+  // Hash the password with bcrypt
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
-    try {
-      // Save the user to the database
-      await user.save();
-      console.log(user);
+  // Create a new user with the hashed password
+  // eslint-disable-next-line new-cap
+  const user = new users({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    age: req.body.age,
+    email: req.body.email,
+    password: hashedPassword,
+    password2: hashedPassword,
+    mood: req.body.moods
+});
 
-      // Redirect to the user's account page
-      res.redirect(`/account/${user._id}`);
-    } catch (error) {
-      // Handle errors
-      console.log(error);
-      res.redirect('/register');
-    }
-  });
+  try {
+    // Save the user to the database
+    await user.save();
+    console.log(user + 'Succesfully added');
 
-  // Render the user's account page
-  router.get('/account/:id', async (req, res) => {
-    try {
-      // Find the user by ID
-      const user = await User.findById(req.params._id);
+    // Redirect to the user's account page
+    res.render('pages/account', { user });
+  } catch (error) {
+    // Handle errors
+    console.log(error);
+    res.redirect('/register');
+  }
+});
 
-      // Render the account page with the user's information
-      res.render('account', { user });
-    } catch (error) {
-      // Handle errors
-      console.log(error);
-      res.render('/register');
-    }
-  });
+router.get('/account/:_id/', async (req, res) => {
+  try {
+    // Find the user by ID
+    const user = await users.findById(req.params._id);
+
+    // Render the account page with the user's information
+    res.render('account', { user });
+  } catch (error) {
+    // Handle errors
+    console.log(error);
+    res.render('/signup');
+  }
+});
+
+router.get('/login', (req, res) => {
+  res.render('pages/login');
+});
+
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  const user = await users.findOne({ email });
+  if (!user || user.password !== password) {
+    res.send('Invalid email or password');
+  } else {
+    res.send('Something went wrong');
+  }
+});
 
 module.exports = router;
