@@ -606,6 +606,20 @@ section.heading {
 /* FORMULIERENNPAGINA */
 /****************************/
 
+body.matching>main.mainmatch>section.heading>h1,
+body.matching>main.mainmatch>section.heading>p {
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>section.heading>h1 {
+    font-size: 2em;
+    margin-bottom: 5vh;
+}
+
+body.matching>main.mainmatch>section.heading>p {
+    margin-bottom: 0;
+}
+
 body.matching form>section {
     display: flex;
     flex-direction: column;
@@ -614,7 +628,7 @@ body.matching form>section {
     background-color: var(--vlakPaars);
     border-radius: .75em;
     padding: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 3.5em;
     height: max-content;
 }
 
@@ -626,8 +640,9 @@ body.matching form input[type="checkbox"] {
 }
 
 body.matching>main.mainmatch label {
-    font-size: small;
-    background-color: white;
+    /* font-size: small; */
+    background-color: var(--wit);
+    color: var(--accentPaars);
     padding: 0 2em;
     border-radius: 1em;
 }
@@ -636,12 +651,23 @@ body.matching>main.mainmatch>form>section>section:not(:last-of-type)>label {
     margin-bottom: 1em;
 }
 
-/* ! Werkt nog niet
+body.matching>main.mainmatch>form>section>section>input[type="checkbox"]:checked+label {
+    font-weight: 700;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+}
 
-body.matching form>main.mainmatch>form>section>section>input[type="checkbox"]:checked label {
-    background: linear-gradient(48deg,
-            var(--accentDonkerBlauw) 0%,
-            var(--accentLichtBlauw) 100%)
+body.matching>main.mainmatch>form input[type="submit"] {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
 
 /****************************/
