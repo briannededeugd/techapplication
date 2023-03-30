@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const { users } = require('./userSchema');
-const { admin } = require('./adminSchema')
-
+const { admin } = require('./adminSchema');
+const { songs } = require('./songSchema')
 
 
 /**========================================================================
@@ -48,11 +48,13 @@ router.get('/myprofile/:adminId', async (req, res) => {
     // const DATA_ADMIN = await admin.find({}).toArray();
     // console.log('@@-- data', DATA);
     let adminProfile = await admin.findOne({ _id : adminId});
+    let allSongs = await songs.find({});
     console.log(`dit is de pagina van ${adminProfile.firstName} `);
     console.log(adminProfile);
     
     res.render('pages/myprofile', {
-        user : adminProfile
+        user: adminProfile,
+        likedSongs: allSongs.filter(song => song.adminLike === 'true'),
     });
 });
 

@@ -13,6 +13,7 @@ const songSchema = new mongoose.Schema({
 	cover: String,
 	audiofile: String,
 	spotifylink: String,
+	adminLike: String,
 });
 
 // const songs = mongoose.model('songs', songSchema);
