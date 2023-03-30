@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 console.log('js connected!!');
 
 // Play knop wordt pauzeknop als erop wordt geklikt
