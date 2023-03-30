@@ -19,7 +19,7 @@ const likingRouter = require('./routes/likingRouter');
  *========================================================================**/
 
 const { songs } = require('./routes/songSchema');
-const { User } = require('./routes/userSchema');
+const { users } = require('./routes/userSchema');
 const { admin } = require('./routes/adminSchema');
 
 /**========================================================================
@@ -66,7 +66,7 @@ app.get('/', async (req, res) => {
     const allSongs = await songs.find({});
     // console.log("🚀 ~ file: server.js:58 ~ app.get ~ allSongs:", allSongs);
 
-        const allUsers = await User.find({});
+        const allUsers = await users.find({});
         // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
 
         const allAdmins = await admin.find({});
@@ -84,7 +84,7 @@ app.use('/following', followingRouter);
 /**----------------------
  *    Tristan's Register
  *------------------------**/
-app.use('/tristan', registerRouter);
+app.use('/register', registerRouter);
 
 /**----------------------
  *    Brianne's Matching
