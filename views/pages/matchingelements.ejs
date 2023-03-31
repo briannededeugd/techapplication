@@ -1,79 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
 		<%- include('../partials/head'); %>
 	</head>
-	<body class="matching">
+	<body class='matching'>
 		<header><%- include('../partials/header') %></header>
 
-		<main class="mainmatch">
-			<section class="heading">
+		<main class='mainmatch'>
+			<section class='heading'>
 				<h1>What <em>music elements</em> do you listen to most?</h1>
 				<p>Pick as many as you like.</p>
 			</section>
 
 			<form
-				name="elementform"
-				action="../matching/userPost"
-				method="post"
-				class="form">
+				name='elementform'
+				action='../matching/userPost'
+				method='post'
+				class='form'>
 				<section>
-					<section class="beatmelody">
-						<input type="checkbox" name="feature" value="beat" id="beat" />
-						<label for="beat">
+					<section class='beatmelody'>
+						<input type='checkbox' name='feature' value='beat' id='beat' />
+						<label for='beat'>
 							<p>Beat</p>
 						</label>
 
-						<input type="checkbox" name="feature" value="melody" id="melody" />
-						<label for="melody">
+						<input type='checkbox' name='feature' value='melody' id='melody' />
+						<label for='melody'>
 							<p>Melody</p>
 						</label>
 					</section>
 
-					<section class="vocalsinstruments">
-						<input type="checkbox" name="feature" value="vocals" id="vocals" />
-						<label for="vocals">
+					<section class='vocalsinstruments'>
+						<input type='checkbox' name='feature' value='vocals' id='vocals' />
+						<label for='vocals'>
 							<p>Vocals</p>
 						</label>
 
 						<input
-							type="checkbox"
-							name="feature"
-							value="instruments"
-							id="instruments" />
-						<label for="instruments">
+							type='checkbox'
+							name='feature'
+							value='instruments'
+							id='instruments' />
+						<label for='instruments'>
 							<p>Instruments</p>
 						</label>
 					</section>
 
-					<section class="backingvibe">
+					<section class='backingvibe'>
 						<input
-							type="checkbox"
-							name="feature"
-							value="backingvocals"
-							id="backingvocals" />
-						<label for="backingvocals">
+							type='checkbox'
+							name='feature'
+							value='backingvocals'
+							id='backingvocals' />
+						<label for='backingvocals'>
 							<p>Backing vocals</p>
 						</label>
 
-						<input type="checkbox" name="feature" value="vibe" id="vibe" />
-						<label for="vibe">
+						<input type='checkbox' name='feature' value='vibe' id='vibe' />
+						<label for='vibe'>
 							<p>Vibe</p>
 						</label>
 					</section>
 				</section>
 
 				<input
-					type="hidden"
-					name="nextPage"
-					value="/matching/matchinglanguage" />
-				<input type="submit" value="Continue to language" />
+					type='hidden'
+					name='nextPage'
+					value='/matching/matchinglanguage' />
+				<input type='submit' value='Continue to language' />
 			</form>
 		</main>
-		<script src="/scripts/navbarScript.js"></script>
+		<script src='/scripts/navbarScript.js'></script>
 	</body>
 </html>
