@@ -175,7 +175,6 @@ router.post('/matchingresult', async (req, res) => {
 	);
 	console.log('DE BESTE MATCH IS:', bestMatch);
 
-
 	/**========================================================================
 	 *                           LAADT IN OP PAGINA
 	 *========================================================================**/
@@ -205,8 +204,7 @@ router.post('/matchingresult', async (req, res) => {
 		fifthTitle: bestMatch[4]?.title,
 		fifthArtist: bestMatch[4]?.artist,
 		fifthCover: bestMatch[4]?.cover,
-		fifthAudiofile: bestMatch[4].audiofile,
-		
+		fifthAudiofile: bestMatch[4]?.audiofile,
 	});
 });
 /**========================================================================
