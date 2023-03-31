@@ -1,145 +1,59 @@
 const express = require('express');
 const router = express.Router();
 
+
+/**========================================================================
+ *                           Mongoose Schemas
+ *========================================================================**/
+
 const { users } = require('./userSchema');
 const { admin } = require('./adminSchema');
 const { songs } = require('./songSchema');
 
 
 /**========================================================================
- *                           Explore Page
+ *                           Controllers
  *========================================================================**/
 
-router.get('/explore', async (req, res) => {
-	console.log('jarno\'s following router werkt!');
-	const allUsers = await users.find({});
-	console.log('🚀 ~ file: followingrouter.js:15 ~ router.get ~ allUsers:', allUsers);
-	
-	/**----------------------
-	 *    Mood and Fav.Songs cleanup
-	 *------------------------**/
-	const cleanedUsers = allUsers.map(user => {
-		if (user.mood) {
-			user.mood = user.mood.join(', ');
-		}
-		if (user.favouriteSongs) {
-			user.favouriteSongs = user.favouriteSongs.join(', ');
-		}
-		return user;
-	});
-	
-	/*---- END OF SECTION ----*/
-	
+const followController = require('../controllers/followController');
+const cleanDataController = require('../controllers/cleanDataController');
+const myProfileController = require('../controllers/myProfileController');
 
-	res.render('pages/explore', {profiles : cleanedUsers});
-});
+
+
+/**========================================================================
+ *                           PAGE -- EXPLORE
+ *========================================================================**/
+
+router.get('/explore', cleanDataController.cleanUsers);
 
 
 /**----------------------
  *    Clicking the follow button
  *------------------------**/
 
-router.post('/follow/:profileId', async (req, res) => {
-	const profileId = req.params.profileId;
-	console.log('🚀 ~ file: followingrouter.js:21 ~ router.post ~ profileId:', profileId);
-    
-	const followStatus = req.body.followStatus === 'true';
-	console.log('🚀 ~ file: server.js:150 ~ APP.post ~ req.body.followStatus:', req.body.followStatus);
-    
-	// Update the profile's follow status in the database
-	await users.findOneAndUpdate({_id: profileId}, {$set: {follow: followStatus}});
-  
-	// Redirect the user back to the explore page
-	res.redirect('/following/explore');
-});
+router.post('/follow/:profileId', followController.exploreFollowButton);
 
 
 /**========================================================================
- *                           My Profile Page
+ *                           PAGE -- MY PROFILE
  *========================================================================**/
 
-router.get('/myprofile/:adminId', async (req, res) => {
-	const adminId = req.params.adminId;
-	let allSongs = await songs.find({});
-	const adminProfile = await admin.findOne({ _id : adminId});
-
-	//! Doesnt work yet, admin mood and favSongs still uncleaned 
-	// const cleanedAdmin = dataFollowing.map(user => {
-	// 	if (user.mood) {
-	// 		user.mood = user.mood.join(', ')
-	// 	}
-	// 	if (user.favouriteSongs) {
-	// 		user.favouriteSongs = user.favouriteSongs.join(', ')
-	// 	}
-	// 	return user;
-	// });
-
-	console.log(`dit is de pagina van ${adminProfile.firstName} `);
-	console.log(adminProfile);
-    
-	res.render('pages/myprofile', {
-		user : adminProfile,
-		likedSongs: allSongs.filter(song => song.adminLike === 'true'),
-	});
-});
+router.get('/myprofile/:adminId', myProfileController.loadAdminProfile);
 
 
 /**========================================================================
- *                           Following page
+ *                           PAGE -- FOLLOWING
  *========================================================================**/
- 
-router.get('/followlist', async (req, res) => {
-	/**----------------------
-	 *    Mood and Fav.Songs cleanup
-	 *------------------------**/
-	const dataFollowing = await users.find({follow : true});
-	const cleanedUsers = dataFollowing.map(user => {
-		if (user.mood) {
-			user.mood = user.mood.join(', ');
-		}
-		if (user.favouriteSongs) {
-			user.favouriteSongs = user.favouriteSongs.join(', ');
-		}
-		return user;
-	});
-	/*---- END OF SECTION ----*/
-	
-	
-	// const EMPTY_MESSAGE_IMAGE_PULL = await DB_GENERAL.find({}).toArray();
-	// const EMPTY_MESSAGE_IMAGE = EMPTY_MESSAGE_IMAGE_PULL.find(profile => profile.imageEmpty)
-	if (cleanedUsers.length < 1) {
-		res.render('pages/following', {
-			followingArray : cleanedUsers,
-			emptyMessageH2 : 'You don\'t seem to be following anyone...',
-			emptyImage : '../images/imageSadpepe.jpg',
-			emptyMessageP : 'Head on over to the explore page to find new people to follow!'
-
-		});
-	} else {
-		res.render('pages/following', {
-			followingArray : cleanedUsers,
-			emptyMessageH2 : '',
-			emptyImage : '',
-			emptyMessageP : ''
-		});
-	}
-});
+ //?  I would like to split the cleanFollowingUsers into two seperate exports but then the page keeps loading...
+router.get('/followlist', cleanDataController.cleanFollowingUsers);
 
 
 /**----------------------
  *    User clicks unfollow button
  *------------------------**/
 
-router.post('/followlist/:profileId', async (req, res) => {
-	const profileId = req.params.profileId;
-	const followStatus = req.body.followStatus === 'true';
-    
-	// Update the profile's follow status in the database
-	await users.findOneAndUpdate({_id: profileId}, {$set: {follow: followStatus}});
-  
-	// Redirect the user back to the explore page
-	res.redirect('/following/followlist');
-});
+router.post('/followlist/:profileId', followController.followingUnfollowButton);
 
 
 
