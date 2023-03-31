@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
 		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+			rel='stylesheet'
+			href='https://fonts.googleapis.com/icon?family=Material+Icons' />
 		<%- include('../partials/head'); %>
 	</head>
-	<body class="matching">
+	<body class='matching'>
 		<header><%- include('../partials/header') %></header>
 
-		<main class="mainresult">
+		<main class='mainresult'>
 			<section>
 				<!-- Wrapper -->
 				<section>
@@ -23,49 +23,49 @@
 					</section>
 
 					<!-- Song details -->
-					<section id="lieddetails">
-						<img src="<%= cover %>" alt="Album cover" />
+					<section id='lieddetails'>
+						<img src='<%= cover %>' alt='Album cover' />
 						<p><%= title %></p>
 						<p><%= artist %></p>
 					</section>
 
 					<!-- Progress area -->
 					<section>
-						<section id="audio">
+						<section id='audio'>
 							<audio
-								id="current-audio"
-								type="audio/mp3"
-								crossOrigin="anonymous"
-								src="<%= audiofile %>"></audio>
+								id='current-audio'
+								type='audio/mp3'
+								crossOrigin='anonymous'
+								src='<%= audiofile %>'></audio>
 						</section>
 
 						<!-- song timer -->
-						<section id="songtimer">
-							<section class="progress-bar">
-								<section class="tijd-indicator"></section>
+						<section id='songtimer'>
+							<section class='progress-bar'>
+								<section class='tijd-indicator'></section>
 							</section>
-							<section id="tijd">
-								<span id="huidige-tijd">0:00</span>
-								<span id="max-tijd">0:00</span>
+							<section id='tijd'>
+								<span id='huidige-tijd'>0:00</span>
+								<span id='max-tijd'>0:00</span>
 							</section>
 						</section>
 					</section>
 
 					<!-- Controls -->
-					<section class="controls">
-						<a href="<%= spotifylink %>">
-							<img src="/images/spotifylogo.png" id="spotify" />
+					<section class='controls'>
+						<a href='<%= spotifylink %>'>
+							<img src='/images/spotifylogo.png' id='spotify' />
 						</a>
 
-						<i id="play-knop" class="material-icons">play_arrow</i>
+						<i id='play-knop' class='material-icons'>play_arrow</i>
 
-						<a href="/liking">
-							<i class="material-icons">queue_music</i>
+						<a href='/liking'>
+							<i class='material-icons'>queue_music</i>
 						</a>
 					</section>
 				</section>
 
-				<section class="othermatches">
+				<section class='othermatches'>
 					<h2>Your almost-matches</h2>
 					<p>
 						Songs that didn't quite hit the right note, but still fit your
@@ -74,52 +74,52 @@
 
 					<section>
 						<h3>2</h3>
-						<img src="<%= secondCover %>" alt="" />
+						<img src='<%= secondCover %>' alt='' />
 						<section>
 							<h3><%= secondTitle %></h3>
 							<p><%= secondArtist %></p>
-							<audio id="secondaudio" src="<%= secondAudiofile %>"></audio>
+							<audio id='secondaudio' src='<%= secondAudiofile %>'></audio>
 						</section>
-						<i id="play2nd" class="material-icons">play_arrow</i>
+						<i id='play2nd' class='material-icons'>play_arrow</i>
 					</section>
 
 					<section>
 						<h3>3</h3>
-						<img src="<%= thirdCover %>" alt="" />
+						<img src='<%= thirdCover %>' alt='' />
 						<section>
 							<h3><%= thirdTitle %></h3>
 							<p><%= thirdArtist %></p>
-							<audio id="thirdaudio" src="<%= thirdAudiofile %>"></audio>
+							<audio id='thirdaudio' src='<%= thirdAudiofile %>'></audio>
 						</section>
-						<i id="play3rd" class="material-icons">play_arrow</i>
+						<i id='play3rd' class='material-icons'>play_arrow</i>
 					</section>
 
 					<section>
 						<h3>4</h3>
-						<img src="<%= fourthCover %>" alt="" />
+						<img src='<%= fourthCover %>' alt='' />
 						<section>
 							<h3><%= fourthTitle %></h3>
 							<p><%= fourthArtist %></p>
-							<audio id="fourthaudio" src="<%= fourthAudiofile %>"></audio>
+							<audio id='fourthaudio' src='<%= fourthAudiofile %>'></audio>
 						</section>
-						<i id="play4th" class="material-icons">play_arrow</i>
+						<i id='play4th' class='material-icons'>play_arrow</i>
 					</section>
 
 					<section>
 						<h3>5</h3>
-						<img src="<%= fifthCover %>" alt="" />
+						<img src='<%= fifthCover %>' alt='' />
 						<section>
 							<h3><%= fifthTitle %></h3>
 							<p><%= fifthArtist %></p>
-							<audio id="fifthaudio" src="<%= fifthAudiofile %>"></audio>
+							<audio id='fifthaudio' src='<%= fifthAudiofile %>'></audio>
 						</section>
-						<i id="play5th" class="material-icons">play_arrow</i>
+						<i id='play5th' class='material-icons'>play_arrow</i>
 					</section>
 				</section>
 			</section>
 		</main>
 
-		<script src="/scripts/matchingscript.js" type="module"></script>
-		<script src="/scripts/navbarScript.js"></script>
+		<script src='/scripts/matchingscript.js' type='module'></script>
+		<script src='/scripts/navbarScript.js'></script>
 	</body>
 </html>

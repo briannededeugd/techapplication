@@ -842,7 +842,7 @@ audio {
     gap: 1em;
 
     background-color: var(--vlakPaars);
-    padding: 0 2em;
+    padding: 1em 2em;
     border-radius: 1em;
 }
 
@@ -852,6 +852,10 @@ audio {
 
 .othermatches>section>i {
     margin-left: auto;
+}
+
+.othermatches>section>i:hover {
+    cursor: pointer;
 }
 
 .othermatches>section h3 {
