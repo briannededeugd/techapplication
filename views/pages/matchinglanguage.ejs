@@ -1,65 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<title>Document</title>
 		<%- include('../partials/head'); %>
 	</head>
-	<body class="matching">
+	<body class='matching'>
 		<header><%- include('../partials/header') %></header>
 
-		<main class="mainmatch">
-			<section class="heading">
+		<main class='mainmatch'>
+			<section class='heading'>
 				<h1>In what language do you prefer to listen music?</h1>
 				<p>Choose one or more preferred languages.</p>
 			</section>
 
 			<form
-				name="languageform"
-				action="../matching/matchingresult"
-				method="post"
-				class="form">
+				name='languageform'
+				action='../matching/matchingresult'
+				method='post'
+				class='form'>
 				<section>
-					<section class="dutchenglish">
-						<input type="checkbox" name="language" value="dutch" id="dutch" />
-						<label for="language">
+					<section class='dutchenglish'>
+						<input type='checkbox' name='language' value='dutch' id='dutch' />
+						<label for='dutch'>
 							<p>Dutch</p>
 						</label>
 
 						<input
-							type="checkbox"
-							name="language"
-							value="english"
-							id="english" />
-						<label for="english">
+							type='checkbox'
+							name='language'
+							value='english'
+							id='english' />
+						<label for='english'>
 							<p>English</p>
 						</label>
 					</section>
 
-					<section class="koreannopref">
-						<input type="checkbox" name="language" value="korean" id="korean" />
-						<label for="korean">
+					<section class='koreannopref'>
+						<input type='checkbox' name='language' value='korean' id='korean' />
+						<label for='korean'>
 							<p>Korean</p>
 						</label>
 
 						<input
-							type="checkbox"
-							name="language"
-							value="nopreference"
-							id="nopreference" />
-						<label for="nopreference">
+							type='checkbox'
+							name='language'
+							value='nopreference'
+							id='nopreference' />
+						<label for='nopreference'>
 							<p>No preference</p>
 						</label>
 					</section>
 				</section>
 
-				<input type="hidden" name="nextPage" value="matching/matchingresult" />
+				<input type='hidden' name='nextPage' value='matching/matchingresult' />
 
-				<input type="submit" value="Result" />
+				<input type='submit' value='Result' />
 			</form>
 		</main>
-		<script src="/scripts/navbarScript.js"></script>
+		<script src='/scripts/navbarScript.js'></script>
 	</body>
 </html>
