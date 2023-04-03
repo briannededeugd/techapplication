@@ -37,5 +37,5 @@ exports.getFilterResults =  async (req, res) => {
       res.render("pages/filterresults", {
         data: filteredUsers,
         filters: filterOptions,
-      });
+    });
 };
