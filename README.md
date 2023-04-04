@@ -54,26 +54,26 @@ Gebruikers kunnen nieuwe nummers ontdekken, de artiest en titel van elk nummer b
 ## API Endpoints
 
 ### filterRouter.js
-1. `GET /`: Geeft een bevestigingsbericht terug dat aangeeft dat de filterrouter werkt.
+- `GET /`: Geeft een bevestigingsbericht terug dat aangeeft dat de filterrouter werkt.
 
 ### followingrouter.js
-2. `GET /following/explore`: Laadt de Explore-pagina met een lijst van alle gebruikers.
-3. `POST /following/follow/:profileId`: Volg of ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
-4. `GET /following/myprofile/:adminId`: Laadt de My Profile-pagina voor de beheerder met ID adminId, samen met de door de beheerder gelikete nummers.
-5. `GET /following/followlist`: Laadt de Following-pagina met een lijst van gevolgde gebruikers.
-6. `POST /following/followlist/:profileId`: Ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
+- `GET /following/explore`: Laadt de Explore-pagina met een lijst van alle gebruikers.
+- `POST /following/follow/:profileId`: Volg of ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
+- `GET /following/myprofile/:adminId`: Laadt de My Profile-pagina voor de beheerder met ID adminId, samen met de door de beheerder gelikete nummers.
+- `GET /following/followlist`: Laadt de Following-pagina met een lijst van gevolgde gebruikers.
+- `POST /following/followlist/:profileId`: Ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
 
 ### likingRouter.js
-7. `GET /liking`: Laadt de Songs-pagina met een lijst van alle nummers.
-8. `POST /liking/like/:songId`: Like of unlike een nummer op basis van het songId en de likeStatus in het verzoek.
+- `GET /liking`: Laadt de Songs-pagina met een lijst van alle nummers.
+- `POST /liking/like/:songId`: Like of unlike een nummer op basis van het songId en de likeStatus in het verzoek.
 
 ### matchingRouter.js
-9. `GET /`: Render de 'matchingfeels' pagina.
-10. `GET /matchingelements`: Render de 'matchingelements' pagina.
-11. `GET /matchinglanguage`: Render de 'matchinglanguage' pagina.
-12. `GET /matchingresult`: Render de 'matchingresult' pagina.
-13. `POST /userPost`: Verwerk en sla de door de gebruiker geselecteerde features, stemmingen en talen op en navigeer naar de volgende pagina.
-14. `POST /matchingresult`: Verwerk de gebruikersinvoer, filter de liedjes op basis van de geselecteer
+- `GET /`: Render de 'matchingfeels' pagina.
+- `GET /matchingelements`: Render de 'matchingelements' pagina.
+- `GET /matchinglanguage`: Render de 'matchinglanguage' pagina.
+- `GET /matchingresult`: Render de 'matchingresult' pagina.
+- `POST /userPost`: Verwerk en sla de door de gebruiker geselecteerde features, stemmingen en talen op en navigeer naar de volgende pagina.
+- `POST /matchingresult`: Verwerk de gebruikersinvoer, filter de liedjes op basis van de geselecteer
  
 ## Technologieën
 
