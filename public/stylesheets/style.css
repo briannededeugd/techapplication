@@ -15,8 +15,9 @@ html {
     max-height: auto;
     scroll-behavior: smooth;
     background-color: var(--grijs);
-    /* background: rgb(247,37,133);
-    background: linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%); */ 
+    background: rgb(247,37,133);
+    background: /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
+    linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%)
 }
 
 
@@ -55,7 +56,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr;
-    background-color: var(--grijs);
+    /* background-color: var(--grijs); */
     height: auto;
     justify-content: center;
     align-items: center;
@@ -107,12 +108,12 @@ header nav li a:before {
 }
   
 header nav li a:after {
-    background:var(--accentPaars);
+    background:var(--accentLichtBlauw);
     top: 0;
 }
   
 header nav li a:hover:before {
-    background: var(--accentPaars);
+    background: var(--accentLichtBlauw);
     height: 100%;
     transition: height 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
 }
@@ -126,7 +127,7 @@ header nav li a.active:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
     bottom: 0;
-    background: var(--accentPaars);
+    background: var(--accentLichtBlauw);
 }
 
 .sticky {
@@ -540,14 +541,39 @@ div#empty-message img {
     display: none;
 }
 
-/*******************************************  
-Elaine's CSS
-*******************************************/
+
+
+/**========================================================================
+ *                           Filter page
+ *========================================================================**/
+
+main.elaine {
+    width: 100%;
+}
 
 .filters {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    
+    gap: 2em; 
+}
+
+.filters fieldset {
+    border: none; 
+    margin: 0;
+    padding: 0;
+}
+.filters fieldset {
+    justify-content: center;
+}
+
+/**========================================================================
+ *                           Filter results
+ *========================================================================**/
+
+.filter-results {
+
 }
 
 
