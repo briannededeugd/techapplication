@@ -12,15 +12,15 @@
   <body>
     <header><%- include('../partials/header'); %></header>
 
-    <main class="explore-main">
+    <main>
       <h1>Songs</h1>
       <p>Find new songs to like!</p>
 
-      <div id="songs">
+      <div id="like">
         <% songs.forEach((song) => { %>
         <div class="<%= song._id %>">
           <h2><%= song.title %></h2>
-          <p>Artist:<%= song.artist %></p>
+          <p>Artist: <%= song.artist %></p>
           <form action="/liking/like/<%= song._id %>" method="POST">
             <input
               type="hidden"
@@ -33,6 +33,9 @@
             <button>Like</button>
             <% } %>
           </form>
+          <div class="image-gradient">
+            <img src="<%= song.cover %>" alt="Song cover">
+          </div>
         </div>
         <% }); %>
       </div>
