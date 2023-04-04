@@ -29,7 +29,7 @@ exports.followingUnfollowButton = async (req, res) => {
     
 	// Update the profile's follow status in the database
 	await users.findOneAndUpdate({_id: profileId}, {$set: {follow: followStatus}});
-  
+
 	// Redirect the user back to the explore page
 	res.redirect('/following/followlist');
 }

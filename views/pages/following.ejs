@@ -43,7 +43,7 @@
                      <%= profile.mood %>
                   <% } %>
                 </p>
-                <form action="/following/followlist/<%= profile._id %>" method="POST">
+                <form action="/following/followlist/<%= profile._id %>" data-profile-id="<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
                   
                   <% if (profile.follow) { %>
@@ -54,8 +54,19 @@
                 </form>
                 <img src='/images/imageBackupGandalf.jpg'>
               </div>
+
+              <dialog class="<%= profile._id %>" id="confirmDialog_<%= profile._id %>" data-id="<%= profile._id %>">
+                <form method="dialog">
+                  <label>Are you sure you wan't to unfollow <%= profile.firstName %></label>
+                  <button value="cancel">Cancel</button>
+                  <button id="confirmBtn" value="default">Confirm</button>
+                </form>
+              </dialog>
             <% }); %>
+
           </div>
+
+          
 
     
     </main>
@@ -63,7 +74,8 @@
     <footer>
         <%- include('../partials/footer'); %>
     </footer>
-    
+    <script src='/scripts/navbarScript.js'></script>
+    <script src='/scripts/confirmButtonScript.js'></script>
 </body>
 </html>
 
