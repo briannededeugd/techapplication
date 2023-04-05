@@ -46,7 +46,7 @@ exports.userMatchingResultController = async (req, res) => {
 	}
 
 	const song = await songs.find({});
-	console.log('🚀 ~ file: matchingRouter.js:79 ~ router.post ~ song:', song);
+	console.log('HIER IS DE SONG LISTTT 🚀 ~ file: matchingRouter.js:79 ~ router.post ~ song:', song);
 
 	const filterSongs = (songList) => {
 		if (!Array.isArray(songList)) {
@@ -96,20 +96,25 @@ exports.userMatchingResultController = async (req, res) => {
 			let score = 0;
 			if (
 				song.language &&
-				song.language.some((language) => selectedLanguage.includes(language))
+				(Array.isArray(song.language)
+					? song.language.every((language) => selectedLanguage.includes(language))
+					: selectedLanguage.includes(song.language))
 			) {
 				score += 3;
 			}
 			if (
 				song.moods &&
-				song.moods.some((mood) => selectedMoods.includes(mood))
+				(Array.isArray(song.moods)
+					? song.moods.every((mood) => selectedMoods.includes(mood))
+					: selectedMoods.includes(song.moods))
 			) {
 				score += 2;
 			}
-
 			if (
 				song.feature &&
-				song.feature.some((feature) => selectedFeatures.includes(feature))
+				(Array.isArray(song.feature)
+					? song.feature.every((feature) => selectedFeatures.includes(feature))
+					: selectedFeatures.includes(song.feature))
 			) {
 				score += 1;
 			}
@@ -123,6 +128,8 @@ exports.userMatchingResultController = async (req, res) => {
 				score: calculateScore(song),
 			};
 		});
+
+		console.log(scores);
 
 		// Sorteer de liedjes per score
 		scores.sort((a, b) => b.score - a.score);
