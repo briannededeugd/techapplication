@@ -69,7 +69,7 @@ const store = new MongoDBStore({
 });
 
 app.use(session({
-  secret: 'key',
+  secret: sessionSecret,
   resave: false,
   saveUninitialized: true,
   store: store
