@@ -22,7 +22,7 @@ exports.cleanUsers = async (req, res) => {
 
 
 
-let cleanedUsers = []
+let cleanedUsers = [];
 
 /**========================================================================
  *  'Cleans' user data as done above and displays zero state if necessary

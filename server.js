@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
 require('dotenv').config();
@@ -64,20 +65,20 @@ app.set('view engine', 'ejs');
 
 const sessionSecret = process.env.SESSION_SECRET;
 const store = new MongoDBStore({
-  uri: uri,
-  collection: process.env.DB_COLLECTION_SESSIONS
+	uri: uri,
+	collection: process.env.DB_COLLECTION_SESSIONS
 });
 
 app.use(session({
-  secret: sessionSecret,
-  resave: false,
-  saveUninitialized: true,
-  store: store
+	secret: sessionSecret,
+	resave: false,
+	saveUninitialized: true,
+	store: store
 }));
 
 //Catch and store errors
 store.on('error', (error) => {
-  console.log(error);
+	console.log(error);
 });
 
 app.use(passport.initialize());
