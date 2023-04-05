@@ -1,83 +1,81 @@
 # Techapplication - RaveMatch
 
-Welkom bij ons Techapplication project: RaveMatch, een muziekmatchingsapp voor muziekliefhebbers. Gebruikers ontdekken nieuwe muziek en ontmoeten nieuwe mensen (die dezelfde muziek hebben ontdekt) op basis van het nummer waarmee ze gematcht zijn.
+Welcome to our Tech project: RaveMatch, a music matching app for music lovers. Users discover new music and meet new people, based on their moods and music tastes.
 
 ## Inhoudsopgave
 
-- [Functie](#functie)
-- [Installatie](#installatie)
-- [Gebruik](#gebruik)
+- [Function](#Function)
+- [Installation](#installation)
+- [Use](#gebruik)
 - [API Endpoints](#api-endpoints)
-- [Technologieën](#technologieën)
-- [Bijdragen](#bijdragen)
-- [Licentie](#licentie)
+- [Technologies](#technologies)
+- [Contributions](#contributions)
+- [License](#license)
 
-## Functie
+## Function
 
-RaveMatch is een muziekmatchingsapp die muziekliefhebbers helpt nieuwe nummers te ontdekken en sociale contacten te leggen. Met onze matchingsysteem worden gebruikers verbonden op basis van hun gedeelde muziekinteresses, waardoor ze nieuwe mensen kunnen ontmoeten en hun netwerk kunnen uitbreiden.
+RaveMatch is a music matching app that helps music lovers discover new songs and socialize. Our matching system connects users based on their shared music interests, allowing them to meet new people and expand their network.
 
-## Installatie
+## Installation
 
-Welkom op de repository van team A (TEC1).
+Welcome to the team A (TEC1) repository. 
 
-1. Clone de repository
-git clone https://github.com/briannededeugd/techapplication/
+1. Clone the repository
+`git clone https://github.com/briannededeugd/techapplication/`
 
-2. Installeer de benodigde dependencies
-npm install
+2. Installeer the necessary dependencies
+`npm install`
 
-3. Voer de volgende commando's uit om te controleren of Node correct is geïnstalleerd
-node install
-node --version
+3.  Run the following commands to verify that Node is installed correctly
+`node install`  
+`node --version`
 
-4. Maak een `.env` bestand aan en voeg de benodigde gegevens toe (bijv. MongoDB URI)
+4. Create an `.env` file and add the necessary data (e.g. MongoDB URI) 
 
-5. Start het project met `npm start`
+5. Start the project with `npm start`
 
-## Gebruik
+## Use
 
-### Register
-- Nog invullen
-### Home
-- Nog invullen
-### Explore
-De Explore pagina toont een lijst van gebruikersprofielen met hun voornaam, achternaam, leeftijd, favoriete liedjes en stemmingen. Gebruikers kunnen andere gebruikers volgen of ontvolgen.
-### My Profile
-Toont het profiel van de ingelogde gebruiker, met hun naam, leeftijd, profielfoto, 'Liked Songs' en muzikale stemmingen. Gebruikers kunnen ook zien wie ze volgen.
-### Filtering
-- Nog invullen
+### Register 
+Users can create their own account, with which they can then meet and follow new people, and discover, listen to and like songs. 
+### Explore 
+The Explore page shows a list of user profiles with their first name, last name, age, favorite songs and moods. Users can follow or unfollow other users. 
+### My Profile 
+Shows the profile of the logged in user, with their name, age, profile picture, 'Like Songs' and musical moods. Users can also see who they follow. 
+### Filtering 
+Users can filter what other users they encounter based on the mood they are in at the time. 
 ### Matching
-Op de Matching-pagina kunnen gebruikers het lied ontdekken dat op dat moment het beste bij hen past. Door een vragenlijst in te vullen, wordt de ideale muziekmatch getoond, gebaseerd op de voorkeurstaal die de gebruiker heeft geselecteerd.
-### Liking
-Gebruikers kunnen nieuwe nummers ontdekken, de artiest en titel van elk nummer bekijken en ervoor kiezen om een nummer leuk of niet leuk te vinden.
+The Matching page allows users to discover the song that best suits them at that moment. By completing a questionnaire, the ideal music match is shown, based on the preferred language selected by the user. 
+### Liking 
+Users can discover new songs, view the artist and title of each song, and choose to like or dislike a song.
 
 ## API Endpoints
 
-### filterRouter.js
-- `GET /`: Geeft een bevestigingsbericht terug dat aangeeft dat de filterrouter werkt.
+### filterRouter.js 
+- `GET /`: Returns a confirmation message indicating that the filter router is working. 
 
-### followingrouter.js
-- `GET /following/explore`: Laadt de Explore-pagina met een lijst van alle gebruikers.
-- `POST /following/follow/:profileId`: Volg of ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
-- `GET /following/myprofile/:adminId`: Laadt de My Profile-pagina voor de beheerder met ID adminId, samen met de door de beheerder gelikete nummers.
-- `GET /following/followlist`: Laadt de Following-pagina met een lijst van gevolgde gebruikers.
-- `POST /following/followlist/:profileId`: Ontvolg een gebruiker op basis van het profileId en de followStatus in het verzoek.
+### followingrouter.js 
+- `GET /following/explore`: Loads the Explore page with a list of all users. 
+- `POST /following/follow/:profileId`: Follow or unfollow a user based on the profileId and followStatus in the request. 
+- `GET /following/myprofile/:adminId`: Loads the My Profile page for the admin with ID adminId along with the numbers liked by the admin. 
+- `GET /following/followlist`: Loads the Following page with a list of followed users. 
+- `POST /following/followlist/:profileId`: Unfollow a user based on the profileId and followStatus in the request.
 
-### likingRouter.js
-- `GET /liking`: Laadt de Songs-pagina met een lijst van alle nummers.
-- `POST /liking/like/:songId`: Like of unlike een nummer op basis van het songId en de likeStatus in het verzoek.
+### likingRouter.js 
+- `GET /liking`: Loads the Songs page with a list of all songs. 
+- `POST /liking/like/:songId`: Like or unlike a song based on the songId and likeStatus in the request. 
 
-### matchingRouter.js
-- `GET /`: Render de 'matchingfeels' pagina.
-- `GET /matchingelements`: Render de 'matchingelements' pagina.
-- `GET /matchinglanguage`: Render de 'matchinglanguage' pagina.
-- `GET /matchingresult`: Render de 'matchingresult' pagina.
-- `POST /userPost`: Verwerk en sla de door de gebruiker geselecteerde features, stemmingen en talen op en navigeer naar de volgende pagina.
-- `POST /matchingresult`: Verwerk de gebruikersinvoer, filter de liedjes op basis van de geselecteer
+### matchingRouter.js 
+- `GET /`: Render the 'matchingfeels' page. 
+- `GET /matchingelements`: Render the 'matchingelements' page. 
+- `GET /matchinglanguage`: Render the 'matchinglanguage' page. 
+- `GET /matchingresult`: Render the 'matchingresult' page. 
+- `POST /userPost`: Process and save the user selected features, moods and languages ​​and navigate to the next page. 
+- `POST /matchingresult`: Process the user input, filter the songs based on the selected options.
  
-## Technologieën
+## Technologies
 
-Dit zijn de belangrijkste technologieën die we hebben gebruikt voor ons project:
+These are the most important technologies that we have used for our project:
 - Node.js
 - Express
 - MongoDB
@@ -89,39 +87,39 @@ Dit zijn de belangrijkste technologieën die we hebben gebruikt voor ons project
 - Nodemon
 - Slug
 
-Daarnaast hebben we de volgende development dependencies gebruikt:
+In addition, we used the following development dependencies:
 - ESLint
 - @typescript-eslint/parser
 - @typescript-eslint/eslint-plugin
 
-Deze zorgen ervoor dat de pakketten consistent zijn en voorkomen meerdere conflicten in de package(-lock).json.
+These ensure that the packages are consistent and prevent multiple conflicts in the package(-lock).json.
 
-## Bijdragen
+## Contributions
 
-Bijdragen van teamleden:
+Contributions from team members: 
 
-- Tristan: Register / log in
-- Brianne: Match
-- Elaine: Filter
-- Jarno: Track/Save
-- Bryan: Like
+* **Tristan** builds the registering / logging in feature, using sessions and cookies.
+* **Brianne** builds a song match feature based on three queries and the database, expanding with "top 5 best matches".
+* **Elaine** takes responsibility of developing the filtering feature based on multiple queries.
+* **Jarno** creates a following system, complete with an explore page.
+* **Bryan** gives users the ability to like, and therefore save, songs.
 
-Wij verwelkom alle hulp om RaveMatch te verbeteren! Als je wilt helpen, volg dan deze stappen:
+We welcome any help to improve RaveMatch! If you want to help, follow these steps:
 
-1. Maak een kopie (fork) van het project.
-2. Maak een nieuwe tak (branch) met een duidelijke naam, bijvoorbeeld `nieuwe-functie` of `bug-oplossen`.
-3. Doe je aanpassingen in die tak (branch).
-4. Zorg dat je code goed past bij de rest van de code en dat je niks kapot maakt.
-5. Test je aanpassingen goed en zorg dat alles nog werkt.
-6. Sla je aanpassingen op (commit) met een korte uitleg van wat je hebt gedaan.
-7. Vraag of je aanpassingen mogen worden toegevoegd (pull request) aan het hoofdproject. Leg uit wat je hebt veranderd, waarom en hoe je het hebt getest.
+1. Make a copy (fork) of the project. 
+2. Create a new branch with a clear name, for example `new-Function` or `bug-solving`. 
+3. Make your adjustments in that branch. 
+4. Make sure your code fits well with the rest of the code and that you don't break anything. 
+5. Test your adjustments well and make sure everything still works. 
+6. Save (commit) your changes with a short explanation of what you have done. 
+7. Ask if your changes can be added (pull request) to the main project. Explain what you changed, why and how you tested it.
 
-Als je problemen vindt of nieuwe ideeën hebt, open dan een nieuw probleem (issue) op de [issue tracker](https://github.com/briannededeugd/techapplication/issues). Leg duidelijk uit wat het probleem is of wat je idee is en hoe je het probleem kunt laten gebeuren (als dat kan).
+If you find any issues or have new ideas, open a new issue on the [issue tracker](https://github.com/briannededeugd/techapplication/issues). Explain clearly what the problem is or what your idea is and how you can make the problem happen (if you can).
 
-## Licentie
+## License
 
-Dit project is gelicenseerd onder de MIT License.
+This project is licensed under the MIT License. 
 
-Copyright (c) 2023 Brianne
+Copyright (c) 2023 Brianne 
 
-Zie het [LICENSE](https://github.com/briannededeugd/techapplication/blob/main/LICENSE) bestand voor de volledige licentietekst.
+See the [LICENSE](https://github.com/briannededeugd/techapplication/blob/main/LICENSE) file for full license text.
