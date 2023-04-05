@@ -5,6 +5,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const passport = require('passport');
 
 /**========================================================================
  *                           Requiring the seperate routes
@@ -53,6 +56,33 @@ app.use(express.urlencoded({ extended: true }));
  *========================================================================**/
 
 app.set('view engine', 'ejs');
+
+
+/**========================================================================
+ *                           Sessions
+ *========================================================================**/
+
+const sessionSecret = process.env.SESSION_SECRET;
+const store = new MongoDBStore({
+  uri: uri,
+  collection: process.env.DB_COLLECTION_SESSIONS
+});
+
+app.use(session({
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: true,
+  store: store
+}));
+
+//Catch and store errors
+store.on('error', (error) => {
+  console.log(error);
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 /**========================================================================
  *                           Routing

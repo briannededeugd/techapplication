@@ -10,11 +10,11 @@ const { users } = require('./userSchema');
  *                           Register Page
  *========================================================================**/
 
-router.get('/', checkNotAuthenticated, (req, res) => {
+router.get('/', (req, res) => {
   res.render('pages/register');
 });
 
-router.post('/', checkNotAuthenticated, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const user = new users({
@@ -39,11 +39,11 @@ router.post('/', checkNotAuthenticated, async (req, res) => {
  *                           Login Page
  *========================================================================**/
 
-router.get('/login', checkNotAuthenticated, (req, res) => {
+router.get('/login', (req, res) => {
   res.render('pages/login');
 });
 
-router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+router.post('/login', passport.authenticate('local', {
   successRedirect: '/register/account',
   failureRedirect: '/register/login'
 }));
@@ -52,7 +52,7 @@ router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
  *                              Page
  *========================================================================**/
 
-router.get('/account', checkNotAuthenticated, (req, res) => {
+router.get('/account', (req, res) => {
   res.render('pages/account');
 });
 
@@ -107,18 +107,18 @@ router.post('/logout', (req, res, next) => {
  *                       Authentication Middleware
  *========================================================================**/
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/register/login');
-};
+// function checkAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     return next();
+//   }
+//   res.redirect('/register/login');
+// };
 
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect('/register/account');
-  }
-  next();
-};
+// function checkNotAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     return res.redirect('/register/account');
+//   }
+//   next();
+// };
 
 module.exports = router;
