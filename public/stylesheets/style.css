@@ -16,9 +16,10 @@ html {
     max-height: auto;
     scroll-behavior: smooth;
     background-color: var(--grijs);
-    background: rgb(247,37,133);
-    background: /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
-    linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
+    background: rgb(247, 37, 133);
+    background:
+        /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
+        linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
 }
 
 
@@ -103,13 +104,14 @@ header nav li a:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
 }
+
 header nav li a:before {
     bottom: 0;
     transition: 0.5s;
 }
 
 header nav li a:after {
-    background:var(--accentLichtBlauw);
+    background: var(--accentLichtBlauw);
     top: 0;
 }
 
@@ -553,9 +555,9 @@ dialog form {
     column-gap: 1em;
     width: auto;
     height: 15%;
-    grid-template-areas: 
-    "label label"
-    "cancel confirm";
+    grid-template-areas:
+        "label label"
+        "cancel confirm";
 }
 
 dialog label {
@@ -572,8 +574,8 @@ dialog form button#confirmBtn {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 dialog form button#cancelBtn {
@@ -584,11 +586,12 @@ dialog form button#cancelBtn {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
-dialog form button#cancelBtn:hover, dialog form button#confirmBtn:hover {
+dialog form button#cancelBtn:hover,
+dialog form button#confirmBtn:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
@@ -604,7 +607,8 @@ main.elaine {
     width: 100%;
 }
 
-main.elaine h2, main.elaine p {
+main.elaine h2,
+main.elaine p {
     color: var(--wit);
 }
 
@@ -612,22 +616,22 @@ main.elaine h2, main.elaine p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    gap: 2em; 
+
+    gap: 2em;
 }
 
 .filters section {
     border-radius: .75em;
     height: max-content;
     background-color: var(--vlakPaars);
-    
+
 }
 
 .filters fieldset {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: none; 
+    border: none;
     margin: 0;
     padding: 1em;
 
@@ -646,15 +650,16 @@ main.elaine h2, main.elaine p {
     color: var(--accentPaars);
     transition: 0.4s;
 }
+
 .filters input[type='checkbox'] {
-    display: none;    
+    display: none;
 }
 
-.filters input[type='checkbox']:checked + label {
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+.filters input[type='checkbox']:checked+label {
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
 
     color: var(--wit);
     font-weight: 800;
@@ -678,7 +683,7 @@ main.elaine h2, main.elaine p {
  *========================================================================**/
 
 .heading {
-     color: var(--wit);
+    color: var(--wit);
 }
 
 
@@ -992,7 +997,6 @@ audio {
 .othermatches>section h3 {
     font-weight: 300;
     font-size: 1em;
-    margin-top: 3em;
 }
 
 /****************************/
