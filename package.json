@@ -18,6 +18,7 @@
   "homepage": "https://github.com/briannededeugd/techapplication#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "env": "^0.0.2",
@@ -30,10 +31,8 @@
     "slug": "^8.2.2"
   },
   "devDependencies": {
-    "eslint": "^8.36.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.36.0"
   }
 }

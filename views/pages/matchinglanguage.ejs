@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<%- include('../partials/head'); %>
+	</head>
+	<body class="matching">
+		<header><%- include('../partials/header') %></header>
+
+		<main class="brianne">
+			<section class="heading">
+				<h1><em>In welke taal</em> luister jij het liefst naar muziek?</h1>
+			</section>
+
+			<form
+				name="languageform"
+				action="../matching/matchingresult"
+				method="post"
+				class="form">
+				<input type="checkbox" name="language" value="dutch" id="dutch" />
+				<label for="language">
+					<img src="img/language-dutch.png" id="dutchImage" />
+					<p>Dutch</p>
+				</label>
+
+				<input type="checkbox" name="language" value="english" id="english" />
+				<label for="english">
+					<img src="img/language-english.png" id="englishImage" />
+					<p>English</p>
+				</label>
+
+				<input type="checkbox" name="language" value="korean" id="korean" />
+				<label for="korean">
+					<img src="img/language-korean.png" id="koreanImage" />
+					<p>Korean</p>
+				</label>
+
+				<input
+					type="checkbox"
+					name="language"
+					value="nopreference"
+					id="nopreference" />
+				<label for="nopreference">
+					<img src="img/language-nopreference.png" id="nopreferenceImage" />
+					<p>No preference</p>
+				</label>
+
+				<!-- Submit-knop is ook knop naar volgende pagina -->
+				<input type="hidden" name="nextPage" value="matching/matchingresult" />
+
+				<input type="submit" />
+			</form>
+		</main>
+		<script src='/scripts/navbarScript.js'></script>
+	</body>
+</html>
