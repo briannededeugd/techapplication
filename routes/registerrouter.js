@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
@@ -10,11 +11,11 @@ const { users } = require('./userSchema');
  *                           Register Page
  *========================================================================**/
 
-router.get('/', checkNotAuthenticated, (req, res) => {
+router.get('/', (req, res) => {
   res.render('pages/register');
 });
 
-router.post('/', checkNotAuthenticated, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const user = new users({
@@ -39,26 +40,26 @@ router.post('/', checkNotAuthenticated, async (req, res) => {
  *                           Login Page
  *========================================================================**/
 
-router.get('/login', checkNotAuthenticated, (req, res) => {
+router.get('/login', (req, res) => {
   res.render('pages/login');
 });
 
-router.post('/login', checkNotAuthenticated, passport.authenticate('local', {
+router.post('/login', passport.authenticate('local', {
   successRedirect: '/register/account',
   failureRedirect: '/register/login'
 }));
 
 /**========================================================================
- *                              Page
+ *                             Account Page
  *========================================================================**/
 
-router.get('/account', checkNotAuthenticated, (req, res) => {
+router.get('/account', async (req, res) => {
   res.render('pages/account');
 });
 
-
-
-
+/**========================================================================
+ *                         Passport Authentication
+ *========================================================================**/
 
 passport.use(new LocalStrategy({
   usernameField: 'email'
@@ -89,20 +90,25 @@ passport.deserializeUser(function(obj, done) {
   console.log('User logged in')
 });
 
+
+/**========================================================================
+ *                           Logout Route
+ *========================================================================**/
+
 router.post('/logout', (req, res, next) => {
-  req.logout((err) => {
-    if (err) { return next(err); }
-    req.session.destroy((err) => {
-      console.log('session destroyed');
-      res.clearCookie('connect.sid', { path: '/' });
+  if (req.session) {
+    req.logout((err) => {
       if (err) { return next(err); }
-      res.redirect('/register/login');
+      req.session.destroy((err) => {
+        console.log('session destroyed');
+        res.clearCookie('connect.sid');
+        if (err) { return next(err); }
+        res.redirect('/register/login');
+      });
     });
-  });
+  }
 });
 
-
- 
 /**========================================================================
  *                       Authentication Middleware
  *========================================================================**/
