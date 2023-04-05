@@ -29,7 +29,7 @@ html {
 
 body {
     width: 100%;
-    height: auto;
+    height: 100vh;
     font-family: var(--fontstyle);
     color: rgb(0, 0, 0);
     text-align: center;
@@ -1103,4 +1103,193 @@ div#like button:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
+}
+
+/******************************/
+/* **** Regsiter Pagina ***** */
+/******************************/
+
+.maintristan {
+    display: block;
+    margin: 0 auto;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 45rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.registerform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.registerform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.registerform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/******************************/
+/* *****  Login Pagina ****** */
+/******************************/
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 30rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.loginform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.loginform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input[type=text] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=text]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+input[type=email] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=email]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+input[type=password] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=password]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+/******************************/
+/* *****  Account Pagina **** */
+/******************************/
+
+.account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 30rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.accountform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.accountform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.removeform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentRoze) 30%,
+            var(--accentPaars) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.removeform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

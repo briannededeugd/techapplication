@@ -4,13 +4,19 @@
     <header>
         <%- include("../partials/header") %>
     </header>
-    <main>
-        <h1>Hello</h1>
-        
-        <form action="/register/logout" method="post">
-            <button type="submit">Logout</button>
-        </form>
-        <a href="/remove"><button>Remove account</button></a>
+    <main class="maintristan">
+        <section class="account">
+            <h1>Profile</h1>
+            
+            <form action="/register/logout" method="post" class="accountform">
+                <button type="submit">Logout</button>
+            </form>
+            <form action="/register/remove" method="post" class="removeform">
+                <button type="submit">Remove account</button></a>
+            </form>
+            
+        </section>
     </main>
+    <script src='/scripts/navbarScript.js'></script>
 </body>
 </html>
