@@ -8,6 +8,7 @@
     --wit: #ffffff;
     --zwart: #000000;
     --accentPaars: #7209b7;
+    --vlakPaars: rgba(255, 255, 255, 0.2);
 }
 
 html {
@@ -78,7 +79,7 @@ header nav ul {
 
 }
 
-header nav li a{
+header nav li a {
     color: var(--zwart);
     display: block;
     font-size: 1em;
@@ -93,7 +94,8 @@ header nav li a{
     -webkit-transition: all 0.5s ease;
 }
 
-header nav li a:before, header nav li a:after {
+header nav li a:before,
+header nav li a:after {
     content: '';
     position: absolute;
     width: 7px;
@@ -101,17 +103,17 @@ header nav li a:before, header nav li a:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
 }
-  
+
 header nav li a:before {
     bottom: 0;
     transition: 0.5s;
 }
-  
+
 header nav li a:after {
     background:var(--accentLichtBlauw);
     top: 0;
 }
-  
+
 header nav li a:hover:before {
     background: var(--accentLichtBlauw);
     height: 100%;
@@ -154,14 +156,14 @@ footer {
  *                           Main MyProfile
  *========================================================================**/
 
- main.myProfile-main {
+main.myProfile-main {
     display: grid;
-} 
+}
 
 div#myProfile-container {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name button image image"
@@ -185,7 +187,7 @@ div#myProfile-container img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -253,9 +255,9 @@ div#myProfile-container a {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
-      
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
+
 }
 
 div#myProfile-container a:hover {
@@ -291,7 +293,7 @@ div#profiles {
 div#profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -316,7 +318,7 @@ div#profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -372,8 +374,8 @@ div#profiles p:nth-of-type(5) {
 div#profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#profiles button {
@@ -384,8 +386,8 @@ div#profiles button {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 div#profiles button:hover {
@@ -419,7 +421,7 @@ div#following-profiles {
 div#following-profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -443,7 +445,7 @@ div#following-profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -499,8 +501,8 @@ div#following-profiles p:nth-of-type(5) {
 div#following-profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#following-profiles button {
@@ -511,8 +513,8 @@ div#following-profiles button {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 div#following-profiles button:hover {
@@ -694,7 +696,7 @@ body.matching {
         '. main .';
 }
 
-main.brianne {
+main.mainmatch {
     width: 100%;
     height: auto;
     font-family: var(--fontstyle);
@@ -714,11 +716,31 @@ main.brianne {
 
 }
 
+/* main.mainresult {
+    width: 100%;
+    height: auto;
+    font-family: var(--fontstyle);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    gap: 1.5em 0px;
+    margin: 0 auto 0 auto;
+    text-decoration: none;
+    text-decoration-line: none;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        '. heading .'
+        '. form .';
+
+} */
+
 /****************************/
 /* TEMPLATE AREAS */
 /****************************/
 
-form>section {
+form>section>section {
     display: flex;
     flex-direction: row;
     gap: 1em;
@@ -732,14 +754,125 @@ section.heading {
     grid-area: heading;
 }
 
+
+
+/****************************/
+/* FORMULIERENNPAGINA */
+/****************************/
+
+body.matching>main.mainmatch>section.heading>h1,
+body.matching>main.mainmatch>section.heading>p {
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>section.heading>h1 {
+    font-size: 2em;
+    margin-bottom: 5vh;
+}
+
+body.matching>main.mainmatch>section.heading>p {
+    margin-bottom: 0;
+}
+
+body.matching form>section {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+    background-color: var(--vlakPaars);
+    border-radius: .75em;
+    padding: 2em;
+    margin-bottom: 3.5em;
+    height: max-content;
+}
+
+body.matching form input[type="checkbox"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    cursor: pointer;
+}
+
+body.matching>main.mainmatch label {
+    /* font-size: small; */
+    background-color: var(--wit);
+    color: var(--accentPaars);
+    padding: 0 2em;
+    border-radius: 1em;
+}
+
+body.matching>main.mainmatch label:hover {
+    cursor: pointer;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+
+}
+
+body.matching>main.mainmatch>form>section>section:not(:last-of-type)>label {
+    margin-bottom: 1em;
+}
+
+body.matching>main.mainmatch>form>section>section>input[type="checkbox"]:checked+label {
+    font-weight: 700;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>form>input[type="submit"] {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>form>input[type="submit"]:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
+
 /****************************/
 /* RESULTATENPAGINA */
 /****************************/
 
+main.mainresult>section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10em;
+    grid-row-gap: 0px;
+}
+
+body.matching>main.mainresult>section>section>section:first-of-type>h1 {
+    font-size: 2em;
+    color: var(--wit);
+    margin: .5em auto .5em auto;
+}
+
+#lieddetails p:first-of-type {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: .5em 0 0 0;
+    color: var(--wit);
+}
+
+#lieddetails p:nth-of-type(2) {
+    margin: 0 0 .5em 0;
+    color: var(--wit);
+}
+
 #lieddetails img {
-    width: 30vw;
-    margin-bottom: 1em;
+    width: 25vw;
+    margin: 0 auto 1em auto;
     position: relative;
+    border-radius: 1em;
 }
 
 #audio {
@@ -753,6 +886,8 @@ section.heading {
 
 #play-knop {
     cursor: pointer;
+    font-size: 3em;
+    color: var(--wit);
 }
 
 audio {
@@ -761,27 +896,32 @@ audio {
 
 #songtimer {
     width: inherit;
-    position: absolute;
-    bottom: 5em;
+    margin-top: 2.25em;
+    color: white;
+}
+
+#tijd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
 }
 
 .progress-bar {
     position: relative;
-    width: 22.5vw;
-    height: 5px;
+    width: 40vw;
+    height: 3px;
+    border-radius: 2em;
     margin: auto 1em;
-    background-color: #525b78;
+    background-color: var(--wit);
 }
 
 .tijd-indicator {
     border-radius: 2em;
-    width: 1em;
-    height: 1em;
-    top: -.31em;
-    background-color: #8ebaff;
+    width: 1.5em;
+    height: 1.5em;
+    top: -.7em;
+    background-color: var(--wit);
     position: absolute;
     left: 0;
 }
@@ -791,7 +931,68 @@ audio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     position: relative;
+}
+
+.controls>a:first-of-type>img {
+    height: 1.5em;
+}
+
+.controls>a:nth-of-type(2)>i {
+    height: 1.5em;
+    color: var(--wit);
+}
+
+/**************************/
+/*     ALMOST-MATCHES     */
+/**************************/
+.othermatches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    margin: auto;
+
+    color: var(--wit);
+}
+
+.othermatches * {
+    margin: 0;
+}
+
+.othermatches>p {
+    margin-bottom: 2em;
+}
+
+.othermatches>section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 25vw;
+    gap: 1em;
+
+    background-color: var(--vlakPaars);
+    padding: 1em 2em;
+    border-radius: 1em;
+}
+
+.othermatches>section img {
+    height: 6vh;
+}
+
+.othermatches>section>i {
+    margin-left: auto;
+}
+
+.othermatches>section>i:hover {
+    cursor: pointer;
+}
+
+.othermatches>section h3 {
+    font-weight: 300;
+    font-size: 1em;
     margin-top: 3em;
 }
 
