@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
 	_id: ObjectId,
@@ -36,6 +37,10 @@ const userSchema = new mongoose.Schema({
 		required: true
 	}
 });
+
+userSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.hashedPassword);
+};
 
 const users = mongoose.model('users', userSchema);
 
