@@ -192,7 +192,7 @@ div#myProfile-container img {
 
 div#myProfile-container h2 {
     grid-area: name;
-    color: var(--accentPaars);
+    color: var(--accentMidBlauw);
     font-size: 2em;
     align-self: start;
     margin: 0;
@@ -209,11 +209,16 @@ div#myProfile-container p:nth-of-type(1) {
 div#myProfile-container p:nth-of-type(2) {
     grid-area: favSongsHeading;
     font-weight: 700;
-    border: 0.2em solid var(--accentLichtBlauw);
     padding: 0.1em 0.5em;
     border-radius: 9px;
     margin: 0.5em 0 -0.5em;
     align-self: start;
+
+    background: 
+    linear-gradient(100deg,
+    var(--accentMidBlauw) 30%,
+    var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
 
 div#myProfile-container p:nth-of-type(3) {
@@ -225,11 +230,16 @@ div#myProfile-container p:nth-of-type(3) {
 div#myProfile-container p:nth-of-type(4) {
     grid-area: moodsHeading;
     font-weight: 700;
-    border: 0.2em solid var(--accentLichtBlauw);
     padding: 0.1em 0.5em;
     border-radius: 9px;
     margin: 0.5em 0 -0.5em;
     align-self: start;
+
+    background: 
+    linear-gradient(100deg,
+    var(--accentMidBlauw) 30%,
+    var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
 
 div#myProfile-container p:nth-of-type(5) {
@@ -252,15 +262,15 @@ div#myProfile-container a {
     cursor: pointer;
     border-radius: 9px;
     color: var(--wit);
-    background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
+    background-color: var(--accentMidBlauw);
+    border: 0.2em solid var(--accentMidBlauw) ;
     transition: all 0.3s; 
       
 }
 
 div#myProfile-container a:hover {
     grid-area: button;
-    color: var(--accentPaars);
+    color: var(--accentMidBlauw);
     background-color: var(--wit);
     transition: all 0.3s;
 
@@ -323,7 +333,7 @@ div#profiles img {
 
 div#profiles h2 {
     grid-area: name;
-    color: var(--accentPaars);
+    color: var(--accentMidBlauw);
     font-size: 2em;
     align-self: start;
     margin: 0;
@@ -340,12 +350,18 @@ div#profiles p:nth-of-type(1) {
 div#profiles p:nth-of-type(2) {
     grid-area: favSongsHeading;
     font-weight: 700;
-    border: 0.2em solid var(--accentLichtBlauw);
     padding: 0.1em 0.5em;
     border-radius: 9px;
     margin: 0.5em 0 -0.5em;
     align-self: start;
+
+    background: 
+    linear-gradient(100deg,
+    var(--accentMidBlauw) 30%,
+    var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
+
 
 div#profiles p:nth-of-type(3) {
     grid-area: favSongs;
@@ -356,11 +372,16 @@ div#profiles p:nth-of-type(3) {
 div#profiles p:nth-of-type(4) {
     grid-area: moodsHeading;
     font-weight: 700;
-    border: 0.2em solid var(--accentLichtBlauw);
     padding: 0.1em 0.5em;
     border-radius: 9px;
     margin: 0.5em 0 -0.5em;
     align-self: start;
+
+    background: 
+    linear-gradient(100deg,
+    var(--accentMidBlauw) 30%,
+    var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
 
 div#profiles p:nth-of-type(5) {
@@ -383,14 +404,14 @@ div#profiles button {
     cursor: pointer;
     border-radius: 9px;
     color: var(--wit);
-    background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
+    background-color: var(--accentMidBlauw);
+    border: 0.2em solid var(--accentMidBlauw) ;
     transition: all 0.3s;   
 }
 
 div#profiles button:hover {
     grid-area: button;
-    color: var(--accentPaars);
+    color: var(--accentMidBlauw);
     background-color: var(--wit);
     transition: all 0.3s;
 
@@ -629,8 +650,6 @@ main.elaine h2, main.elaine p {
     border: none; 
     margin: 0;
     padding: 1em;
-
-    width: 100vh;
 }
 
 .filters label {
