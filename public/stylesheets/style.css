@@ -8,6 +8,7 @@
     --wit: #ffffff;
     --zwart: #000000;
     --accentPaars: #7209b7;
+    --vlakPaars: rgba(255, 255, 255, 0.2);
 }
 
 html {
@@ -15,9 +16,12 @@ html {
     max-height: auto;
     scroll-behavior: smooth;
     background-color: var(--grijs);
-    background: rgb(247,37,133);
-    background: /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
-    linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
+    background: rgb(247, 37, 133);
+    background:
+        /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
+        linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
+    height: 100vh;
+    width: 100vw;
 }
 
 
@@ -27,7 +31,7 @@ html {
 
 body {
     width: 100%;
-    height: auto;
+    height: 100vh;
     font-family: var(--fontstyle);
     color: rgb(0, 0, 0);
     text-align: center;
@@ -78,7 +82,7 @@ header nav ul {
 
 }
 
-header nav li a{
+header nav li a {
     color: var(--zwart);
     display: block;
     font-size: 1em;
@@ -93,7 +97,8 @@ header nav li a{
     -webkit-transition: all 0.5s ease;
 }
 
-header nav li a:before, header nav li a:after {
+header nav li a:before,
+header nav li a:after {
     content: '';
     position: absolute;
     width: 7px;
@@ -101,17 +106,17 @@ header nav li a:before, header nav li a:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
 }
-  
+
 header nav li a:before {
     bottom: 0;
     transition: 0.5s;
 }
-  
+
 header nav li a:after {
-    background:var(--accentLichtBlauw);
+    background: var(--accentLichtBlauw);
     top: 0;
 }
-  
+
 header nav li a:hover:before {
     background: var(--accentLichtBlauw);
     height: 100%;
@@ -154,14 +159,14 @@ footer {
  *                           Main MyProfile
  *========================================================================**/
 
- main.myProfile-main {
+main.myProfile-main {
     display: grid;
-} 
+}
 
 div#myProfile-container {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name button image image"
@@ -185,7 +190,7 @@ div#myProfile-container img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -262,10 +267,11 @@ div#myProfile-container a {
     cursor: pointer;
     border-radius: 9px;
     color: var(--wit);
+
     background-color: var(--accentMidBlauw);
     border: 0.2em solid var(--accentMidBlauw) ;
     transition: all 0.3s; 
-      
+
 }
 
 div#myProfile-container a:hover {
@@ -301,7 +307,7 @@ div#profiles {
 div#profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -326,7 +332,7 @@ div#profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -393,8 +399,8 @@ div#profiles p:nth-of-type(5) {
 div#profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#profiles button {
@@ -404,6 +410,7 @@ div#profiles button {
     cursor: pointer;
     border-radius: 9px;
     color: var(--wit);
+
     background-color: var(--accentMidBlauw);
     border: 0.2em solid var(--accentMidBlauw) ;
     transition: all 0.3s;   
@@ -440,7 +447,7 @@ div#following-profiles {
 div#following-profiles div {
     display: grid;
     grid-template-columns: 0.1fr 1.25fr 0.65fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr ;
+    grid-template-rows: 0.2fr 1fr 1fr 1.2fr 1.2fr 1.2fr 1.2fr;
     grid-template-areas:
         ". . . image image"
         ". name form image image"
@@ -464,7 +471,7 @@ div#following-profiles img {
     max-width: 100%;
     max-height: 25em;
     height: 100%;
-    min-width:15em;
+    min-width: 15em;
     min-height: 22em;
     border-radius: 0 30px 30px 0;
 }
@@ -520,8 +527,8 @@ div#following-profiles p:nth-of-type(5) {
 div#following-profiles form {
     grid-area: form;
     justify-self: start;
-    align-self: start;  
-    margin-top: 0.5em;  
+    align-self: start;
+    margin-top: 0.5em;
 }
 
 div#following-profiles button {
@@ -532,8 +539,8 @@ div#following-profiles button {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 div#following-profiles button:hover {
@@ -573,9 +580,9 @@ dialog form {
     column-gap: 1em;
     width: auto;
     height: 15%;
-    grid-template-areas: 
-    "label label"
-    "cancel confirm";
+    grid-template-areas:
+        "label label"
+        "cancel confirm";
 }
 
 dialog label {
@@ -592,8 +599,8 @@ dialog form button#confirmBtn {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
 dialog form button#cancelBtn {
@@ -604,11 +611,12 @@ dialog form button#cancelBtn {
     border-radius: 9px;
     color: var(--wit);
     background-color: var(--accentPaars);
-    border: 0.2em solid var(--accentPaars) ;
-    transition: all 0.3s; 
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
 }
 
-dialog form button#cancelBtn:hover, dialog form button#confirmBtn:hover {
+dialog form button#cancelBtn:hover,
+dialog form button#confirmBtn:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
@@ -624,7 +632,8 @@ main.elaine {
     width: 100%;
 }
 
-main.elaine h2, main.elaine p {
+main.elaine h2,
+main.elaine p {
     color: var(--wit);
 }
 
@@ -632,22 +641,22 @@ main.elaine h2, main.elaine p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    gap: 2em; 
+
+    gap: 2em;
 }
 
 .filters section {
     border-radius: .75em;
     height: max-content;
     background-color: var(--vlakPaars);
-    
+
 }
 
 .filters fieldset {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: none; 
+    border: none;
     margin: 0;
     padding: 1em;
 }
@@ -664,15 +673,16 @@ main.elaine h2, main.elaine p {
     color: var(--accentPaars);
     transition: 0.4s;
 }
+
 .filters input[type='checkbox'] {
-    display: none;    
+    display: none;
 }
 
-.filters input[type='checkbox']:checked + label {
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+.filters input[type='checkbox']:checked+label {
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
 
     color: var(--wit);
     font-weight: 800;
@@ -696,7 +706,7 @@ main.elaine h2, main.elaine p {
  *========================================================================**/
 
 .heading {
-     color: var(--wit);
+    color: var(--wit);
 }
 
 
@@ -713,7 +723,7 @@ body.matching {
         '. main .';
 }
 
-main.brianne {
+main.mainmatch {
     width: 100%;
     height: auto;
     font-family: var(--fontstyle);
@@ -733,11 +743,31 @@ main.brianne {
 
 }
 
+/* main.mainresult {
+    width: 100%;
+    height: auto;
+    font-family: var(--fontstyle);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    gap: 1.5em 0px;
+    margin: 0 auto 0 auto;
+    text-decoration: none;
+    text-decoration-line: none;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        '. heading .'
+        '. form .';
+
+} */
+
 /****************************/
 /* TEMPLATE AREAS */
 /****************************/
 
-form>section {
+form>section>section {
     display: flex;
     flex-direction: row;
     gap: 1em;
@@ -751,14 +781,132 @@ section.heading {
     grid-area: heading;
 }
 
+
+
+/****************************/
+/* FORMULIERENNPAGINA */
+/****************************/
+
+body.matching {
+    background:
+        /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
+        linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
+    background-size: 100vw 100vh;
+}
+
+body.matching>main.mainmatch>section.heading>h1,
+body.matching>main.mainmatch>section.heading>p {
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>section.heading>h1 {
+    font-size: 2em;
+    margin-bottom: 5vh;
+}
+
+body.matching>main.mainmatch>section.heading>p {
+    margin-bottom: 0;
+}
+
+body.matching form>section {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    align-items: center;
+    background-color: var(--vlakPaars);
+    border-radius: .75em;
+    padding: 2em;
+    margin-bottom: 3.5em;
+    height: max-content;
+}
+
+body.matching form input[type="checkbox"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+    cursor: pointer;
+}
+
+body.matching>main.mainmatch label {
+    /* font-size: small; */
+    background-color: var(--wit);
+    color: var(--accentPaars);
+    padding: 0 2em;
+    border-radius: 1em;
+}
+
+body.matching>main.mainmatch label:hover {
+    cursor: pointer;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+
+}
+
+body.matching>main.mainmatch>form>section>section:not(:last-of-type)>label {
+    margin-bottom: 1em;
+}
+
+body.matching>main.mainmatch>form>section>section>input[type="checkbox"]:checked+label {
+    font-weight: 700;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>form>input[type="submit"] {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+}
+
+body.matching>main.mainmatch>form>input[type="submit"]:hover {
+    cursor: pointer;
+    font-weight: 700;
+}
+
 /****************************/
 /* RESULTATENPAGINA */
 /****************************/
 
+main.mainresult>section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10em;
+    grid-row-gap: 0px;
+}
+
+body.matching>main.mainresult>section>section>section:first-of-type>h1 {
+    font-size: 2em;
+    color: var(--wit);
+    margin: .5em auto .5em auto;
+}
+
+#lieddetails p:first-of-type {
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: .5em 0 0 0;
+    color: var(--wit);
+}
+
+#lieddetails p:nth-of-type(2) {
+    margin: 0 0 .5em 0;
+    color: var(--wit);
+}
+
 #lieddetails img {
-    width: 30vw;
-    margin-bottom: 1em;
+    width: 25vw;
+    margin: 0 auto 1em auto;
     position: relative;
+    border-radius: 1em;
 }
 
 #audio {
@@ -772,6 +920,8 @@ section.heading {
 
 #play-knop {
     cursor: pointer;
+    font-size: 3em;
+    color: var(--wit);
 }
 
 audio {
@@ -780,27 +930,32 @@ audio {
 
 #songtimer {
     width: inherit;
-    position: absolute;
-    bottom: 5em;
+    margin-top: 2.25em;
+    color: white;
+}
+
+#tijd {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 1em;
 }
 
 .progress-bar {
     position: relative;
-    width: 22.5vw;
-    height: 5px;
+    width: 40vw;
+    height: 3px;
+    border-radius: 2em;
     margin: auto 1em;
-    background-color: #525b78;
+    background-color: var(--wit);
 }
 
 .tijd-indicator {
     border-radius: 2em;
-    width: 1em;
-    height: 1em;
-    top: -.31em;
-    background-color: #8ebaff;
+    width: 1.5em;
+    height: 1.5em;
+    top: -.7em;
+    background-color: var(--wit);
     position: absolute;
     left: 0;
 }
@@ -810,8 +965,68 @@ audio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     position: relative;
-    margin-top: 3em;
+}
+
+.controls>a:first-of-type>img {
+    height: 1.5em;
+}
+
+.controls>a:nth-of-type(2)>i {
+    height: 1.5em;
+    color: var(--wit);
+}
+
+/**************************/
+/*     ALMOST-MATCHES     */
+/**************************/
+.othermatches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    margin: auto;
+
+    color: var(--wit);
+}
+
+.othermatches * {
+    margin: 0;
+}
+
+.othermatches>p {
+    margin-bottom: 2em;
+}
+
+.othermatches>section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 25vw;
+    gap: 1em;
+
+    background-color: var(--vlakPaars);
+    padding: 1em 2em;
+    border-radius: 1em;
+}
+
+.othermatches>section img {
+    height: 6vh;
+}
+
+.othermatches>section>i {
+    margin-left: auto;
+}
+
+.othermatches>section>i:hover {
+    cursor: pointer;
+}
+
+.othermatches>section h3 {
+    font-weight: 300;
+    font-size: 1em;
 }
 
 /****************************/
@@ -918,4 +1133,193 @@ div#like button:hover {
     color: var(--accentPaars);
     background-color: var(--wit);
     transition: all 0.3s;
+}
+
+/******************************/
+/* **** Regsiter Pagina ***** */
+/******************************/
+
+.maintristan {
+    display: block;
+    margin: 0 auto;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 45rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.registerform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.registerform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.registerform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/******************************/
+/* *****  Login Pagina ****** */
+/******************************/
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 30rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.loginform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.loginform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+input[type=text] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=text]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+input[type=email] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=email]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+input[type=password] {
+    width: 98%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    height: 40px;
+    padding: 0 5px;
+}
+
+input[type=password]:focus {
+    border-bottom: 1px solid var(--accentDonkerBlauw);
+    outline: 0;
+    caret-color: var(--accentDonkerBlauw);
+}
+
+/******************************/
+/* *****  Account Pagina **** */
+/******************************/
+
+.account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    background-color: var(--wit);
+    width: 35rem;
+    height: 30rem;
+    
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.accountform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.accountform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.removeform button {
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: .5em 1em;
+    background: linear-gradient(100deg,
+            var(--accentRoze) 30%,
+            var(--accentPaars) 100%);
+    color: var(--wit);
+    transition: .5s;
+}
+
+.removeform button:hover {
+    cursor: pointer;
+    transform: translatey(-.2em);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

@@ -1,0 +1,24 @@
+<%- include("../partials/head") %>
+
+<body>
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <main class="maintristan">
+        <section class="login">
+            <h1>Login here</h1>
+            <form action="/register/login" method="post" class="loginform">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account yet?</p><a href="/register">Register</a>
+        </section>
+    </main>
+    <script src='/scripts/navbarScript.js'></script>
+</body>
+</html>
