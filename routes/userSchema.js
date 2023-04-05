@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 		required: false
 	},
 	mood: Array,
-	favouriteArtist: Array,
+	favouriteArtists: Array,
 	favouriteSongs: Array,
 	follow: Boolean,
 	password: {

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
 require('dotenv').config();
@@ -34,13 +33,13 @@ const { admin } = require('./routes/adminSchema');
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
 
-async function main () {
-  await mongoose.connect(uri, {
-    dbName: process.env.DB_NAME,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  console.log('Succesfully connected');
+async function main() {
+	await mongoose.connect(uri, {
+		dbName: process.env.DB_NAME,
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	});
+	console.log('Succesfully connected');
 }
 main().catch((err) => console.log(err));
 
@@ -57,6 +56,7 @@ app.use(express.urlencoded({ extended: true }));
  *========================================================================**/
 
 app.set('view engine', 'ejs');
+
 
 /**========================================================================
  *                           Sessions
@@ -92,23 +92,20 @@ app.use(passport.session());
  *    Home Page
  *------------------------**/
 app.get('/', async (req, res) => {
-  res.send('Welkom op de homepagina');
+	res.send('Welkom op de homepagina');
 
-  try {
-    const allSongs = await songs.find({});
-    console.log('🚀 ~ file: server.js:66 ~ app.get ~ allSongs:', allSongs);
-		
+	try {
+		const allSongs = await songs.find({});
+		console.log('🚀 ~ file: server.js:66 ~ app.get ~ allSongs:', allSongs);
 
-    // eslint-disable-next-line no-unused-vars
-    const allUsers = await users.find({});
-    // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
+		const allUsers = await users.find({});
+		// console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
 
-    // eslint-disable-next-line no-unused-vars
-    const allAdmins = await admin.find({});
-    // console.log("🚀 ~ file: server.js:73 ~ app.get ~ allAdmins:", allAdmins)
-  } catch (error) {
-    console.error(error);
-  }
+		const allAdmins = await admin.find({});
+		// console.log("🚀 ~ file: server.js:73 ~ app.get ~ allAdmins:", allAdmins)
+	} catch (error) {
+		console.error(error);
+	}
 });
 
 /**----------------------
@@ -141,11 +138,11 @@ app.use('/liking', likingRouter);
  *========================================================================**/
 
 app.use((req, res) => {
-  res
-    .status(404)
-    .send(
-      'We`re sorry, we were not able to find the page you were looking for'
-    );
+	res
+		.status(404)
+		.send(
+			'We`re sorry, we were not able to find the page you were looking for'
+		);
 });
 
 /**========================================================================
@@ -153,5 +150,5 @@ app.use((req, res) => {
  *========================================================================**/
 
 app.listen(port, () => {
-  console.log(`Server is listening to port: ${port}`);
+	console.log(`Server is listening to port: ${port}`);
 });

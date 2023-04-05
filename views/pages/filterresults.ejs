@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../partials/head'); %>
+
+    <title>Results</title>
+  </head>
+
+  <body>
+    <header><%- include('../partials/header'); %></header>
+
+    <main class="filter-results">
+     <div class="heading">
+      <h1>Results</h1>
+      <p>Selected: <%= filters %></p>
+    </div> 
+
+      <div id="profiles">
+        <% data.forEach((filteredUsers) => { %>
+          <div class="<%= filteredUsers._id %>">
+            <h2><%= filteredUsers.firstName %> <%= filteredUsers.lastName %></h2>
+            
+            <p>Age:<%= filteredUsers.age %></p>
+
+            <p>Moods</p>
+            <p><%= filteredUsers.mood %></p>
+
+            <p>Favorite Artists</p>
+            <p><%=filteredUsers.favouriteArtists%></p>
+
+            <!-- <p>Favorite Songs</p>
+            <p><%= filteredUsers.favouriteSongs %></p> -->
+            
+            <img src='<%= filteredUsers.profilePicture %>'>
+          </div>
+        <% }); %>
+      </div>
+    </main>
+
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+
+  </body>
+</html>

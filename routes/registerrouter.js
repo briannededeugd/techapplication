@@ -52,7 +52,7 @@ router.post('/login', passport.authenticate('local', {
  *                             Account Page
  *========================================================================**/
 
-router.get('/account', async (req, res) => {
+router.get('/account', (req, res) => {
   res.render('pages/account');
 });
 
@@ -112,18 +112,18 @@ router.post('/logout', (req, res, next) => {
  *                       Authentication Middleware
  *========================================================================**/
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/register/login');
-};
+// function checkAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     return next();
+//   }
+//   res.redirect('/register/login');
+// };
 
-function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return res.redirect('/register/account');
-  }
-  next();
-};
+// function checkNotAuthenticated(req, res, next) {
+//   if (req.isAuthenticated()) {
+//     return res.redirect('/register/account');
+//   }
+//   next();
+// };
 
 module.exports = router;
