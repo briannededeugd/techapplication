@@ -6,12 +6,11 @@
     </header>
     <main>
         <h1>Hello</h1>
-        <p><%= user.firstName + ' ' + user.lastName%></p>
-        <ul>
-            <% user.mood.forEach(moods => { %>
-                <li><%= moods %></li>
-            <% }); %>
-        </ul>
+        
+        <form action="/register/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+        <a href="/remove"><button>Remove account</button></a>
     </main>
 </body>
 </html>

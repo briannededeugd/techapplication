@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
 require('dotenv').config();
@@ -5,13 +6,16 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const passport = require('passport');
 
 /**========================================================================
  *                           Requiring the seperate routes
  *========================================================================**/
 
 const followingRouter = require('./routes/followingRouter');
-const registerRouter = require('./routes/registerRouter');
+const registerRouter = require('./routes/registerrouter');
 const matchingRouter = require('./routes/matchingRouter');
 const filterRouter = require('./routes/filterRouter');
 const likingRouter = require('./routes/likingRouter');
@@ -31,12 +35,12 @@ const { admin } = require('./routes/adminSchema');
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}${process.env.DB_URI}`;
 
 async function main () {
-    await mongoose.connect(uri, {
-      dbName: process.env.DB_NAME,
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-    console.log('Succesfully connected');
+  await mongoose.connect(uri, {
+    dbName: process.env.DB_NAME,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  console.log('Succesfully connected');
 }
 main().catch((err) => console.log(err));
 
@@ -55,6 +59,32 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 /**========================================================================
+ *                           Sessions
+ *========================================================================**/
+
+const sessionSecret = process.env.SESSION_SECRET;
+const store = new MongoDBStore({
+  uri: uri,
+  collection: process.env.DB_COLLECTION_SESSIONS
+});
+
+app.use(session({
+  secret: sessionSecret,
+  resave: false,
+  saveUninitialized: true,
+  store: store
+}));
+
+//Catch and store errors
+store.on('error', (error) => {
+  console.log(error);
+});
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+/**========================================================================
  *                           Routing
  *========================================================================**/
 
@@ -62,21 +92,23 @@ app.set('view engine', 'ejs');
  *    Home Page
  *------------------------**/
 app.get('/', async (req, res) => {
-	res.send('Welkom op de homepagina');
+  res.send('Welkom op de homepagina');
 
-	try {
-		const allSongs = await songs.find({});
-		console.log('🚀 ~ file: server.js:66 ~ app.get ~ allSongs:', allSongs);
+  try {
+    const allSongs = await songs.find({});
+    console.log('🚀 ~ file: server.js:66 ~ app.get ~ allSongs:', allSongs);
 		
 
-        const allUsers = await users.find({});
-        // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
+    // eslint-disable-next-line no-unused-vars
+    const allUsers = await users.find({});
+    // console.log("🚀 ~ file: server.js:61 ~ app.get ~ allUsers:", allUsers)
 
-        const allAdmins = await admin.find({});
-        // console.log("🚀 ~ file: server.js:73 ~ app.get ~ allAdmins:", allAdmins)
-    } catch (error) {
-        console.error(error);
-    }
+    // eslint-disable-next-line no-unused-vars
+    const allAdmins = await admin.find({});
+    // console.log("🚀 ~ file: server.js:73 ~ app.get ~ allAdmins:", allAdmins)
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 /**----------------------
@@ -109,11 +141,11 @@ app.use('/liking', likingRouter);
  *========================================================================**/
 
 app.use((req, res) => {
-	res
-		.status(404)
-		.send(
-			'We`re sorry, we were not able to find the page you were looking for'
-		);
+  res
+    .status(404)
+    .send(
+      'We`re sorry, we were not able to find the page you were looking for'
+    );
 });
 
 /**========================================================================
@@ -121,5 +153,5 @@ app.use((req, res) => {
  *========================================================================**/
 
 app.listen(port, () => {
-	console.log(`Server is listening to port: ${port}`);
+  console.log(`Server is listening to port: ${port}`);
 });
