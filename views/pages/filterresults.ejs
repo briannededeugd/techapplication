@@ -13,8 +13,10 @@
     <header><%- include('../partials/header'); %></header>
 
     <main class="filter-results">
+     <div class="heading">
       <h1>Results</h1>
       <p>Selected: <%= filters %></p>
+    </div> 
 
       <div id="profiles">
         <% data.forEach((filteredUsers) => { %>

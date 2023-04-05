@@ -17,7 +17,7 @@ html {
     background-color: var(--grijs);
     background: rgb(247,37,133);
     background: /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
-    linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%)
+    linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
 }
 
 
@@ -26,7 +26,7 @@ html {
  *========================================================================**/
 
 body {
-    width: 100%;
+    width: 100vh;
     height: auto;
     font-family: var(--fontstyle);
     color: rgb(0, 0, 0);
@@ -551,6 +551,10 @@ main.elaine {
     width: 100%;
 }
 
+main.elaine h2, main.elaine p {
+    color: var(--wit);
+}
+
 .filters {
     display: flex;
     flex-direction: column;
@@ -559,21 +563,69 @@ main.elaine {
     gap: 2em; 
 }
 
+.filters section {
+    border-radius: .75em;
+    height: max-content;
+    background-color: var(--vlakPaars);
+    
+}
+
 .filters fieldset {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     border: none; 
     margin: 0;
-    padding: 0;
+    padding: 1em;
+
+    width: 100vh;
 }
-.filters fieldset {
-    justify-content: center;
+
+.filters label {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 1.1em;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    background: var(--wit);
+    color: var(--accentPaars);
+    transition: 0.4s;
+}
+.filters input[type='checkbox'] {
+    display: none;    
+}
+
+.filters input[type='checkbox']:checked + label {
+    background: 
+    linear-gradient(100deg,
+    var(--accentMidBlauw) 30%,
+    var(--accentLichtBlauw) 100%);
+
+    color: var(--wit);
+    font-weight: 800;
+    transition: 0.4s;
+}
+
+.elaine .submit {
+    cursor: pointer;
+    font-size: large;
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    background: linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
+    color: var(--wit);
 }
 
 /**========================================================================
  *                           Filter results
  *========================================================================**/
 
-.filter-results {
-
+.heading {
+     color: var(--wit);
 }
 
 
