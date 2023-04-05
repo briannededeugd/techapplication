@@ -541,6 +541,58 @@ div#empty-message img {
     display: none;
 }
 
+dialog {
+    border-radius: 15px;
+}
+
+dialog form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1em;
+    width: auto;
+    height: 15%;
+    grid-template-areas: 
+    "label label"
+    "cancel confirm";
+}
+
+dialog label {
+    grid-area: label;
+    padding: 0 1em 2em;
+
+}
+
+dialog form button#confirmBtn {
+    grid-area: confirm;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s; 
+}
+
+dialog form button#cancelBtn {
+    grid-area: cancel;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s; 
+}
+
+dialog form button#cancelBtn:hover, dialog form button#confirmBtn:hover {
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
+}
+
 
 
 /**========================================================================
@@ -741,4 +793,110 @@ audio {
     justify-content: space-between;
     position: relative;
     margin-top: 3em;
+}
+
+/****************************/
+/* ***** Liking Pagina **** */
+/****************************/
+
+div#like {
+    display: grid;
+    gap: 2em;
+}
+
+div#like div {
+    display: grid;
+    grid-template-columns: 0.1fr 1.25fr 0.65fr 0.2fr 1fr 1fr;
+    grid-template-rows: 0.05fr 0.2fr 0.1fr 0.7fr;
+    grid-template-areas:
+        ". . . . image image"
+        ". artist form . image image"
+        ". artist . . image image"
+        ". songTitle songTitle . image image";
+    background-color: var(--wit);
+    align-items: center;
+    justify-items: start;
+    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 1.875em;
+    min-width: 45em;
+}
+
+
+div#like .image-gradient {
+    position: relative;
+    grid-area: image;
+    width: 100%;
+    max-width: 100%;
+    max-height: 10em;
+    height: 100%;
+    min-width: 15em;
+    min-height: 22em;
+    border-radius: 0 30px 30px 0;
+    overflow: hidden;
+}
+
+div#like .image-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--accentPaars), rgba(0, 0, 0, 0));
+    border-radius: 0 30px 30px 0;
+    z-index: 1;
+}
+
+div#like img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+div#like h2 {
+    grid-area: songTitle;
+    color: var(--accentPaars);
+    font-size: 2.5em;
+    align-self: start;
+    margin: 0;
+    font-weight: bold;
+}
+
+div#like p:nth-of-type(1) {
+    grid-area: artist;
+    align-self: start;
+    margin-top: 0.12em;
+    color: var(--accentPaars);
+    font-size: 1.5em;
+}
+
+div#like form {
+    grid-area: form;
+    justify-self: start;
+    align-self: start;
+}
+
+div#like button {
+    grid-area: button;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 15px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars);
+    transition: all 0.3s;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+div#like button:hover {
+    grid-area: button;
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
 }
