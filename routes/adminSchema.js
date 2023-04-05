@@ -9,7 +9,7 @@ const adminSchema = new mongoose.Schema({
 	email: String,
 	profilePicture: String,
 	mood: Array,
-	favouriteArtist: Array,
+	favouriteArtists: Array,
 	favouriteSongs: Array,
 });
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
+	_id: ObjectId,
 	firstName: {
 		type: String,
 		required: true
@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 		required: false
 	},
 	mood: Array,
-	favouriteArtist: Array,
+	favouriteArtists: Array,
 	favouriteSongs: Array,
 	follow: Boolean,
 	password: {
@@ -36,10 +36,6 @@ const userSchema = new mongoose.Schema({
 		required: true
 	}
 });
-
-userSchema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.hashedPassword);
-};
 
 const users = mongoose.model('users', userSchema);
 

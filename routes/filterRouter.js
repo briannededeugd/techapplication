@@ -1,9 +1,28 @@
+/* eslint-disable no-undef */
+
 const express = require("express");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  res.send("elaine's filter router werkt!");
-  console.log("elaine's filter router werkt!");
-});
+/**========================================================================
+ *                             Mongoose Schema
+ *========================================================================**/
+
+const { users } = require("./userSchema");
+
+
+/**========================================================================
+ *                             Controllers
+ *========================================================================**/
+
+const filteringController = require('../controllers/filteringController');
+
+/**========================================================================
+ *                        Filter page and results
+ *========================================================================**/
+
+router.get('/', filteringController.filterOnPage);
+
+router.post('/filterresults', filteringController.getFilterResults);
+
 
 module.exports = router;
