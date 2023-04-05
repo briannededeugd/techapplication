@@ -41,7 +41,7 @@
                      <%= profile.mood %>
                   <% } %>
                 </p>
-                <form action="/following/follow/<%= profile._id %>" method="POST">
+                <form action="/following/follow/<%= profile._id %>" data-profile-id= "<%= profile._id %>" method="POST">
                   <input type="hidden" name="followStatus" value="<%= profile.follow ? 'false' : 'true' %>">
                   
                   <% if (profile.follow) { %>
@@ -62,6 +62,7 @@
         <%- include('../partials/footer'); %>
     </footer>
     <script src='/scripts/navbarScript.js'></script>
+    <script src='/scripts/exploreConfirmButtonScript.js'></script>
 </body>
 </html>
 

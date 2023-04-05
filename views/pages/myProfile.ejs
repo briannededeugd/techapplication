@@ -22,7 +22,7 @@
                 <p>Age: <%= user.age %></p>
                 <p>Liked Songs:</p>
                 <p>
-                  <% likedSongs.forEach((song) => { %> <%= song.title %>, <% }); %>
+                  <% likedSongs.forEach((song) => { %> Artist:<%= song.artist %> <%= song.title %>, <% }); %>
                 </p>
                 <p>Moods:</p>
                 <p> 
