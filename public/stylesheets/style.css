@@ -540,6 +540,58 @@ div#empty-message img {
     display: none;
 }
 
+dialog {
+    border-radius: 15px;
+}
+
+dialog form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1em;
+    width: auto;
+    height: 15%;
+    grid-template-areas: 
+    "label label"
+    "cancel confirm";
+}
+
+dialog label {
+    grid-area: label;
+    padding: 0 1em 2em;
+
+}
+
+dialog form button#confirmBtn {
+    grid-area: confirm;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s; 
+}
+
+dialog form button#cancelBtn {
+    grid-area: cancel;
+    all: unset;
+    padding: 0.1em 2em;
+    cursor: pointer;
+    border-radius: 9px;
+    color: var(--wit);
+    background-color: var(--accentPaars);
+    border: 0.2em solid var(--accentPaars) ;
+    transition: all 0.3s; 
+}
+
+dialog form button#cancelBtn:hover, dialog form button#confirmBtn:hover {
+    color: var(--accentPaars);
+    background-color: var(--wit);
+    transition: all 0.3s;
+}
+
 
 
 /**========================================================================
