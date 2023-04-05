@@ -103,7 +103,6 @@ header nav li a:after {
     left: -0.5em;
     border-radius: 85px 85px 85px 85px;
 }
-
 header nav li a:before {
     bottom: 0;
     transition: 0.5s;
