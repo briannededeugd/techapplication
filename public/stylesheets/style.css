@@ -19,8 +19,8 @@ html {
     background: rgb(247, 37, 133);
     background:
         /* linear-gradient(48deg, rgba(247,37,133,1) 0%, rgba(114,9,183,1) 15%, rgba(58,12,163,1) 50%, rgba(67,97,238,1) 85%, rgba(76,201,240,1) 100%);  */
-        linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%);
-    height: 100vh;
+        linear-gradient(205deg, #4361ee 0%, #435fec 0%, #3a0ca3 23.7%, #7209b7 56.2%, #f72585 150%) fixed;
+    min-height: 100%;
     width: 100vw;
 }
 
@@ -48,6 +48,10 @@ body {
     text-decoration: none;
     text-decoration-line: none;
     justify-content: center;
+}
+
+body > main > h1 {
+    color: var(--wit);
 }
 
 
@@ -95,6 +99,7 @@ header nav li a {
     text-transform: uppercase;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
+    color: var(--wit);
 }
 
 header nav li a:before,
@@ -219,10 +224,10 @@ div#myProfile-container p:nth-of-type(2) {
     margin: 0.5em 0 -0.5em;
     align-self: start;
 
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
     color: var(--wit);
 }
 
@@ -240,10 +245,10 @@ div#myProfile-container p:nth-of-type(4) {
     margin: 0.5em 0 -0.5em;
     align-self: start;
 
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
     color: var(--wit);
 }
 
@@ -269,8 +274,8 @@ div#myProfile-container a {
     color: var(--wit);
 
     background-color: var(--accentMidBlauw);
-    border: 0.2em solid var(--accentMidBlauw) ;
-    transition: all 0.3s; 
+    border: 0.2em solid var(--accentMidBlauw);
+    transition: all 0.3s;
 
 }
 
@@ -361,10 +366,10 @@ div#profiles p:nth-of-type(2) {
     margin: 0.5em 0 -0.5em;
     align-self: start;
 
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
     color: var(--wit);
 }
 
@@ -383,10 +388,10 @@ div#profiles p:nth-of-type(4) {
     margin: 0.5em 0 -0.5em;
     align-self: start;
 
-    background: 
-    linear-gradient(100deg,
-    var(--accentMidBlauw) 30%,
-    var(--accentLichtBlauw) 100%);
+    background:
+        linear-gradient(100deg,
+            var(--accentMidBlauw) 30%,
+            var(--accentLichtBlauw) 100%);
     color: var(--wit);
 }
 
@@ -412,8 +417,8 @@ div#profiles button {
     color: var(--wit);
 
     background-color: var(--accentMidBlauw);
-    border: 0.2em solid var(--accentMidBlauw) ;
-    transition: all 0.3s;   
+    border: 0.2em solid var(--accentMidBlauw);
+    transition: all 0.3s;
 }
 
 div#profiles button:hover {
@@ -717,10 +722,11 @@ main.elaine p {
 body.matching {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: auto auto;
+    /* grid-template-rows: auto auto; */
     grid-template-areas:
         'header header header'
         '. main .';
+    gap: 0 !important;
 }
 
 main.mainmatch {
@@ -742,26 +748,6 @@ main.mainmatch {
         '. form .';
 
 }
-
-/* main.mainresult {
-    width: 100%;
-    height: auto;
-    font-family: var(--fontstyle);
-    color: rgb(0, 0, 0);
-    text-align: center;
-    gap: 1.5em 0px;
-    margin: 0 auto 0 auto;
-    text-decoration: none;
-    text-decoration-line: none;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        '. heading .'
-        '. form .';
-
-} */
 
 /****************************/
 /* TEMPLATE AREAS */
@@ -802,6 +788,7 @@ body.matching>main.mainmatch>section.heading>p {
 body.matching>main.mainmatch>section.heading>h1 {
     font-size: 2em;
     margin-bottom: 5vh;
+    color: var(--wit);
 }
 
 body.matching>main.mainmatch>section.heading>p {
@@ -1152,7 +1139,7 @@ div#like button:hover {
     background-color: var(--wit);
     width: 35rem;
     height: 45rem;
-    
+
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -1195,7 +1182,7 @@ div#like button:hover {
     background-color: var(--wit);
     width: 35rem;
     height: 30rem;
-    
+
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -1283,7 +1270,7 @@ input[type=password]:focus {
     background-color: var(--wit);
     width: 35rem;
     height: 30rem;
-    
+
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
