@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+/* eslint-disable linebreak-style */
 
 require('dotenv').config();
 const express = require('express');
@@ -9,6 +10,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const passport = require('passport');
+const compression = require('compression');
 
 /**========================================================================
  *                           Requiring the seperate routes
@@ -51,6 +53,8 @@ main().catch((err) => console.log(err));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(compression());
+app.disable('etag');
 
 /**========================================================================
  *                           Templating
